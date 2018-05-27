@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Projekt
 {
-    interface IView
+    public interface IView
     {
+
     }
 }
