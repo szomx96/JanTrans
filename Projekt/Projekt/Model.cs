@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Projekt
 {
-    class Model
+    public class Model
     {
+        public Model()
+        { }
+
     }
 }

@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace Projekt
 {
-    class Presenter
+    public class Presenter
     {
+        Model model;
+        IView view;
+        public Presenter(Model model, IView view)
+        {
+            this.model = model;
+            this.view = view;
+        }
     }
 }

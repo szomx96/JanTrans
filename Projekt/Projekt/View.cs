@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Projekt
 {
-    public partial class View : Form
+    public partial class View : Form, IView
     {
         public View()
         {
