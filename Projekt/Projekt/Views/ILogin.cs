@@ -8,6 +8,7 @@ namespace Projekt
 {
     public interface IView
     {
+        event Action<string, string> SendLogin;
 
     }
 }

@@ -14,6 +14,11 @@ namespace Projekt
         {
             this.model = model;
             this.view = view;
+            view.SendLogin += PresenterLogin;
+        }
+        private void PresenterLogin(string log, string pass)
+        {
+
         }
     }
 }
