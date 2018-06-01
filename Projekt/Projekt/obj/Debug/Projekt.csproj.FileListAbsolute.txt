@@ -8,3 +8,12 @@ D:\Studies\object programmin\Projekt_poig\Projekt\Projekt\bin\Debug\Projekt.exe
 D:\Studies\object programmin\Projekt_poig\Projekt\Projekt\bin\Debug\Projekt.pdb
 D:\Studies\object programmin\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.exe
 D:\Studies\object programmin\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.pdb
+D:\repos\Projekt_poig\Projekt\Projekt\bin\Debug\Projekt.exe.config
+D:\repos\Projekt_poig\Projekt\Projekt\bin\Debug\Projekt.exe
+D:\repos\Projekt_poig\Projekt\Projekt\bin\Debug\Projekt.pdb
+D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Properties.Resources.resources
+D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.View.resources
+D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.csproj.GenerateResource.Cache
+D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.csproj.CoreCompileInputs.cache
+D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.exe
+D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.pdb

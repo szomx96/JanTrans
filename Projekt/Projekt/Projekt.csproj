@@ -46,6 +46,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Table_classes\Ciezarowka.cs" />
+    <Compile Include="Views\Edytuj_kierowca.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Edytuj_kierowca.Designer.cs">
+      <DependentUpon>Edytuj_kierowca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Edytuj_pojazd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Edytuj_pojazd.Designer.cs">
+      <DependentUpon>Edytuj_pojazd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Ekran_glowny.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Ekran_glowny.Designer.cs">
+      <DependentUpon>Ekran_glowny.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ILogin.cs" />
     <Compile Include="Table_classes\Kierowca.cs" />
     <Compile Include="Table_classes\Klient.cs" />
@@ -61,6 +79,42 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Table_classes\Zlecenie.cs" />
+    <Compile Include="Views\Nowe_zlecenie.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Nowe_zlecenie.Designer.cs">
+      <DependentUpon>Nowe_zlecenie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Nowy_kierowca.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Nowy_kierowca.Designer.cs">
+      <DependentUpon>Nowy_kierowca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Nowy_pojazd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Nowy_pojazd.Designer.cs">
+      <DependentUpon>Nowy_pojazd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Ustawienia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Ustawienia.Designer.cs">
+      <DependentUpon>Ustawienia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Wybierz_z_bazy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Wybierz_z_bazy.Designer.cs">
+      <DependentUpon>Wybierz_z_bazy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Zlecenie_podglad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Zlecenie_podglad.Designer.cs">
+      <DependentUpon>Zlecenie_podglad.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -70,8 +124,35 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\Edytuj_kierowca.resx">
+      <DependentUpon>Edytuj_kierowca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Edytuj_pojazd.resx">
+      <DependentUpon>Edytuj_pojazd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Ekran_glowny.resx">
+      <DependentUpon>Ekran_glowny.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Nowe_zlecenie.resx">
+      <DependentUpon>Nowe_zlecenie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Nowy_kierowca.resx">
+      <DependentUpon>Nowy_kierowca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Nowy_pojazd.resx">
+      <DependentUpon>Nowy_pojazd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Ustawienia.resx">
+      <DependentUpon>Ustawienia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Wybierz_z_bazy.resx">
+      <DependentUpon>Wybierz_z_bazy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Zlecenie_podglad.resx">
+      <DependentUpon>Zlecenie_podglad.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

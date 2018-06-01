@@ -31,38 +31,60 @@
             this.buttonLogin = new System.Windows.Forms.Button();
             this.textBoxLogin = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.labelLogin = new System.Windows.Forms.Label();
+            this.labelPassword = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonLogin
             // 
-            this.buttonLogin.Location = new System.Drawing.Point(22, 183);
+            this.buttonLogin.Location = new System.Drawing.Point(15, 121);
             this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(90, 37);
+            this.buttonLogin.Size = new System.Drawing.Size(199, 37);
             this.buttonLogin.TabIndex = 0;
-            this.buttonLogin.Text = "Login";
+            this.buttonLogin.Text = "Zaloguj";
             this.buttonLogin.UseVisualStyleBackColor = true;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // textBoxLogin
             // 
-            this.textBoxLogin.Location = new System.Drawing.Point(12, 40);
+            this.textBoxLogin.Location = new System.Drawing.Point(103, 31);
             this.textBoxLogin.Name = "textBoxLogin";
-            this.textBoxLogin.Size = new System.Drawing.Size(100, 22);
+            this.textBoxLogin.Size = new System.Drawing.Size(111, 22);
             this.textBoxLogin.TabIndex = 2;
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(12, 134);
+            this.textBoxPassword.Location = new System.Drawing.Point(103, 74);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.PasswordChar = '%';
-            this.textBoxPassword.Size = new System.Drawing.Size(100, 22);
+            this.textBoxPassword.PasswordChar = '♫';
+            this.textBoxPassword.Size = new System.Drawing.Size(111, 22);
             this.textBoxPassword.TabIndex = 1;
+            // 
+            // labelLogin
+            // 
+            this.labelLogin.AutoSize = true;
+            this.labelLogin.Location = new System.Drawing.Point(12, 31);
+            this.labelLogin.Name = "labelLogin";
+            this.labelLogin.Size = new System.Drawing.Size(47, 17);
+            this.labelLogin.TabIndex = 3;
+            this.labelLogin.Text = "Login:";
+            // 
+            // labelPassword
+            // 
+            this.labelPassword.AutoSize = true;
+            this.labelPassword.Location = new System.Drawing.Point(11, 74);
+            this.labelPassword.Name = "labelPassword";
+            this.labelPassword.Size = new System.Drawing.Size(48, 17);
+            this.labelPassword.TabIndex = 4;
+            this.labelPassword.Text = "Hasło:";
             // 
             // View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(229, 256);
+            this.ClientSize = new System.Drawing.Size(238, 189);
+            this.Controls.Add(this.labelPassword);
+            this.Controls.Add(this.labelLogin);
             this.Controls.Add(this.textBoxLogin);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.buttonLogin);
@@ -78,5 +100,7 @@
         private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.TextBox textBoxLogin;
         private System.Windows.Forms.TextBox textBoxPassword;
+        private System.Windows.Forms.Label labelLogin;
+        private System.Windows.Forms.Label labelPassword;
     }
 }
