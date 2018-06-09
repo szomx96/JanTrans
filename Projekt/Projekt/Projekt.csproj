@@ -45,76 +45,88 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Commodity.cs" />
+    <Compile Include="Classes\Customer.cs" />
+    <Compile Include="Classes\Driver.cs" />
+    <Compile Include="Classes\Route.cs" />
+    <Compile Include="Classes\Vehicle.cs" />
+    <Compile Include="Classes\Zlecenie.cs" />
     <Compile Include="Table_classes\Ciezarowka.cs" />
-    <Compile Include="Views\Edytuj_kierowca.cs">
+    <Compile Include="Forms\Edytuj_kierowca.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Edytuj_kierowca.Designer.cs">
+    <Compile Include="Forms\Edytuj_kierowca.Designer.cs">
       <DependentUpon>Edytuj_kierowca.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Edytuj_pojazd.cs">
+    <Compile Include="Forms\Edytuj_pojazd.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Edytuj_pojazd.Designer.cs">
+    <Compile Include="Forms\Edytuj_pojazd.Designer.cs">
       <DependentUpon>Edytuj_pojazd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Ekran_glowny.cs">
+    <Compile Include="Forms\Ekran_glowny.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Ekran_glowny.Designer.cs">
+    <Compile Include="Forms\Ekran_glowny.Designer.cs">
       <DependentUpon>Ekran_glowny.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\IEkranGlowny.cs" />
     <Compile Include="Views\ILogin.cs" />
     <Compile Include="Table_classes\Kierowca.cs" />
     <Compile Include="Table_classes\Klient.cs" />
-    <Compile Include="Model.cs" />
-    <Compile Include="Presenter.cs" />
+    <Compile Include="Models\Model.cs" />
+    <Compile Include="Presenters\Presenter.cs" />
     <Compile Include="Table_classes\Towar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\Login.cs">
+    <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Login.Designer.cs">
+    <Compile Include="Forms\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Table_classes\Zlecenie.cs" />
-    <Compile Include="Views\Nowe_zlecenie.cs">
+    <Compile Include="Forms\Nowe_zlecenie.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Nowe_zlecenie.Designer.cs">
+    <Compile Include="Forms\Nowe_zlecenie.Designer.cs">
       <DependentUpon>Nowe_zlecenie.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Nowy_kierowca.cs">
+    <Compile Include="Forms\Nowy_kierowca.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Nowy_kierowca.Designer.cs">
+    <Compile Include="Forms\Nowy_kierowca.Designer.cs">
       <DependentUpon>Nowy_kierowca.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Nowy_pojazd.cs">
+    <Compile Include="Forms\Nowy_pojazd.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Nowy_pojazd.Designer.cs">
+    <Compile Include="Forms\Nowy_pojazd.Designer.cs">
       <DependentUpon>Nowy_pojazd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Ustawienia.cs">
+    <Compile Include="Forms\Ustawienia.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Ustawienia.Designer.cs">
+    <Compile Include="Forms\Ustawienia.Designer.cs">
       <DependentUpon>Ustawienia.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Wybierz_z_bazy.cs">
+    <Compile Include="Forms\Wybierz_z_bazy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Wybierz_z_bazy.Designer.cs">
+    <Compile Include="Forms\Wybierz_z_bazy.Designer.cs">
       <DependentUpon>Wybierz_z_bazy.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Zlecenie_podglad.cs">
+    <Compile Include="Forms\Zlecenie_podglad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Zlecenie_podglad.Designer.cs">
+    <Compile Include="Forms\Zlecenie_podglad.Designer.cs">
       <DependentUpon>Zlecenie_podglad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\INoweZlecenie.cs" />
+    <Compile Include="Views\IPojazd.cs" />
+    <Compile Include="Views\IKierowca.cs" />
+    <Compile Include="Views\IUstawienia.cs" />
+    <Compile Include="Views\IZleceniePodgladcs.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -124,34 +136,34 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Views\Edytuj_kierowca.resx">
+    <EmbeddedResource Include="Forms\Edytuj_kierowca.resx">
       <DependentUpon>Edytuj_kierowca.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Edytuj_pojazd.resx">
+    <EmbeddedResource Include="Forms\Edytuj_pojazd.resx">
       <DependentUpon>Edytuj_pojazd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Ekran_glowny.resx">
+    <EmbeddedResource Include="Forms\Ekran_glowny.resx">
       <DependentUpon>Ekran_glowny.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Login.resx">
+    <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Nowe_zlecenie.resx">
+    <EmbeddedResource Include="Forms\Nowe_zlecenie.resx">
       <DependentUpon>Nowe_zlecenie.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Nowy_kierowca.resx">
+    <EmbeddedResource Include="Forms\Nowy_kierowca.resx">
       <DependentUpon>Nowy_kierowca.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Nowy_pojazd.resx">
+    <EmbeddedResource Include="Forms\Nowy_pojazd.resx">
       <DependentUpon>Nowy_pojazd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Ustawienia.resx">
+    <EmbeddedResource Include="Forms\Ustawienia.resx">
       <DependentUpon>Ustawienia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Wybierz_z_bazy.resx">
+    <EmbeddedResource Include="Forms\Wybierz_z_bazy.resx">
       <DependentUpon>Wybierz_z_bazy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Zlecenie_podglad.resx">
+    <EmbeddedResource Include="Forms\Zlecenie_podglad.resx">
       <DependentUpon>Zlecenie_podglad.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
