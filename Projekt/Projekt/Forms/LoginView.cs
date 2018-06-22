@@ -17,6 +17,7 @@ namespace Projekt.Forms
 
         public LoginView(IViewChanger changer)
         {
+            InitializeComponent();
             this.changer = changer;
         }
         public string Login
@@ -34,13 +35,15 @@ namespace Projekt.Forms
             set { errorProvider.SetError(buttonLogin, value); }
         }
 
-        public event Action<string, string> SendLogin;
+        public event Func<string, string, string> SendLogin;
 
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
+            
             errorProvider.Clear();
-            SendLogin(Login, Password);
+            if(SendLogin(Login, Password)=="admin")
+                changer.ShowAdminMain();
         }
     }
 }

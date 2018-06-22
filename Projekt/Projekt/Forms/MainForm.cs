@@ -30,20 +30,37 @@ namespace Projekt.Forms
         {
             var view = new LoginView(this);
             var model = new LoginModel(session); //sesja z userem
-            var presenter = new Presenter(model, view); 
+            var presenter = new LoginPresenter(model, view); 
             
-            ShowControl(control);
-            //centerActualView();
+            ShowControl(view);
+            centerActualView();
         }
 
-        public void ShowRegister()
+        public void ShowAdminMain()
         {
-            throw new NotImplementedException();
+            var view = new AdminMainView(this);
+            var model = new AdminMainModel(session);
+            var presenter = new AdminMainPresenter(model, view);
+
+            ShowControl(view);
+            //niech ktos to przesunie gdzie trzeba plox dzieki
+
         }
 
         public void ShowKibel()
         {
             throw new NotImplementedException();
         }
+        private void centerActualView()
+        {
+            control.Left = (this.Width - control.Width) / 2;
+            control.Top = (this.Height - control.Height) / 2;
+        }
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            ShowLogin();
+        }
+
+      
     }
 }

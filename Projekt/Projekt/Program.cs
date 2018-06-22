@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Projekt.Forms;
 namespace Projekt
 {
     static class Program
@@ -16,10 +16,16 @@ namespace Projekt
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            LoginModel model = new LoginModel();
-            LoginView view = new LoginView();
-            Presenter p = new Presenter(model, view);
-            Application.Run(view);
+            //LoginModel model = new LoginModel();
+            //MainForm view = new MainForm();
+            //Presenter p = new Presenter(model, view);
+            //Application.Run(view);
+
+
+            var formMain = new MainForm();
+
+
+            Application.Run(formMain);
         }
     }
 }

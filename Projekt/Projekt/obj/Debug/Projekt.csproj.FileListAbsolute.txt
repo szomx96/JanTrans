@@ -12,7 +12,6 @@ D:\repos\Projekt_poig\Projekt\Projekt\bin\Debug\Projekt.exe.config
 D:\repos\Projekt_poig\Projekt\Projekt\bin\Debug\Projekt.exe
 D:\repos\Projekt_poig\Projekt\Projekt\bin\Debug\Projekt.pdb
 D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Properties.Resources.resources
-D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.View.resources
 D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.csproj.GenerateResource.Cache
 D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.csproj.CoreCompileInputs.cache
 D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.exe
@@ -20,7 +19,6 @@ D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.pdb
 D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.csprojResolveAssemblyReference.cache
 D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Views.Edytuj_kierowca.resources
 D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Views.Edytuj_pojazd.resources
-D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Views.Ekran_glowny.resources
 D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Views.Nowe_zlecenie.resources
 D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Views.Nowy_kierowca.resources
 D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Views.Nowy_pojazd.resources
@@ -31,3 +29,8 @@ D:\repos\Projekt_poig\Projekt\Projekt\bin\Debug\Google.Protobuf.dll
 D:\repos\Projekt_poig\Projekt\Projekt\bin\Debug\MySql.Data.dll
 D:\repos\Projekt_poig\Projekt\Projekt\bin\Debug\Google.Protobuf.xml
 D:\repos\Projekt_poig\Projekt\Projekt\bin\Debug\MySql.Data.xml
+D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Forms.LoginView.resources
+D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Forms.MainForm.resources
+D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Forms.Login.resources
+D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Forms.AdminMainView.resources
+D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Views.AdminMainView.resources

@@ -11,7 +11,7 @@ namespace Projekt
         string Login { get; set; }
         string Password { get; set; }
         string Error { set; }
-        event Action<string, string> SendLogin;
+        event Func<string, string, string> SendLogin;
 
     }
 }

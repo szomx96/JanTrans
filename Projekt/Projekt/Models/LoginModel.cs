@@ -21,7 +21,7 @@ namespace Projekt
         {
             this.container = container;
         }
-        public string LogedAs
+        public string LoggedAs
         {
             get { return loginMode; }
             set { loginMode = value; }

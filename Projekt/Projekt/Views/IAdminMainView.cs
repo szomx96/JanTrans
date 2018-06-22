@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Projekt.Views
+namespace Projekt
 {
-    interface IEkranGlowny
+    public interface IAdminMainView
     {
         string CurrentDate { get; set; }
         string UserName { get; set; }

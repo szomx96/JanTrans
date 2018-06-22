@@ -9,7 +9,7 @@ namespace Projekt
     public interface IViewChanger
     {
         void ShowLogin();
-        void ShowRegister();
+        void ShowAdminMain();
         void ShowKibel();
           
     }

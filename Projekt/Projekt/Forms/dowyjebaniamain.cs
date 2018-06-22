@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Projekt.Views
 {
-    public partial class Ekran_glowny : Form
+    public partial class AdminMainView : Form
     {
-        public Ekran_glowny()
+        public AdminMainView()
         {
             InitializeComponent();
         }

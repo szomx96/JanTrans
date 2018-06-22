@@ -1,6 +1,6 @@
 ﻿namespace Projekt.Views
 {
-    partial class Ekran_glowny
+    partial class AdminMainView
     {
         /// <summary>
         /// Required designer variable.
