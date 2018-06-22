@@ -8,14 +8,15 @@ namespace Projekt
 {
     public class Presenter
     {
-        Model model;
+        LoginModel model;
         ILogin view;
-        public Presenter(Model model, ILogin view)
+        public Presenter(LoginModel model, ILogin view)
         {
             this.model = model;
             this.view = view;
             view.SendLogin += PresenterLogin;
         }
+
         private void PresenterLogin(string log, string pass)
         {
             if (model.CheckLogin(log, pass))
@@ -25,7 +26,7 @@ namespace Projekt
                 {
                     Ekran_glowny ekran = new Ekran_glowny();
                     ekran.Show();
-                    view = ekran;
+                    //view = ekran;
                     
                     //  TU DODAC +=
                 }

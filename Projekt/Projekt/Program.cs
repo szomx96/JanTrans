@@ -16,8 +16,8 @@ namespace Projekt
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Model model = new Model();
-            View view = new View();
+            LoginModel model = new LoginModel();
+            LoginView view = new LoginView();
             Presenter p = new Presenter(model, view);
             Application.Run(view);
         }

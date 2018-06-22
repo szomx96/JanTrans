@@ -6,17 +6,21 @@ using System.Threading.Tasks;
 
 namespace Projekt
 {
-    public class Model
+    public class LoginModel
     {
         private string loginMode = "none";
         private string userID = "";
+        ModelContainer container = new ModelContainer();
         MySQLConnect database = new MySQLConnect();
-        public Model()
+        public LoginModel()
         {
             
             
         }
-
+        public LoginModel(ModelContainer container)
+        {
+            this.container = container;
+        }
         public string LogedAs
         {
             get { return loginMode; }
