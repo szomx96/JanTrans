@@ -23,8 +23,6 @@ namespace Projekt.Classes
             this.commodity = commodity;
             this.vehicle = vehicle;
             this.route = route;
-
-
         }
 
     }

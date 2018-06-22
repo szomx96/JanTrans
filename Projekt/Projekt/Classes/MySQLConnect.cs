@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using MySql.Data.MySqlClient;
 
-namespace testingCOnnection
+namespace Projekt
 {
     public class MySQLConnect
     {
@@ -28,7 +28,7 @@ namespace testingCOnnection
             server = "localhost";
             database = "jantrans";
             uid = "root";
-            password = "toor";
+            password = "";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";SslMode=none;convert zero datetime=True";
@@ -98,6 +98,37 @@ namespace testingCOnnection
         }
 
         //Select statement
+        public string[] SelectLogin(string log, string pass)
+        {
+            List<string> ansv = new List<string>();
+            string query = "SELECT Typ, ID_kierowca FROM logowanie WHERE Login like \""+log+"\" AND Haslo like \""+pass+"\"";
+            Console.WriteLine(query);
+
+            if (this.OpenConnection() == true)
+            {
+                
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+               
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+              
+                while (dataReader.Read())
+                {
+                    ansv.Add(dataReader["Typ"] + "");
+                    ansv.Add(dataReader["ID_kierowca"] + "");
+                }
+                dataReader.Close();
+                this.CloseConnection();
+                return ansv.ToArray();
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+
+
         public List<string>[] Select()
         {
             string query = "SELECT k.*, Data_pocz, Data_kon FROM kierowcy k, kierowca_zajety z WHERE ID_Kierowcy = Id_kierowca";

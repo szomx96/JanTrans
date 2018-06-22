@@ -26,8 +26,9 @@ SET time_zone = "+00:00";
 -- Table structure for table `ciezarowki`
 --
 
+-- use jantrans
 CREATE TABLE IF NOT EXISTS `ciezarowki` (
-  `ID_Pojazdu` int(11) NOT NULL AUTO_INCREMENT,
+  `ID_Pojazdu` int(11) AUTO_INCREMENT,
   `Ladownosc` int(11) DEFAULT NULL,
   `Pojemnosc` int(11) DEFAULT NULL,
   `Rejestracja` text NOT NULL,
@@ -39,6 +40,7 @@ CREATE TABLE IF NOT EXISTS `ciezarowki` (
 --
 
 INSERT INTO `ciezarowki` (`ID_Pojazdu`, `Ladownosc`, `Pojemnosc`, `Rejestracja`) VALUES
+(1, 2137, 88, 'SGLKEK'),
 (2, 1500, 50, 'SZ2137E'),
 (3, 1480, 25, 'SGL997JP'),
 (4, 1500, 50, 'SZ2137E'),

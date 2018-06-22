@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Projekt
 {
-    public interface IView
+    public interface ILogin
     {
         string Login { get; set; }
         string Password { get; set; }
-
+        string Error { set; }
         event Action<string, string> SendLogin;
 
     }
