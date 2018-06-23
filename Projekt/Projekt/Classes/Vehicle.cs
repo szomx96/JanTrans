@@ -4,15 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Projekt.Classes
+namespace Projekt
 {
     public class Vehicle
     {
         string vehicleID;
+        double vehicleCapacity;
+        double vehicleVolume;
+        string vehicleRegistration;
 
-        Vehicle(string vehicleID)
+        Vehicle(string vehicleID, double vehicleCapacity, double vehicleVolume, string vehicleRegistration)
         {
             this.vehicleID = vehicleID;
+            this.vehicleCapacity = vehicleCapacity;
+            this.vehicleVolume = vehicleVolume;
+            this.vehicleRegistration = vehicleRegistration;
         }
 
     }
