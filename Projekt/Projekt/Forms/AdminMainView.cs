@@ -14,17 +14,11 @@ namespace Projekt.Forms
     public partial class AdminMainView : UserControl, IAdminMainView
     {
         IViewChanger changer;
-        
 
-        public AdminMainView(IViewChanger changer)
+        #region properties
+
+        public string CurrentDate
         {
-            InitializeComponent();
-            this.changer = changer;
-        }  
-
-
-      
-        public string CurrentDate {
             get
             {
                 return labelCurrentDate.Text;
@@ -36,9 +30,8 @@ namespace Projekt.Forms
             }
         }
 
-
-        public string UserName {
-
+        public string UserName
+        {
             get
             {
                 return labelUserNameValue.Text;
@@ -48,10 +41,10 @@ namespace Projekt.Forms
             {
                 labelUserNameValue.Text = value;
             }
-
         }
-        public string UserSurname {
 
+        public string UserSurname
+        {
             get
             {
                 return labelUserSurnameValue.Text;
@@ -59,13 +52,12 @@ namespace Projekt.Forms
 
             set
             {
-                labelUserNameValue.Text = value;
+                labelUserSurnameValue.Text = value;
             }
-
         }
 
-        public string UserLogin {
-
+        public string UserLogin
+        {
             get
             {
                 return labelUserLoginValue.Text;
@@ -75,10 +67,10 @@ namespace Projekt.Forms
             {
                 labelUserLoginValue.Text = value;
             }
-
         }
-        public int UserID {
 
+        public int UserID
+        {
             get
             {
                 return int.Parse(labelUserIDValue.Text);
@@ -89,6 +81,17 @@ namespace Projekt.Forms
                 labelUserIDValue.Text = value.ToString();
             }
         }
+
+        
+
+        #endregion
+
+        public AdminMainView(IViewChanger changer)
+        {
+            InitializeComponent();
+            this.changer = changer;
+        }  
+
 
         private void noweZlecenieToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -103,6 +106,18 @@ namespace Projekt.Forms
         private void pojazdToolStripMenuItem_Click(object sender, EventArgs e)
         {
             changer.ShowNewVehicle();
+        }
+
+        public event Func<string[]> LoadUserInfo;
+        
+        private void AdminMainView_Load(object sender, EventArgs e)
+        {
+            string[] info = LoadUserInfo();
+
+            UserName = info[0];
+            UserSurname = info[1];
+            UserLogin = info[2];
+            UserID = int.Parse(info[3]);
         }
     }
 }

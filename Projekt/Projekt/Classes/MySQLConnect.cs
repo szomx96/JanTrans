@@ -99,11 +99,44 @@ namespace Projekt
 
         #region selects
         //Select statement
+
+        public string[] SelectUserInfo (int userID)
+        {
+            List<string> answ = new List<string>();
+
+            // string query = Kuchasz ratunku
+
+            f(this.OpenConnection() == true)
+            {
+
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+
+                while (dataReader.Read())
+                {
+                    answ.Add(dataReader["Typ"] + "");
+                    answ.Add(dataReader["ID_kierowca"] + "");
+                }
+                dataReader.Close();
+                this.CloseConnection();
+                return answ.ToArray();
+            }
+            else
+            {
+                return null;
+            }
+
+
+
+        }
+
         public string[] SelectLogin(string log, string pass)
         {
-            List<string> ansv = new List<string>();
+            List<string> answ = new List<string>();
             string query = "SELECT Typ, ID_kierowca FROM logowanie WHERE Login like \""+log+"\" AND Haslo like \""+pass+"\"";
-            Console.WriteLine(query);
+         
 
             if (this.OpenConnection() == true)
             {
@@ -115,12 +148,12 @@ namespace Projekt
               
                 while (dataReader.Read())
                 {
-                    ansv.Add(dataReader["Typ"] + "");
-                    ansv.Add(dataReader["ID_kierowca"] + "");
+                    answ.Add(dataReader["Typ"] + "");
+                    answ.Add(dataReader["ID_kierowca"] + "");
                 }
                 dataReader.Close();
                 this.CloseConnection();
-                return ansv.ToArray();
+                return answ.ToArray();
             }
             else
             {

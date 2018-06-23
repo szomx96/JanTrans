@@ -273,6 +273,7 @@ namespace Projekt.Forms
             this.Controls.Add(this.menuStrip1);
             this.Name = "AdminMainView";
             this.Size = new System.Drawing.Size(954, 549);
+            this.Load += new System.EventHandler(this.AdminMainView_Load);
             this.groupBoxUser.ResumeLayout(false);
             this.groupBoxUser.PerformLayout();
             this.menuStrip1.ResumeLayout(false);

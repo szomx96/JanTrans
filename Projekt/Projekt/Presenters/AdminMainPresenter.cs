@@ -16,7 +16,13 @@ namespace Projekt.Presenters
         public AdminMainPresenter(AdminMainModel model, IAdminMainView view)
         {
             this.model = model;
-            this.view = view;           
+            this.view = view;
+            view.LoadUserInfo += PresenterUserInfo;
+        }
+
+        private string[] PresenterUserInfo()
+        {
+            return model.SelectUserInfo();   
         }
     }
 }

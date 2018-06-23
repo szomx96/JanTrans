@@ -19,6 +19,12 @@ namespace Projekt.Models
             this.container = container;
         }
 
+        internal string[] SelectUserInfo()
+        {
+            string[] info = container.Database.SelectUserInfo(container.LoginID);
+            return info;
+        }
+
 
     }
 

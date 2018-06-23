@@ -12,7 +12,10 @@ namespace Projekt.Views
         string UserName { get; set; }
         string UserSurname { get; set; }
         string UserLogin { get; set; }
+        
         int UserID { get; set; }
+
+        event Func<string[]> LoadUserInfo;
 
     }
 }
