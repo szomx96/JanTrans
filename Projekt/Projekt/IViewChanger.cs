@@ -12,6 +12,7 @@ namespace Projekt
         void ShowAdminMain();
         void ShowNewOrder();
         void ShowNewDriver();
+        void ShowNewVehicle();
           
     }
 }

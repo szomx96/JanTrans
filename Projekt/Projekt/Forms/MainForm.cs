@@ -69,6 +69,18 @@ namespace Projekt.Forms
             ShowControl(view);
         }
 
+        public void ShowNewVehicle()
+        {
+            var view = new NewVehicle(this);
+            var model = new NewVehicleModel(session);
+            var presenter = new NewVehiclePresenter(model, view);
+
+            ShowControl(view);
+        }
+
+
+
+
 
         private void centerActualView()
         {

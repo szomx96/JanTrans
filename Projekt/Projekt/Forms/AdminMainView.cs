@@ -99,5 +99,10 @@ namespace Projekt.Forms
         {
             changer.ShowNewDriver();
         }
+
+        private void pojazdToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            changer.ShowNewVehicle();
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Projekt.Views
 {
-    interface IPojazd
+    public interface IVehicle
     {
         string RegistrationNr { get; set; }
         string Capacity { get; set; }

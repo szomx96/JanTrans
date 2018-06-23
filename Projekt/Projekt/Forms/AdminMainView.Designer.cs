@@ -220,6 +220,7 @@ namespace Projekt.Forms
             this.pojazdToolStripMenuItem.Name = "pojazdToolStripMenuItem";
             this.pojazdToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.pojazdToolStripMenuItem.Text = "Pojazd";
+            this.pojazdToolStripMenuItem.Click += new System.EventHandler(this.pojazdToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 

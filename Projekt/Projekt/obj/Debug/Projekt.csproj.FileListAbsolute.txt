@@ -19,7 +19,6 @@ D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.pdb
 D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.csprojResolveAssemblyReference.cache
 D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Views.Edytuj_kierowca.resources
 D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Views.Edytuj_pojazd.resources
-D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Views.Nowy_pojazd.resources
 D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Views.Ustawienia.resources
 D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Views.Wybierz.resources
 D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Views.Zlecenie_podglad.resources
@@ -33,3 +32,4 @@ D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Forms.Login.resources
 D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Forms.AdminMainView.resources
 D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Forms.NewOrder.resources
 D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Forms.NewDriver.resources
+D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Forms.NewVehicle.resources
