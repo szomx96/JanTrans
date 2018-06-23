@@ -8,7 +8,7 @@ namespace Projekt
 {
     public class ModelContainer
     {
-        MySQLConnect database = new MySQLConnect();
+        public MySQLConnect database = new MySQLConnect();
         private string loginMode = "none";
         private string userID = "";
 

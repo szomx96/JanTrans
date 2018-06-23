@@ -28,7 +28,7 @@ namespace Projekt
             server = "localhost";
             database = "jantrans";
             uid = "root";
-            password = "";
+            password = "toor";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";SslMode=none;convert zero datetime=True";
@@ -97,6 +97,7 @@ namespace Projekt
         {
         }
 
+        #region selects
         //Select statement
         public string[] SelectLogin(string log, string pass)
         {
@@ -126,8 +127,32 @@ namespace Projekt
                 return null;
             }
         }
+        public List<Vehicle> SelectVehicles()
+        {
+            string query = "SELECT * FROM ciezarowki";
 
-
+            List<Vehicle> vehicles = new List<Vehicle>();
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                
+                while (dataReader.Read())
+                {
+                    int id = (int)dataReader["ID_Pojazdu"];
+                    double vehicleCapacity = (double)dataReader["Ladownosc"];
+                    double vehicleVolume = (double)dataReader["Pojemnosc"];
+                    string vehicleRegistration = dataReader["Rejestracja"].ToString();
+                }
+                dataReader.Close();
+                this.CloseConnection();
+                return vehicles;
+            }
+            else
+            {
+                return null;
+            }
+        }
 
         public List<string>[] Select()
         {
@@ -179,7 +204,7 @@ namespace Projekt
             }
 
         }
-
+        #endregion
         //Count statement
         public int Count()
         {
