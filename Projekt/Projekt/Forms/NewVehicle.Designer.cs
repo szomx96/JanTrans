@@ -36,6 +36,7 @@
             this.labelVehicleCapacity = new System.Windows.Forms.Label();
             this.labelVehicleNumber = new System.Windows.Forms.Label();
             this.buttonVehicleAdd = new System.Windows.Forms.Button();
+            this.buttonBack = new System.Windows.Forms.Button();
             this.groupBoxVehicle.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +48,7 @@
             this.groupBoxVehicle.Controls.Add(this.labelVehicleVolume);
             this.groupBoxVehicle.Controls.Add(this.labelVehicleCapacity);
             this.groupBoxVehicle.Controls.Add(this.labelVehicleNumber);
-            this.groupBoxVehicle.Location = new System.Drawing.Point(12, 13);
+            this.groupBoxVehicle.Location = new System.Drawing.Point(15, 71);
             this.groupBoxVehicle.Name = "groupBoxVehicle";
             this.groupBoxVehicle.Size = new System.Drawing.Size(318, 182);
             this.groupBoxVehicle.TabIndex = 0;
@@ -104,21 +105,32 @@
             // 
             // buttonVehicleAdd
             // 
-            this.buttonVehicleAdd.Location = new System.Drawing.Point(161, 202);
+            this.buttonVehicleAdd.Location = new System.Drawing.Point(164, 260);
             this.buttonVehicleAdd.Name = "buttonVehicleAdd";
             this.buttonVehicleAdd.Size = new System.Drawing.Size(169, 31);
             this.buttonVehicleAdd.TabIndex = 1;
             this.buttonVehicleAdd.Text = "Dodaj";
             this.buttonVehicleAdd.UseVisualStyleBackColor = true;
             // 
-            // Nowy_pojazd
+            // buttonBack
+            // 
+            this.buttonBack.Location = new System.Drawing.Point(15, 12);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(127, 31);
+            this.buttonBack.TabIndex = 2;
+            this.buttonBack.Text = "<- Wróć";
+            this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
+            // NewVehicle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.buttonVehicleAdd);
             this.Controls.Add(this.groupBoxVehicle);
-            this.Name = "Nowy_pojazd";
-            this.Size = new System.Drawing.Size(362, 256);
+            this.Name = "NewVehicle";
+            this.Size = new System.Drawing.Size(464, 360);
             this.groupBoxVehicle.ResumeLayout(false);
             this.groupBoxVehicle.PerformLayout();
             this.ResumeLayout(false);
@@ -135,5 +147,6 @@
         private System.Windows.Forms.Label labelVehicleNumber;
         private System.Windows.Forms.TextBox textBoxVolumeValue;
         private System.Windows.Forms.Button buttonVehicleAdd;
+        private System.Windows.Forms.Button buttonBack;
     }
 }

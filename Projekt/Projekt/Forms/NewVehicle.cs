@@ -68,5 +68,10 @@ namespace Projekt.Forms {
 
 
         }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            changer.ShowAdminMain();
+        }
     }
 }
