@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace Projekt.Models
 {
-    public class AdminMainModel
+    public class NewOrderModel
     {
+
         ModelContainer container = new ModelContainer();
-        AdminMainModel()
-        {
 
-        }
+        public NewOrderModel() { }
 
-        public AdminMainModel(ModelContainer container)
+
+        public NewOrderModel(ModelContainer container)
         {
             this.container = container;
         }
 
 
-    }
 
+    }
 }

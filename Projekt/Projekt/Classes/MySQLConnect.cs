@@ -28,7 +28,7 @@ namespace Projekt
             server = "localhost";
             database = "jantrans";
             uid = "root";
-            password = "toor";
+            password = "";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";SslMode=none;convert zero datetime=True";

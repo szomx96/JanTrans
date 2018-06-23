@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Projekt.Forms;
+using Projekt.Models;
+using Projekt.Presenters;
 
 
 namespace Projekt.Forms
@@ -26,6 +29,7 @@ namespace Projekt.Forms
             this.control = control;
             Controls.Add(control);
         }
+
         public void ShowLogin()
         {
             var view = new LoginView(this);
@@ -42,15 +46,30 @@ namespace Projekt.Forms
             var model = new AdminMainModel(session);
             var presenter = new AdminMainPresenter(model, view);
 
-            ShowControl(view);
-            //niech ktos to przesunie gdzie trzeba plox dzieki
+            ShowControl(view);           
 
         }
 
-        public void ShowKibel()
+        public void ShowNewOrder()
         {
-            throw new NotImplementedException();
+            var view = new NewOrder(this);
+            var model = new NewOrderModel(session);
+            var presenter = new NewOrderPresenter(model, view);
+
+            ShowControl(view);
+
         }
+
+        public void ShowNewDriver()
+        {
+            var view = new NewDriver(this);
+            var model = new NewDriverModel(session);
+            var presenter = new NewDriverPresenter(model, view);
+
+            ShowControl(view);
+        }
+
+
         private void centerActualView()
         {
             control.Left = (this.Width - control.Width) / 2;
@@ -61,6 +80,6 @@ namespace Projekt.Forms
             ShowLogin();
         }
 
-      
+       
     }
 }

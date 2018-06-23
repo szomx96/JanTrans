@@ -10,7 +10,8 @@ namespace Projekt
     {
         void ShowLogin();
         void ShowAdminMain();
-        void ShowKibel();
+        void ShowNewOrder();
+        void ShowNewDriver();
           
     }
 }

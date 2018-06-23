@@ -92,7 +92,11 @@
     <Compile Include="IViewChanger.cs" />
     <Compile Include="Models\AdminMainModel.cs" />
     <Compile Include="Models\ModelContainer.cs" />
+    <Compile Include="Models\NewDriverModel.cs" />
+    <Compile Include="Models\NewOrderModel.cs" />
     <Compile Include="Presenters\AdminMainPresenter.cs" />
+    <Compile Include="Presenters\NewDriverPresenter.cs" />
+    <Compile Include="Presenters\NewOrderPresenter.cs" />
     <Compile Include="Table_classes\Ciezarowka.cs" />
     <Compile Include="Forms\Edytuj_kierowca.cs">
       <SubType>UserControl</SubType>
@@ -106,12 +110,6 @@
     <Compile Include="Forms\Edytuj_pojazd.Designer.cs">
       <DependentUpon>Edytuj_pojazd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\dowyjebaniamain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\dowyjebaniamain.Designer.cs">
-      <DependentUpon>dowyjebaniamain.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\IAdminMainView.cs" />
     <Compile Include="Views\ILogin.cs" />
     <Compile Include="Table_classes\Kierowca.cs" />
@@ -122,17 +120,17 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Table_classes\Zlecenie.cs" />
-    <Compile Include="Forms\Nowe_zlecenie.cs">
+    <Compile Include="Forms\NewOrder.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\Nowe_zlecenie.Designer.cs">
-      <DependentUpon>Nowe_zlecenie.cs</DependentUpon>
+    <Compile Include="Forms\NewOrder.Designer.cs">
+      <DependentUpon>NewOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Nowy_kierowca.cs">
+    <Compile Include="Forms\NewDriver.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\Nowy_kierowca.Designer.cs">
-      <DependentUpon>Nowy_kierowca.cs</DependentUpon>
+    <Compile Include="Forms\NewDriver.Designer.cs">
+      <DependentUpon>NewDriver.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Nowy_pojazd.cs">
       <SubType>UserControl</SubType>
@@ -158,9 +156,9 @@
     <Compile Include="Forms\Zlecenie_podglad.Designer.cs">
       <DependentUpon>Zlecenie_podglad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\INoweZlecenie.cs" />
+    <Compile Include="Views\INewOrder.cs" />
     <Compile Include="Views\IPojazd.cs" />
-    <Compile Include="Views\IKierowca.cs" />
+    <Compile Include="Views\IDriver.cs" />
     <Compile Include="Views\IUstawienia.cs" />
     <Compile Include="Views\IZleceniePodgladcs.cs" />
     <EmbeddedResource Include="Forms\AdminMainView.resx">
@@ -190,14 +188,11 @@
     <EmbeddedResource Include="Forms\Edytuj_pojazd.resx">
       <DependentUpon>Edytuj_pojazd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\dowyjebaniamain.resx">
-      <DependentUpon>dowyjebaniamain.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\NewOrder.resx">
+      <DependentUpon>NewOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Nowe_zlecenie.resx">
-      <DependentUpon>Nowe_zlecenie.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Nowy_kierowca.resx">
-      <DependentUpon>Nowy_kierowca.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\NewDriver.resx">
+      <DependentUpon>NewDriver.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Nowy_pojazd.resx">
       <DependentUpon>Nowy_pojazd.cs</DependentUpon>

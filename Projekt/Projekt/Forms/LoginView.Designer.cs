@@ -61,7 +61,7 @@
             this.textBoxLogin.Location = new System.Drawing.Point(94, 10);
             this.textBoxLogin.Name = "textBoxLogin";
             this.textBoxLogin.Size = new System.Drawing.Size(111, 22);
-            this.textBoxLogin.TabIndex = 7;
+            this.textBoxLogin.TabIndex = 1;
             // 
             // textBoxPassword
             // 
@@ -69,14 +69,14 @@
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '♫';
             this.textBoxPassword.Size = new System.Drawing.Size(111, 22);
-            this.textBoxPassword.TabIndex = 6;
+            this.textBoxPassword.TabIndex = 2;
             // 
             // buttonLogin
             // 
             this.buttonLogin.Location = new System.Drawing.Point(6, 100);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(199, 37);
-            this.buttonLogin.TabIndex = 5;
+            this.buttonLogin.TabIndex = 3;
             this.buttonLogin.Text = "Zaloguj";
             this.buttonLogin.UseVisualStyleBackColor = true;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);

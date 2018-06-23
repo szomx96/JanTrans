@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.groupBoxVehicle = new System.Windows.Forms.GroupBox();
-            this.labelVehicleNumber = new System.Windows.Forms.Label();
-            this.labelVehicleCapacity = new System.Windows.Forms.Label();
+            this.textBoxVolumeValue = new System.Windows.Forms.TextBox();
+            this.textBoxCapacityValue = new System.Windows.Forms.TextBox();
+            this.textBoxRegistrationNrValue = new System.Windows.Forms.TextBox();
             this.labelVehicleVolume = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.labelVehicleCapacity = new System.Windows.Forms.Label();
+            this.labelVehicleNumber = new System.Windows.Forms.Label();
             this.buttonVehicleAdd = new System.Windows.Forms.Button();
             this.groupBoxVehicle.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxVehicle
             // 
-            this.groupBoxVehicle.Controls.Add(this.textBox3);
-            this.groupBoxVehicle.Controls.Add(this.textBox2);
-            this.groupBoxVehicle.Controls.Add(this.textBox1);
+            this.groupBoxVehicle.Controls.Add(this.textBoxVolumeValue);
+            this.groupBoxVehicle.Controls.Add(this.textBoxCapacityValue);
+            this.groupBoxVehicle.Controls.Add(this.textBoxRegistrationNrValue);
             this.groupBoxVehicle.Controls.Add(this.labelVehicleVolume);
             this.groupBoxVehicle.Controls.Add(this.labelVehicleCapacity);
             this.groupBoxVehicle.Controls.Add(this.labelVehicleNumber);
@@ -54,23 +54,26 @@
             this.groupBoxVehicle.TabStop = false;
             this.groupBoxVehicle.Text = "Pojazd";
             // 
-            // labelVehicleNumber
+            // textBoxVolumeValue
             // 
-            this.labelVehicleNumber.AutoSize = true;
-            this.labelVehicleNumber.Location = new System.Drawing.Point(16, 50);
-            this.labelVehicleNumber.Name = "labelVehicleNumber";
-            this.labelVehicleNumber.Size = new System.Drawing.Size(111, 17);
-            this.labelVehicleNumber.TabIndex = 0;
-            this.labelVehicleNumber.Text = "Nr rejestracyjny:";
+            this.textBoxVolumeValue.Location = new System.Drawing.Point(149, 128);
+            this.textBoxVolumeValue.Name = "textBoxVolumeValue";
+            this.textBoxVolumeValue.Size = new System.Drawing.Size(151, 22);
+            this.textBoxVolumeValue.TabIndex = 5;
             // 
-            // labelVehicleCapacity
+            // textBoxCapacityValue
             // 
-            this.labelVehicleCapacity.AutoSize = true;
-            this.labelVehicleCapacity.Location = new System.Drawing.Point(16, 88);
-            this.labelVehicleCapacity.Name = "labelVehicleCapacity";
-            this.labelVehicleCapacity.Size = new System.Drawing.Size(83, 17);
-            this.labelVehicleCapacity.TabIndex = 1;
-            this.labelVehicleCapacity.Text = "Ładowność:";
+            this.textBoxCapacityValue.Location = new System.Drawing.Point(149, 88);
+            this.textBoxCapacityValue.Name = "textBoxCapacityValue";
+            this.textBoxCapacityValue.Size = new System.Drawing.Size(151, 22);
+            this.textBoxCapacityValue.TabIndex = 4;
+            // 
+            // textBoxRegistrationNrValue
+            // 
+            this.textBoxRegistrationNrValue.Location = new System.Drawing.Point(149, 50);
+            this.textBoxRegistrationNrValue.Name = "textBoxRegistrationNrValue";
+            this.textBoxRegistrationNrValue.Size = new System.Drawing.Size(151, 22);
+            this.textBoxRegistrationNrValue.TabIndex = 3;
             // 
             // labelVehicleVolume
             // 
@@ -81,26 +84,23 @@
             this.labelVehicleVolume.TabIndex = 2;
             this.labelVehicleVolume.Text = "Pojemność:";
             // 
-            // textBox1
+            // labelVehicleCapacity
             // 
-            this.textBox1.Location = new System.Drawing.Point(149, 50);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(151, 22);
-            this.textBox1.TabIndex = 3;
+            this.labelVehicleCapacity.AutoSize = true;
+            this.labelVehicleCapacity.Location = new System.Drawing.Point(16, 88);
+            this.labelVehicleCapacity.Name = "labelVehicleCapacity";
+            this.labelVehicleCapacity.Size = new System.Drawing.Size(83, 17);
+            this.labelVehicleCapacity.TabIndex = 1;
+            this.labelVehicleCapacity.Text = "Ładowność:";
             // 
-            // textBox2
+            // labelVehicleNumber
             // 
-            this.textBox2.Location = new System.Drawing.Point(149, 88);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(151, 22);
-            this.textBox2.TabIndex = 4;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(149, 128);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(151, 22);
-            this.textBox3.TabIndex = 5;
+            this.labelVehicleNumber.AutoSize = true;
+            this.labelVehicleNumber.Location = new System.Drawing.Point(16, 50);
+            this.labelVehicleNumber.Name = "labelVehicleNumber";
+            this.labelVehicleNumber.Size = new System.Drawing.Size(111, 17);
+            this.labelVehicleNumber.TabIndex = 0;
+            this.labelVehicleNumber.Text = "Nr rejestracyjny:";
             // 
             // buttonVehicleAdd
             // 
@@ -128,12 +128,12 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBoxVehicle;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxCapacityValue;
+        private System.Windows.Forms.TextBox textBoxRegistrationNrValue;
         private System.Windows.Forms.Label labelVehicleVolume;
         private System.Windows.Forms.Label labelVehicleCapacity;
         private System.Windows.Forms.Label labelVehicleNumber;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxVolumeValue;
         private System.Windows.Forms.Button buttonVehicleAdd;
     }
 }

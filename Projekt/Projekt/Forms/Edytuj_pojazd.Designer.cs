@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBoxVehicle = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxVolumeValue = new System.Windows.Forms.TextBox();
+            this.textBoxCapacityValue = new System.Windows.Forms.TextBox();
+            this.textBoxRegistrationNumerValue = new System.Windows.Forms.TextBox();
             this.labelVehicleVolume = new System.Windows.Forms.Label();
             this.labelVehicleCapacity = new System.Windows.Forms.Label();
             this.labelVehicleNumber = new System.Windows.Forms.Label();
@@ -41,9 +41,9 @@
             // 
             // groupBoxVehicle
             // 
-            this.groupBoxVehicle.Controls.Add(this.textBox3);
-            this.groupBoxVehicle.Controls.Add(this.textBox2);
-            this.groupBoxVehicle.Controls.Add(this.textBox1);
+            this.groupBoxVehicle.Controls.Add(this.textBoxVolumeValue);
+            this.groupBoxVehicle.Controls.Add(this.textBoxCapacityValue);
+            this.groupBoxVehicle.Controls.Add(this.textBoxRegistrationNumerValue);
             this.groupBoxVehicle.Controls.Add(this.labelVehicleVolume);
             this.groupBoxVehicle.Controls.Add(this.labelVehicleCapacity);
             this.groupBoxVehicle.Controls.Add(this.labelVehicleNumber);
@@ -54,26 +54,26 @@
             this.groupBoxVehicle.TabStop = false;
             this.groupBoxVehicle.Text = "Pojazd";
             // 
-            // textBox3
+            // textBoxVolumeValue
             // 
-            this.textBox3.Location = new System.Drawing.Point(149, 128);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(151, 22);
-            this.textBox3.TabIndex = 5;
+            this.textBoxVolumeValue.Location = new System.Drawing.Point(149, 128);
+            this.textBoxVolumeValue.Name = "textBoxVolumeValue";
+            this.textBoxVolumeValue.Size = new System.Drawing.Size(151, 22);
+            this.textBoxVolumeValue.TabIndex = 5;
             // 
-            // textBox2
+            // textBoxCapacityValue
             // 
-            this.textBox2.Location = new System.Drawing.Point(149, 88);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(151, 22);
-            this.textBox2.TabIndex = 4;
+            this.textBoxCapacityValue.Location = new System.Drawing.Point(149, 88);
+            this.textBoxCapacityValue.Name = "textBoxCapacityValue";
+            this.textBoxCapacityValue.Size = new System.Drawing.Size(151, 22);
+            this.textBoxCapacityValue.TabIndex = 4;
             // 
-            // textBox1
+            // textBoxRegistrationNumerValue
             // 
-            this.textBox1.Location = new System.Drawing.Point(149, 50);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(151, 22);
-            this.textBox1.TabIndex = 3;
+            this.textBoxRegistrationNumerValue.Location = new System.Drawing.Point(149, 50);
+            this.textBoxRegistrationNumerValue.Name = "textBoxRegistrationNumerValue";
+            this.textBoxRegistrationNumerValue.Size = new System.Drawing.Size(151, 22);
+            this.textBoxRegistrationNumerValue.TabIndex = 3;
             // 
             // labelVehicleVolume
             // 
@@ -128,9 +128,9 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBoxVehicle;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxVolumeValue;
+        private System.Windows.Forms.TextBox textBoxCapacityValue;
+        private System.Windows.Forms.TextBox textBoxRegistrationNumerValue;
         private System.Windows.Forms.Label labelVehicleVolume;
         private System.Windows.Forms.Label labelVehicleCapacity;
         private System.Windows.Forms.Label labelVehicleNumber;

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Projekt.Views
 {
-    interface IKierowca
+    public interface IDriver
     {
-        string Name { get; set; }
-        string Surname { get; set; }
+        string DriverName { get; set; }
+        string DriverSurname { get; set; }
 
     }
 }

@@ -6,20 +6,17 @@ using System.Threading.Tasks;
 
 namespace Projekt.Models
 {
-    public class AdminMainModel
+    public class NewDriverModel
     {
         ModelContainer container = new ModelContainer();
-        AdminMainModel()
-        {
 
-        }
+        public NewDriverModel() { }
 
-        public AdminMainModel(ModelContainer container)
+        public NewDriverModel(ModelContainer container)
         {
             this.container = container;
         }
 
 
     }
-
 }

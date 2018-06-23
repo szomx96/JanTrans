@@ -1,6 +1,6 @@
-﻿namespace Projekt.Views
+﻿namespace Projekt.Forms
 {
-    partial class Nowy_kierowca
+    partial class NewDriver
     {
         /// <summary> 
         /// Wymagana zmienna projektanta.
@@ -41,7 +41,7 @@
             // 
             this.labelDriverName.AutoSize = true;
             this.labelDriverName.Location = new System.Drawing.Point(6, 36);
-            this.labelDriverName.Name = "labelDriverName";
+//            this.labelDriverName.SetName("labelDriverName");
             this.labelDriverName.Size = new System.Drawing.Size(37, 17);
             this.labelDriverName.TabIndex = 0;
             this.labelDriverName.Text = "Imię:";
@@ -50,7 +50,7 @@
             // 
             this.labelDriverSurname.AutoSize = true;
             this.labelDriverSurname.Location = new System.Drawing.Point(6, 75);
-            this.labelDriverSurname.Name = "labelDriverSurname";
+           // this.labelDriverSurname.SetName("labelDriverSurname");
             this.labelDriverSurname.Size = new System.Drawing.Size(71, 17);
             this.labelDriverSurname.TabIndex = 1;
             this.labelDriverSurname.Text = "Nazwisko:";
@@ -58,21 +58,21 @@
             // textBoxDriverName
             // 
             this.textBoxDriverName.Location = new System.Drawing.Point(83, 36);
-            this.textBoxDriverName.Name = "textBoxDriverName";
+           // this.textBoxDriverName.SetName("textBoxDriverName");
             this.textBoxDriverName.Size = new System.Drawing.Size(154, 22);
             this.textBoxDriverName.TabIndex = 2;
             // 
             // textBoxDriverSurname
             // 
             this.textBoxDriverSurname.Location = new System.Drawing.Point(83, 75);
-            this.textBoxDriverSurname.Name = "textBoxDriverSurname";
+           // this.textBoxDriverSurname.SetName("textBoxDriverSurname");
             this.textBoxDriverSurname.Size = new System.Drawing.Size(154, 22);
             this.textBoxDriverSurname.TabIndex = 3;
             // 
             // buttonDriverAdd
             // 
             this.buttonDriverAdd.Location = new System.Drawing.Point(86, 137);
-            this.buttonDriverAdd.Name = "buttonDriverAdd";
+          //  this.buttonDriverAdd.SetName("buttonDriverAdd");
             this.buttonDriverAdd.Size = new System.Drawing.Size(174, 34);
             this.buttonDriverAdd.TabIndex = 4;
             this.buttonDriverAdd.Text = "Dodaj";
@@ -85,7 +85,7 @@
             this.groupBoxDriver.Controls.Add(this.textBoxDriverSurname);
             this.groupBoxDriver.Controls.Add(this.textBoxDriverName);
             this.groupBoxDriver.Location = new System.Drawing.Point(3, 3);
-            this.groupBoxDriver.Name = "groupBoxDriver";
+          //  this.groupBoxDriver.SetName("groupBoxDriver");
             this.groupBoxDriver.Size = new System.Drawing.Size(257, 123);
             this.groupBoxDriver.TabIndex = 5;
             this.groupBoxDriver.TabStop = false;

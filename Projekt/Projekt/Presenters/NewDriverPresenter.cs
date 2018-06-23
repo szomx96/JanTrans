@@ -8,15 +8,16 @@ using Projekt.Views;
 
 namespace Projekt.Presenters
 {
-    public class AdminMainPresenter //reeeee ///normies out reeee
+    public class NewDriverPresenter
     {
-        AdminMainModel model;
-        IAdminMainView view;
+        NewDriverModel model;
+        IDriver view;
 
-        public AdminMainPresenter(AdminMainModel model, IAdminMainView view)
+        public NewDriverPresenter(NewDriverModel model, IDriver view)
         {
             this.model = model;
-            this.view = view;           
+            this.view = view;
         }
+
     }
 }

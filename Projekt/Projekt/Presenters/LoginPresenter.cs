@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Projekt.Views;
-namespace Projekt
+using Projekt.Models;
+
+namespace Projekt.Presenters
 {
     public class LoginPresenter
     {

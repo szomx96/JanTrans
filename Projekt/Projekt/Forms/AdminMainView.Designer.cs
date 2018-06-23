@@ -1,4 +1,5 @@
-﻿namespace Projekt.Forms
+﻿
+namespace Projekt.Forms
 {
     partial class AdminMainView
     {
@@ -181,13 +182,13 @@
             // wylogujToolStripMenuItem
             // 
             this.wylogujToolStripMenuItem.Name = "wylogujToolStripMenuItem";
-            this.wylogujToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.wylogujToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
             this.wylogujToolStripMenuItem.Text = "Wyloguj";
             // 
             // zamknijToolStripMenuItem
             // 
             this.zamknijToolStripMenuItem.Name = "zamknijToolStripMenuItem";
-            this.zamknijToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.zamknijToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
             this.zamknijToolStripMenuItem.Text = "Zamknij";
             // 
             // dodajToolStripMenuItem
@@ -205,12 +206,14 @@
             this.noweZlecenieToolStripMenuItem.Name = "noweZlecenieToolStripMenuItem";
             this.noweZlecenieToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.noweZlecenieToolStripMenuItem.Text = "Nowe zlecenie";
+            this.noweZlecenieToolStripMenuItem.Click += new System.EventHandler(this.noweZlecenieToolStripMenuItem_Click);
             // 
             // kierowcaToolStripMenuItem
             // 
             this.kierowcaToolStripMenuItem.Name = "kierowcaToolStripMenuItem";
             this.kierowcaToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.kierowcaToolStripMenuItem.Text = "Kierowca";
+            this.kierowcaToolStripMenuItem.Click += new System.EventHandler(this.kierowcaToolStripMenuItem_Click);
             // 
             // pojazdToolStripMenuItem
             // 
@@ -260,14 +263,14 @@
             this.mojeKontoToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
             this.mojeKontoToolStripMenuItem.Text = "Moje konto";
             // 
-            // Ekran_glowny_admin
+            // AdminMainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.labelCurrentDate);
             this.Controls.Add(this.groupBoxUser);
             this.Controls.Add(this.menuStrip1);
-            this.Name = "Ekran_glowny_admin";
+            this.Name = "AdminMainView";
             this.Size = new System.Drawing.Size(954, 549);
             this.groupBoxUser.ResumeLayout(false);
             this.groupBoxUser.PerformLayout();

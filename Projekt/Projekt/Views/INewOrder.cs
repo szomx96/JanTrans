@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Projekt.Views
 {
-    interface INoweZlecenie
+    interface INewOrder
     {
         string CustomerCompanyName { get; set; }
         string CustomerSurname { get; set; }

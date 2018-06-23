@@ -1,6 +1,6 @@
-﻿namespace Projekt.Views
+﻿namespace Projekt.Forms
 {
-    partial class Nowe_zlecenie
+    partial class NewOrder
     {
         /// <summary> 
         /// Wymagana zmienna projektanta.
