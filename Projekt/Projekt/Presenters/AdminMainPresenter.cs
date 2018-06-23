@@ -10,6 +10,7 @@ namespace Projekt
     {
         AdminMainModel model;
         IAdminMainView view;
+
         public AdminMainPresenter(AdminMainModel model, IAdminMainView view)
         {
             this.model = model;

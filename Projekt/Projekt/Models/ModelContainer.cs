@@ -8,9 +8,18 @@ namespace Projekt
 {
     public class ModelContainer
     {
-        MySQLConnect database = new MySQLConnect();
+        private MySQLConnect database = new MySQLConnect();
+
         private string loginMode = "none";
         private string userID = "";
+
+        public MySQLConnect Database
+        {
+            get
+            {
+                return database;
+            }
+        }
 
         public string LoggedAs 
         {
@@ -23,5 +32,7 @@ namespace Projekt
             get { return userID; }
             set { userID = value; }
         }
+
+
     }
 }

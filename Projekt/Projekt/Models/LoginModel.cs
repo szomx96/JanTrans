@@ -11,7 +11,8 @@ namespace Projekt
         private string loginMode = "none";
         private string userID = "";
         ModelContainer container = new ModelContainer();
-        MySQLConnect database = new MySQLConnect();
+      //  MySQLConnect database = new MySQLConnect();
+
         public LoginModel()
         {
             
@@ -37,7 +38,7 @@ namespace Projekt
 
         internal bool CheckLogin(string log, string pass)
         {
-            string[] wynik = database.SelectLogin(log, pass);
+            string[] wynik = container.Database.SelectLogin(log, pass);
             if (wynik.Length == 0 )
                 return false;
             else

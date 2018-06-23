@@ -13,10 +13,13 @@ namespace Projekt
         {
 
         }
+
         public AdminMainModel(ModelContainer container)
         {
             this.container = container;
         }
+
+
     }
 
 }
