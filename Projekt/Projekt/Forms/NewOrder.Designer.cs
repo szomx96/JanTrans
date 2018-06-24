@@ -44,6 +44,7 @@
             this.labelCommodityVolume = new System.Windows.Forms.Label();
             this.labelCommodityWeight = new System.Windows.Forms.Label();
             this.groupBoxDriver = new System.Windows.Forms.GroupBox();
+            this.buttonDriverSelect = new System.Windows.Forms.Button();
             this.labelDriverSurnameValue = new System.Windows.Forms.Label();
             this.labelDriverNameValue = new System.Windows.Forms.Label();
             this.labelDriverSurname = new System.Windows.Forms.Label();
@@ -62,7 +63,6 @@
             this.labelVehicleID = new System.Windows.Forms.Label();
             this.buttonAddOrder = new System.Windows.Forms.Button();
             this.buttonBack = new System.Windows.Forms.Button();
-            this.buttonDriverSelect = new System.Windows.Forms.Button();
             this.groupBoxCustomer.SuspendLayout();
             this.groupBoxCommodity.SuspendLayout();
             this.groupBoxDriver.SuspendLayout();
@@ -112,6 +112,7 @@
             this.buttonCustomerAdd.TabIndex = 6;
             this.buttonCustomerAdd.Text = "Dodaj";
             this.buttonCustomerAdd.UseVisualStyleBackColor = true;
+            this.buttonCustomerAdd.Click += new System.EventHandler(this.buttonCustomerAdd_Click);
             // 
             // textBoxCustomerSurname
             // 
@@ -219,6 +220,15 @@
             this.groupBoxDriver.TabIndex = 3;
             this.groupBoxDriver.TabStop = false;
             this.groupBoxDriver.Text = "Kierowca";
+            // 
+            // buttonDriverSelect
+            // 
+            this.buttonDriverSelect.Location = new System.Drawing.Point(9, 113);
+            this.buttonDriverSelect.Name = "buttonDriverSelect";
+            this.buttonDriverSelect.Size = new System.Drawing.Size(222, 35);
+            this.buttonDriverSelect.TabIndex = 11;
+            this.buttonDriverSelect.Text = "Wybierz";
+            this.buttonDriverSelect.UseVisualStyleBackColor = true;
             // 
             // labelDriverSurnameValue
             // 
@@ -386,15 +396,6 @@
             this.buttonBack.Text = "<- Wróć";
             this.buttonBack.UseVisualStyleBackColor = true;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
-            // 
-            // buttonDriverSelect
-            // 
-            this.buttonDriverSelect.Location = new System.Drawing.Point(9, 113);
-            this.buttonDriverSelect.Name = "buttonDriverSelect";
-            this.buttonDriverSelect.Size = new System.Drawing.Size(222, 35);
-            this.buttonDriverSelect.TabIndex = 11;
-            this.buttonDriverSelect.Text = "Wybierz";
-            this.buttonDriverSelect.UseVisualStyleBackColor = true;
             // 
             // NewOrder
             // 

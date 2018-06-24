@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Projekt.Views;
+using Projekt.Classes;
 
 namespace Projekt.Forms
 {
@@ -151,6 +152,27 @@ namespace Projekt.Forms
         private void buttonBack_Click(object sender, EventArgs e)
         {
             changer.ShowAdminMain();
+        }
+
+        public event Func<Customer, bool> AddCustomer;
+
+        private void buttonCustomerAdd_Click(object sender, EventArgs e)
+        {
+            Customer customer = new Customer(CustomerCompanyName, CustomerName, CustomerSurname);
+
+            if (AddCustomer(customer))
+            {
+                textBoxCustomerCompanyName.Enabled = false;
+                textBoxCustomerName.Enabled = false;
+                textBoxCustomerSurname.Enabled = false;
+              
+
+            }
+            else
+            {
+                //errorprovider
+            }
+
         }
     }
 }

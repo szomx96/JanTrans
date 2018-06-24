@@ -9,8 +9,8 @@ namespace Projekt.Views
     public interface IVehicle
     {
         string RegistrationNr { get; set; }
-        string Capacity { get; set; }
-        string Volume { get; set; }
+        double Capacity { get; set; }
+        double Volume { get; set; }
 
         event Func<Vehicle, bool> AddVehicle;
     }

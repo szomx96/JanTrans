@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Projekt.Classes;
 
 namespace Projekt.Views
 {
@@ -19,6 +20,8 @@ namespace Projekt.Views
         string RouteLength { get; set; }
         string RouteFrom { get; set; }
         string RouteTo { get; set; }
+
+        event Func<Customer, bool> AddCustomer;
 
     }
 }

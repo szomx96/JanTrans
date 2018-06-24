@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Projekt.Views;
 using Projekt.Models;
+using Projekt.Classes;
 
 namespace Projekt.Presenters
 {
@@ -17,7 +18,13 @@ namespace Projekt.Presenters
         {
             this.model = model;
             this.view = view;
+            view.AddCustomer += PresenterAddCustomer;
 
+        }
+
+        private bool PresenterAddCustomer(Customer customer)
+        {
+            return model.InsertCustomer(customer);           
         }
 
     }

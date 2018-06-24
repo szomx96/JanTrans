@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,8 @@ namespace Projekt
 {
     public class MySQLConnect
     {
+        CultureInfo culture = new CultureInfo("en-GB");
+
         private MySqlConnection connection;
         private string server;
         private string database;
@@ -131,13 +134,14 @@ namespace Projekt
             return true;
         }
 
-        public bool InsertVehicle(string vehicleRegistration, string vehicleCapacity, string vehicleVolume)
+        public bool InsertVehicle(string vehicleRegistration, double vehicleCapacity, double vehicleVolume)
         {
             try
             {
-                string query = string.Format("INSERT INTO ciezarowki (Ladownosc, Pojemnosc, Rejestracja)" +
+                string query = string.Format(culture, "INSERT INTO ciezarowki (Ladownosc, Pojemnosc, Rejestracja)" +
                     " values ('{0}', '{1}', '{2}')", vehicleCapacity, vehicleVolume, vehicleRegistration);
-              
+
+                              
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 connection.Open();
                 cmd.ExecuteNonQuery();
@@ -150,6 +154,31 @@ namespace Projekt
                 return false;
             }
             return true;
+
+        }
+
+        public bool InsertCustomer(string customerCompanyName, string customerName, string customerSurname)
+        {
+            try
+            {
+                string query = string.Format("INSERT INTO klienci (nazwa, Imie_wlasciciel, Nazwisko_wlasciciel)" +
+                       " values ('{0}', '{1}', '{2}')", customerCompanyName,
+                       customerName, customerSurname);
+
+
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                connection.Open();
+                cmd.ExecuteNonQuery();
+                int id = (int)cmd.LastInsertedId;
+                connection.Close();
+            }
+            catch
+            {
+                return false;
+            }
+
+            return true;
+
 
         }
 

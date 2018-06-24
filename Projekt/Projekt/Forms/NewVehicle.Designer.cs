@@ -72,6 +72,7 @@
             // textBoxRegistrationNrValue
             // 
             this.textBoxRegistrationNrValue.Location = new System.Drawing.Point(149, 50);
+            this.textBoxRegistrationNrValue.MaxLength = 8;
             this.textBoxRegistrationNrValue.Name = "textBoxRegistrationNrValue";
             this.textBoxRegistrationNrValue.Size = new System.Drawing.Size(151, 22);
             this.textBoxRegistrationNrValue.TabIndex = 3;

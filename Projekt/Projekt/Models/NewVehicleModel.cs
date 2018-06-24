@@ -20,8 +20,8 @@ namespace Projekt.Models
         internal bool InsertNewVehicle(Vehicle vehicle)
         {
             string vehicleRegistration = vehicle.VehicleRegistration;
-            string vehicleCapacity = vehicle.VehicleCapacity;
-            string vehicleVolume = vehicle.VehicleVolume;
+            double vehicleCapacity = vehicle.VehicleCapacity;
+            double vehicleVolume = vehicle.VehicleVolume;
 
             if(container.Database.InsertVehicle(vehicleRegistration, vehicleCapacity, vehicleVolume))
             {

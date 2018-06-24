@@ -12,12 +12,51 @@ namespace Projekt.Classes
         string customerName;
         string customerSurname;
 
-        Customer(string customerCompanyName, string customerName, string customerSurname)
+        public Customer(string customerCompanyName, string customerName, string customerSurname)
         {
             this.customerCompanyName = customerCompanyName;
             this.customerName = customerName;
             this.customerSurname = customerSurname;
 
+        }
+
+        public string CustomerCompanyName
+        {
+            get
+            {
+                return customerCompanyName;
+            }
+
+            set
+            {
+                customerCompanyName = value;
+            }
+        }
+
+        public string CustomerName
+        {
+            get
+            {
+                return customerName;
+            }
+
+            set
+            {
+                customerName = value;
+            }
+        }
+
+        public string CustomerSurname
+        {
+            get
+            {
+                return customerSurname;
+            }
+
+            set
+            {
+                customerSurname = value;
+            }
         }
 
 
