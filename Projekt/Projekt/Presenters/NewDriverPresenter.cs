@@ -21,9 +21,9 @@ namespace Projekt.Presenters
             view.AddDriver += PresenterAddDriver;
         }
 
-        void PresenterAddDriver(Driver driver, string password)
+        private bool PresenterAddDriver(Driver driver, string password)
         {
-            model.InsertNewDriver(driver, password);          
+            return model.InsertNewDriver(driver, password);          
         }
 
 

@@ -11,7 +11,7 @@ namespace Projekt.Views
     {
         string DriverName { get; set; }
         string DriverSurname { get; set; }
-        event Action<Driver, string> AddDriver;
+        event Func<Driver, string, bool> AddDriver;
 
     }
 }

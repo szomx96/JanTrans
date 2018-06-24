@@ -111,6 +111,7 @@
             this.buttonVehicleAdd.TabIndex = 1;
             this.buttonVehicleAdd.Text = "Dodaj";
             this.buttonVehicleAdd.UseVisualStyleBackColor = true;
+            this.buttonVehicleAdd.Click += new System.EventHandler(this.buttonVehicleAdd_Click);
             // 
             // buttonBack
             // 

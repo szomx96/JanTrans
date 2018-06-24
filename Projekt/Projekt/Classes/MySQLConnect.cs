@@ -102,9 +102,33 @@ namespace Projekt
         }
 
         //Insert statement
-        public void InsertDriver(string driverName, string DriverSurname, string password)
+        public bool InsertDriver(string driverName, string driverSurname, string password)
         {
-            string query = "";
+            try
+            {
+                string query = string.Format("INSERT INTO kierowcy (Imie, Nazwisko) values ('{0}', '{1}')",
+                    driverName, driverSurname);
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                connection.Open();
+                cmd.ExecuteNonQuery();
+                int id = (int)cmd.LastInsertedId;
+                connection.Close();
+
+                string username = (driverName + "." + driverSurname).ToLower();
+                query = string.Format("INSERT INTO logowanie values ({0}, 'user', '{1}', '{2}')",
+                    id, username, password);
+
+                cmd = new MySqlCommand(query, connection);
+                connection.Open();
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch 
+            {
+                return false;
+            }
+
+            return true;
 
 
         }

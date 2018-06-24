@@ -58,7 +58,7 @@ namespace Projekt.Forms
             changer.ShowAdminMain();
         }
 
-        event Action<Driver, string> AddDriver;
+        public event Func<Driver, string, bool> AddDriver;
 
         private void buttonDriverAdd_Click(object sender, EventArgs e)
         {
@@ -68,7 +68,17 @@ namespace Projekt.Forms
                 {
                     Driver driver = new Driver(DriverName, DriverSurname);
                     string password = textBoxPassword.Text;
-                    AddDriver(driver, password);
+
+                    if(AddDriver(driver, password))
+                    {
+                        textBoxDriverName.Clear();
+                        textBoxDriverSurname.Clear();
+                        textBoxPassword.Clear();
+                    }
+                    else
+                    {
+                        //errorprovider
+                    }
                 }
             }
 

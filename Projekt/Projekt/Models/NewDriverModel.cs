@@ -18,12 +18,19 @@ namespace Projekt.Models
             this.container = container;
         }
 
-        internal void InsertNewDriver(Driver driver, string password)
+        internal bool InsertNewDriver(Driver driver, string password)
         {
             string driverName = driver.DriverName;
             string driverSurname = driver.DriverSurname;
 
-            container.Database.InsertDriver(driverName, driverSurname, password);
+            if(container.Database.InsertDriver(driverName, driverSurname, password))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
 
         }
 
