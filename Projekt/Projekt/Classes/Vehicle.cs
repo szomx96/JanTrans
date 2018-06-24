@@ -8,6 +8,7 @@ namespace Projekt
 {
     public class Vehicle
     {
+        //lista zajetosci?
         string vehicleID;
         double vehicleCapacity;
         double vehicleVolume;

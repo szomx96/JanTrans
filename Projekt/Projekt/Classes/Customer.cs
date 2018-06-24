@@ -8,6 +8,7 @@ namespace Projekt.Classes
 {
     public class Customer
     {
+        int customerID;
         string customerCompanyName;
         string customerName;
         string customerSurname;
