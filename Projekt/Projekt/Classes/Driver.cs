@@ -8,16 +8,21 @@ namespace Projekt.Classes
 {
     public class Driver
     {
-        //lista zajetosci?
+        
         int driverID;
         string driverName;
         string driverSurname;
         double distanceTravelled;
         Vehicle vehicle;
-        Driver(string driverName, string driverSurname)
+        List<DriverOccupied> occupied;
+        Driver(int driverID, string driverName, string driverSurname, double distanceTravelled, Vehicle vehicle, List<DriverOccupied> occupied)
         {
+            this.driverID = driverID;
             this.driverName = driverName;
             this.driverSurname = driverSurname;
+            this.distanceTravelled = distanceTravelled;
+            this.vehicle = vehicle;
+            this.occupied = occupied;
         }
 
     }

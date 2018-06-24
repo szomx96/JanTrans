@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
+using Projekt.Classes;
 namespace Projekt
 {
     public class MySQLConnect
@@ -35,7 +36,7 @@ namespace Projekt
 
             connection = new MySqlConnection(connectionString);
         }
-
+        #region connection
         //open connection to database
         private bool OpenConnection()
         {
@@ -80,7 +81,7 @@ namespace Projekt
                 return false;
             }
         }
-
+        #endregion
         //Insert statement
         public void Insert()
         {
@@ -98,8 +99,9 @@ namespace Projekt
         }
 
         #region selects
-        //Select statement
+        //Select statements
 
+            //select basic info about logged user
         public string[] SelectUserInfo (string userID)
         {
             List<string> answ = new List<string>();
@@ -135,6 +137,7 @@ namespace Projekt
 
         }
 
+        //selects login and psswd for login compare
         public string[] SelectLogin(string log, string pass)
         {
             List<string> answ = new List<string>();
@@ -163,6 +166,8 @@ namespace Projekt
                 return null;
             }
         }
+
+        // selects all vehicles from database as a collection
         public List<Vehicle> SelectVehicles()
         {
             string query = "SELECT * FROM ciezarowki";
@@ -179,6 +184,7 @@ namespace Projekt
                     double vehicleCapacity = (double)dataReader["Ladownosc"];
                     double vehicleVolume = (double)dataReader["Pojemnosc"];
                     string vehicleRegistration = dataReader["Rejestracja"].ToString();
+                    vehicles.Add(new Vehicle(id, vehicleCapacity, vehicleVolume, vehicleRegistration));
                 }
                 dataReader.Close();
                 this.CloseConnection();
@@ -190,57 +196,146 @@ namespace Projekt
             }
         }
 
-        public List<string>[] Select()
-        {
-            string query = "SELECT k.*, Data_pocz, Data_kon FROM kierowcy k, kierowca_zajety z WHERE ID_Kierowcy = Id_kierowca";
 
-            //Create a list to store the result
-            List<string>[] list = new List<string>[8];
-            list[0] = new List<string>();
-            list[1] = new List<string>();
-            list[2] = new List<string>();
-            list[3] = new List<string>();
-            list[4] = new List<string>();
-            list[5] = new List<string>();
-            list[6] = new List<string>();
-            list[7] = new List<string>();
-            //Open connection
+
+        #region sepcific selects
+
+        //Select vehicle with inp id
+        public Vehicle SelectCertainVehicle(int vehID)
+        {
+            string query = "SELECT * FROM ciezarowki WHERE ID_Pojazdu LIKE " + vehID.ToString();
             if (this.OpenConnection() == true)
             {
-                //Create Command
                 MySqlCommand cmd = new MySqlCommand(query, connection);
-                //Create a data reader and Execute the command
                 MySqlDataReader dataReader = cmd.ExecuteReader();
-
-                //Read the data and store them in the list
+                int vehicleID = 11;
+                double vehicleCapacity = 11;
+                double vehicleVolume = 11;
+                string vehicleRegistration = "";
                 while (dataReader.Read())
                 {
-                    list[0].Add(dataReader["ID_Kierowcy"] + "");
-                    list[1].Add(dataReader["Imie"] + "");
-                    list[2].Add(dataReader["Nazwisko"] + "");
-                    list[3].Add(dataReader["Trasa"] + "");
-                    list[4].Add(dataReader["Ciezarowka"] + "");
-                    list[5].Add(dataReader["Zlecenie"] + "");
-                    list[6].Add(dataReader["Zajety_od"] + "");
-                    list[7].Add(dataReader["Zajety_do"] + "");
+                    vehicleID = (int)dataReader["ID_Pojazdu"];
+                    vehicleCapacity = (double)dataReader["Ladownosc"];
+                    vehicleVolume = (double)dataReader["Pojemnosc"];
+                    vehicleRegistration = dataReader["Rejestracja"].ToString();
                 }
-
-                //close Data Reader
                 dataReader.Close();
-
-                //close Connection
                 this.CloseConnection();
-
-                //return list to be displayed
-                return list;
+                return new Vehicle(vehicleID, vehicleCapacity, vehicleVolume, vehicleRegistration);
             }
             else
             {
-                return list;
+                return null;
             }
 
         }
+
+        //SELECT specific customer defined by input id
+        public Customer SelectCertainCustomer(int cusID)
+        {
+            string query = "SELECT * FROM klienci WHERE ID_Klienta LIKE " + cusID.ToString();
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();   
+                int customerID = 1;
+                string customerCompanyName = "";
+                string customerName = "";
+                string customerSurname= "";
+                while (dataReader.Read())
+                {
+                    customerID = (int)dataReader["ID_Klienta"];
+                    customerCompanyName = dataReader["nazwa"].ToString();
+                    customerName = dataReader["Imie_wlasciciel"].ToString();
+                    customerSurname = dataReader["Nazwisko_wlasciciel"].ToString();
+                }
+                dataReader.Close();
+
+
+                this.CloseConnection();
+                return new Customer(customerID, customerCompanyName, customerName, customerSurname);
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+
+        //select returning collection of dates for specific driver represented by its id
+        public List<DriverOccupied> SelectCertainDatesOfOccupation(int drivID)
+        {
+            string query = "SELECT * FROM kierowca_zajety WHERE Id_kierowca LIKE "+drivID.ToString();
+
+            List<DriverOccupied> dates = new List<DriverOccupied>();
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read())
+                {                    
+                    int DOID = (int)dataReader["Id_dat"];
+                    int driverID = (int)dataReader["Id_kierowca"];
+                    DateTime occBegin = DateTime.ParseExact(dataReader["Data_pocz"].ToString(), "MM.dd.yyyy H:mm:ss", null);
+                    DateTime occEnd = DateTime.ParseExact(dataReader["Data_kon"].ToString(), "MM.dd.yyyy H:mm:ss", null);
+                    dates.Add(new DriverOccupied(DOID, driverID, occBegin, occEnd));
+                }
+                dataReader.Close();
+                this.CloseConnection();
+                return dates;
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+
+
+
+        // select Product with specific ID
+        public Product SelectCertainProduct(int proID)
+        {
+            
+            string query = "SELECT * FROM produkt WHERE ID_Produkt LIKE " + proID.ToString();
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                int productID=1;
+                int customerID=1;
+                string productName="";
+                double weight=0;
+                double volume=0;
+                while (dataReader.Read())
+                {
+                    productID = (int)dataReader["ID_Produkt"];
+                    customerID = (int)dataReader["Klient"];
+                    productName = dataReader["Nazwa"].ToString();
+                    weight = (double)dataReader["Waga"];
+                    volume = (double)dataReader["Objetosc"];
+                }
+                dataReader.Close();
+
+                
+                this.CloseConnection();
+                return new  Product(productID, productName, weight, volume, SelectCertainCustomer(customerID));
+            }
+            else
+            {
+                return null;
+            }
+            return null;
+        }
+
         #endregion
+
+        #endregion
+
+
+
+
         //Count statement
         public int Count()
         {

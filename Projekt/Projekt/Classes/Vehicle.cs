@@ -7,14 +7,13 @@ using System.Threading.Tasks;
 namespace Projekt
 {
     public class Vehicle
-    {
-        //lista zajetosci?
-        string vehicleID;
+    { 
+        int vehicleID;
         double vehicleCapacity;
         double vehicleVolume;
         string vehicleRegistration;
 
-        Vehicle(string vehicleID, double vehicleCapacity, double vehicleVolume, string vehicleRegistration)
+        public Vehicle(int vehicleID, double vehicleCapacity, double vehicleVolume, string vehicleRegistration)
         {
             this.vehicleID = vehicleID;
             this.vehicleCapacity = vehicleCapacity;
