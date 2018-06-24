@@ -8,17 +8,40 @@ namespace Projekt
 {
     public class Vehicle
     {
-        string vehicleID;
-        double vehicleCapacity;
-        double vehicleVolume;
+     
+        string vehicleCapacity;
+        string vehicleVolume;
         string vehicleRegistration;
 
-        Vehicle(string vehicleID, double vehicleCapacity, double vehicleVolume, string vehicleRegistration)
-        {
-            this.vehicleID = vehicleID;
+        public Vehicle(string vehicleRegistration, string vehicleCapacity, string vehicleVolume)
+        {            
             this.vehicleCapacity = vehicleCapacity;
             this.vehicleVolume = vehicleVolume;
             this.vehicleRegistration = vehicleRegistration;
+        }
+
+        public string VehicleRegistration
+        {
+            get
+            {
+                return vehicleRegistration;
+            }
+        }
+
+        public string VehicleCapacity
+        {
+            get
+            {
+                return vehicleCapacity;
+            }
+        }
+
+        public string VehicleVolume
+        {
+            get
+            {
+                return vehicleVolume;
+            }
         }
 
     }

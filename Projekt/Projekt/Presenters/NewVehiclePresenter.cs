@@ -17,8 +17,13 @@ namespace Projekt.Presenters
         {
             this.model = model;
             this.view = view;
+            view.AddVehicle += PresenterAddVehicle;
         }
 
+        private bool PresenterAddVehicle(Vehicle vehicle)
+        {
+            return model.InsertNewVehicle(vehicle);
+        }
 
     }
 }

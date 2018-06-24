@@ -17,5 +17,22 @@ namespace Projekt.Models
             this.container = container;
         }
 
+        internal bool InsertNewVehicle(Vehicle vehicle)
+        {
+            string vehicleRegistration = vehicle.VehicleRegistration;
+            string vehicleCapacity = vehicle.VehicleCapacity;
+            string vehicleVolume = vehicle.VehicleVolume;
+
+            if(container.Database.InsertVehicle(vehicleRegistration, vehicleCapacity, vehicleVolume))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
     }
 }

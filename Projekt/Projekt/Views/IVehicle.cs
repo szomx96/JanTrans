@@ -11,5 +11,7 @@ namespace Projekt.Views
         string RegistrationNr { get; set; }
         string Capacity { get; set; }
         string Volume { get; set; }
+
+        event Func<Vehicle, bool> AddVehicle;
     }
 }

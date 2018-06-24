@@ -129,7 +129,27 @@ namespace Projekt
             }
 
             return true;
+        }
 
+        public bool InsertVehicle(string vehicleRegistration, string vehicleCapacity, string vehicleVolume)
+        {
+            try
+            {
+                string query = string.Format("INSERT INTO ciezarowki (Ladownosc, Pojemnosc, Rejestracja)" +
+                    " values ('{0}', '{1}', '{2}')", vehicleCapacity, vehicleVolume, vehicleRegistration);
+              
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                connection.Open();
+                cmd.ExecuteNonQuery();
+                int id = (int)cmd.LastInsertedId;
+                connection.Close();
+
+            }
+            catch
+            {
+                return false;
+            }
+            return true;
 
         }
 

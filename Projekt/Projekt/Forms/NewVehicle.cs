@@ -74,10 +74,22 @@ namespace Projekt.Forms {
             changer.ShowAdminMain();
         }
 
-
+        public event Func<Vehicle, bool> AddVehicle;
 
         private void buttonVehicleAdd_Click(object sender, EventArgs e)
         {
+            Vehicle vehicle = new Vehicle(RegistrationNr, Capacity, Volume);
+
+            if (AddVehicle(vehicle))
+            {
+                textBoxRegistrationNrValue.Clear();
+                textBoxCapacityValue.Clear();
+                textBoxVolumeValue.Clear();
+            }
+            else
+            {
+                //error provider
+            }
 
         }
     }
