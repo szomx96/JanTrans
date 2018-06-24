@@ -63,13 +63,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Commodity.cs" />
     <Compile Include="Classes\Customer.cs" />
     <Compile Include="Classes\Driver.cs" />
     <Compile Include="Classes\MySQLConnect.cs" />
+    <Compile Include="Classes\Order-Product.cs" />
+    <Compile Include="Classes\Product.cs" />
     <Compile Include="Classes\Route.cs" />
     <Compile Include="Classes\Vehicle.cs" />
-    <Compile Include="Classes\Zlecenie.cs" />
+    <Compile Include="Classes\Order.cs" />
     <Compile Include="Forms\AdminMainView.cs">
       <SubType>UserControl</SubType>
     </Compile>

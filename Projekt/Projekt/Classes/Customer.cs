@@ -8,12 +8,14 @@ namespace Projekt.Classes
 {
     public class Customer
     {
+        int customerID;
         string customerCompanyName;
         string customerName;
         string customerSurname;
 
-        Customer(string customerCompanyName, string customerName, string customerSurname)
+        public Customer(int customerID, string customerCompanyName, string customerName, string customerSurname)
         {
+            this.customerID = customerID;
             this.customerCompanyName = customerCompanyName;
             this.customerName = customerName;
             this.customerSurname = customerSurname;
