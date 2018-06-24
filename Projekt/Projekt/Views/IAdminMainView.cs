@@ -16,6 +16,7 @@ namespace Projekt.Views
         int UserID { get; set; }
 
         event Func<string[]> LoadUserInfo;
+        event Func<string> GetCurrentDate;
 
     }
 }

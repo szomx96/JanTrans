@@ -81,11 +81,7 @@ namespace Projekt
             }
         }
 
-        //Insert statement
-        public void Insert()
-        {
-
-        }
+       
 
         //Update statement
         public void Update()
@@ -97,6 +93,26 @@ namespace Projekt
         {
         }
 
+        #region inserts
+
+        //Insert statement
+        public void Insert()
+        {
+
+        }
+
+        //Insert statement
+        public void InsertDriver(string driverName, string DriverSurname, string password)
+        {
+            string query = "";
+
+
+        }
+
+        #endregion
+
+
+
         #region selects
         //Select statement
 
@@ -106,8 +122,6 @@ namespace Projekt
 
             string query = "SELECT Imie, Nazwisko, Login, ID_kierowca FROM kierowcy, logowanie " +
                 "WHERE ID_Kierowcy like ID_kierowca AND ID_Kierowcy like " + userID;
-
-            MessageBox.Show(query);
 
             if(this.OpenConnection() == true)
             {

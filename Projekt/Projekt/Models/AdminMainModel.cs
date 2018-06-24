@@ -26,6 +26,11 @@ namespace Projekt.Models
             return info;
         }
 
+        internal string GetDate()
+        {
+            return DateTime.Now.ToString();
+        }
+
 
     }
 

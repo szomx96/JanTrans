@@ -35,6 +35,8 @@
             this.buttonDriverAdd = new System.Windows.Forms.Button();
             this.groupBoxDriver = new System.Windows.Forms.GroupBox();
             this.buttonBack = new System.Windows.Forms.Button();
+            this.labelPassword = new System.Windows.Forms.Label();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.groupBoxDriver.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,22 +74,25 @@
             // 
             // buttonDriverAdd
             // 
-            this.buttonDriverAdd.Location = new System.Drawing.Point(101, 213);
+            this.buttonDriverAdd.Location = new System.Drawing.Point(101, 254);
             this.buttonDriverAdd.Name = "buttonDriverAdd";
             this.buttonDriverAdd.Size = new System.Drawing.Size(174, 34);
             this.buttonDriverAdd.TabIndex = 4;
             this.buttonDriverAdd.Text = "Dodaj";
             this.buttonDriverAdd.UseVisualStyleBackColor = true;
+            this.buttonDriverAdd.Click += new System.EventHandler(this.buttonDriverAdd_Click);
             // 
             // groupBoxDriver
             // 
+            this.groupBoxDriver.Controls.Add(this.textBoxPassword);
+            this.groupBoxDriver.Controls.Add(this.labelPassword);
             this.groupBoxDriver.Controls.Add(this.labelDriverName);
             this.groupBoxDriver.Controls.Add(this.labelDriverSurname);
             this.groupBoxDriver.Controls.Add(this.textBoxDriverSurname);
             this.groupBoxDriver.Controls.Add(this.textBoxDriverName);
             this.groupBoxDriver.Location = new System.Drawing.Point(18, 79);
             this.groupBoxDriver.Name = "groupBoxDriver";
-            this.groupBoxDriver.Size = new System.Drawing.Size(257, 123);
+            this.groupBoxDriver.Size = new System.Drawing.Size(257, 169);
             this.groupBoxDriver.TabIndex = 5;
             this.groupBoxDriver.TabStop = false;
             this.groupBoxDriver.Text = "Kierowca";
@@ -102,6 +107,22 @@
             this.buttonBack.UseVisualStyleBackColor = true;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
+            // labelPassword
+            // 
+            this.labelPassword.AutoSize = true;
+            this.labelPassword.Location = new System.Drawing.Point(6, 114);
+            this.labelPassword.Name = "labelPassword";
+            this.labelPassword.Size = new System.Drawing.Size(48, 17);
+            this.labelPassword.TabIndex = 4;
+            this.labelPassword.Text = "Hasło:";
+            // 
+            // textBoxPassword
+            // 
+            this.textBoxPassword.Location = new System.Drawing.Point(83, 114);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Size = new System.Drawing.Size(154, 22);
+            this.textBoxPassword.TabIndex = 5;
+            // 
             // NewDriver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -110,7 +131,7 @@
             this.Controls.Add(this.groupBoxDriver);
             this.Controls.Add(this.buttonDriverAdd);
             this.Name = "NewDriver";
-            this.Size = new System.Drawing.Size(295, 262);
+            this.Size = new System.Drawing.Size(293, 303);
             this.groupBoxDriver.ResumeLayout(false);
             this.groupBoxDriver.PerformLayout();
             this.ResumeLayout(false);
@@ -126,5 +147,7 @@
         private System.Windows.Forms.Button buttonDriverAdd;
         private System.Windows.Forms.GroupBox groupBoxDriver;
         private System.Windows.Forms.Button buttonBack;
+        private System.Windows.Forms.TextBox textBoxPassword;
+        private System.Windows.Forms.Label labelPassword;
     }
 }

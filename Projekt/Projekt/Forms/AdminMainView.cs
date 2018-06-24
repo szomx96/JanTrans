@@ -109,11 +109,13 @@ namespace Projekt.Forms
         }
 
         public event Func<string[]> LoadUserInfo;
+        public event Func<string> GetCurrentDate; 
         
         private void AdminMainView_Load(object sender, EventArgs e)
         {
             string[] info = LoadUserInfo();
 
+            CurrentDate = GetCurrentDate();
             UserName = info[0];
             UserSurname = info[1];
             UserLogin = info[2];

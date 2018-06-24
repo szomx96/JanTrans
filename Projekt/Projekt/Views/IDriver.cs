@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Projekt.Classes;
 
 namespace Projekt.Views
 {
@@ -10,6 +11,7 @@ namespace Projekt.Views
     {
         string DriverName { get; set; }
         string DriverSurname { get; set; }
+        event Action<Driver, string> AddDriver;
 
     }
 }

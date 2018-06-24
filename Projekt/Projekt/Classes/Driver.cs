@@ -8,14 +8,35 @@ namespace Projekt.Classes
 {
     public class Driver
     {
-        string driverName;
-        string driverSurname;
+        private string driverName;
+        private string driverSurname;
+        
 
-        Driver(string driverName, string driverSurname)
+        public Driver(string driverName, string driverSurname)
         {
             this.driverName = driverName;
             this.driverSurname = driverSurname;
+
         }
+
+        public string DriverName
+        {
+            get
+            {
+                return driverName;
+            }
+        }
+
+        public string DriverSurname
+        {
+            get
+            {
+                return driverSurname;
+            }
+        }
+       
+
+
 
     }
 }
