@@ -8,15 +8,17 @@ namespace Projekt.Classes
 {
     public class Route
     {
-        string routeLength;
+        double routeLength;
         string routeFrom;
         string routeTo;
-
-        Route(string routeLength, string routeFrom, string routeTo)
+        DateTime departureDate, arrivalDate;
+        Route(double routeLength, string routeFrom, string routeTo, DateTime departureDate, DateTime arrivalDate)
         {
             this.routeLength = routeLength;
             this.routeFrom = routeFrom;
             this.routeTo = routeTo;
+            this.departureDate = departureDate;
+            this.arrivalDate = arrivalDate;
         }
 
     }
