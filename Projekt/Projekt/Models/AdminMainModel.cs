@@ -8,7 +8,8 @@ namespace Projekt.Models
 {
     public class AdminMainModel
     {
-        ModelContainer container = new ModelContainer();
+        ModelContainer container;
+        //ModelContainer container = new ModelContainer();
         AdminMainModel()
         {
 

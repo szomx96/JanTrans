@@ -8,9 +8,13 @@ namespace Projekt.Models
 {
     public class LoginModel
     {
-        private string loginMode = "none";
-        private string userID = "";
-        ModelContainer container = new ModelContainer();
+        private string loginMode;
+        private string userID;
+        ModelContainer container;
+
+        //private string loginMode = "none";
+        //private string userID = "";
+        //ModelContainer container = new ModelContainer();
       //  MySQLConnect database = new MySQLConnect();
 
         public LoginModel()
@@ -43,6 +47,7 @@ namespace Projekt.Models
                 return false;
             else
             {
+                container.LoginID = wynik[1];
                 loginMode = wynik[0];
                 userID = wynik[1];
                 return true;

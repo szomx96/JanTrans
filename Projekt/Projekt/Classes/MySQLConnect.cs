@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
 namespace Projekt
@@ -100,13 +100,16 @@ namespace Projekt
         #region selects
         //Select statement
 
-        public string[] SelectUserInfo (int userID)
+        public string[] SelectUserInfo (string userID)
         {
             List<string> answ = new List<string>();
 
-            // string query = Kuchasz ratunku
+            string query = "SELECT Imie, Nazwisko, Login, ID_kierowca FROM kierowcy, logowanie " +
+                "WHERE ID_Kierowcy like ID_kierowca AND ID_Kierowcy like " + userID;
 
-            f(this.OpenConnection() == true)
+            MessageBox.Show(query);
+
+            if(this.OpenConnection() == true)
             {
 
                 MySqlCommand cmd = new MySqlCommand(query, connection);
@@ -116,7 +119,9 @@ namespace Projekt
 
                 while (dataReader.Read())
                 {
-                    answ.Add(dataReader["Typ"] + "");
+                    answ.Add(dataReader["Imie"] + "");
+                    answ.Add(dataReader["Nazwisko"] + "");
+                    answ.Add(dataReader["Login"] + "");
                     answ.Add(dataReader["ID_kierowca"] + "");
                 }
                 dataReader.Close();
@@ -127,8 +132,6 @@ namespace Projekt
             {
                 return null;
             }
-
-
 
         }
 
