@@ -3,37 +3,40 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Projekt.Views;
 using Projekt.Models;
+using Projekt.Views;
 using Projekt.Classes;
 
 namespace Projekt.Presenters
 {
-    class NewOrderPresenter
+    public class AddProductPresenter
     {
-        NewOrderModel model;
-        INewOrder view;
-       
+        AddProductModel model;
+        IProduct view;
 
-        public NewOrderPresenter(NewOrderModel model, INewOrder view)
+        public AddProductPresenter(AddProductModel model, IProduct view)
         {
             this.model = model;
             this.view = view;
-            view.SelectDrivers += PresenterSelectDrivers;
-            view.AddCustomer += PresenterAddCustomer;
-        }
-       
 
-        private string[] PresenterSelectDrivers()
+            view.AddCustomer += PresenterAddCustomer;
+            view.SelectCustomers += PresenterSelectCustomers;
+
+        }
+
+        private List<Customer> PresenterSelectCustomers()
         {
-           
-            return model.SelectDrivers();
+            // view.DriverName;
+            return model.SelectCustomers();
         }
 
         private bool PresenterAddCustomer(Customer customer)
         {
             return model.InsertCustomer(customer);
         }
+
+
+
 
     }
 }

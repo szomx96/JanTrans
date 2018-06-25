@@ -7,15 +7,30 @@ using Projekt.Classes;
 
 namespace Projekt.Models
 {
-    public class NewDriverModel
+    public class AddProductModel
     {
         ModelContainer container = new ModelContainer();
 
-        public NewDriverModel() { }
+        public AddProductModel() { }
 
-        public NewDriverModel(ModelContainer container)
+        public AddProductModel(ModelContainer container)
         {
             this.container = container;
+        }
+
+        internal List<Customer> SelectCustomers()
+        {
+            return container.Database.SelectAllCustomers();
+            //List<string> customerNames = new List<string>();
+
+            //foreach (Customer customer in customersList)
+            //{
+            //    customerNames.Add(customer.CustomerCompanyName + " " +
+            //        customer.CustomerName + " " + customer.CustomerSurname);
+            //}
+
+            //return customerNames;
+
         }
 
         internal bool InsertCustomer(Customer customer)
@@ -32,23 +47,6 @@ namespace Projekt.Models
             return false;
 
         }
-
-        internal bool InsertNewDriver(Driver driver, string password)
-        {
-            string driverName = driver.DriverName;
-            string driverSurname = driver.DriverSurname;
-
-            if (container.Database.InsertDriver(driverName, driverSurname, password))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-
-        }
-
 
     }
 }

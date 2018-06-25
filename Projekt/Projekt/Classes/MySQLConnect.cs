@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,8 @@ namespace Projekt
 {
     public class MySQLConnect
     {
+        CultureInfo culture = new CultureInfo("en-GB");
+
         private MySqlConnection connection;
         private string server;
         private string database;
@@ -29,7 +32,7 @@ namespace Projekt
             server = "localhost";
             database = "jantrans";
             uid = "root";
-            password = "toor";
+            password = "";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";SslMode=none;convert zero datetime=True";
@@ -82,16 +85,126 @@ namespace Projekt
             }
         }
         #endregion
+
+        #region inserts
         //Insert statement
         public void Insert()
         {
 
         }
+        public bool InsertDriver(string driverName, string driverSurname, string password)
+        {
+            try
+            {
+                string query = string.Format("INSERT INTO kierowcy (Imie, Nazwisko) values ('{0}', '{1}')",
+                    driverName, driverSurname);
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                connection.Open();
+                cmd.ExecuteNonQuery();
+                int id = (int)cmd.LastInsertedId;
+                connection.Close();
 
+                string username = (driverName + "." + driverSurname).ToLower();
+                query = string.Format("INSERT INTO logowanie values ({0}, 'user', '{1}', '{2}')",
+                    id, username, password);
+
+                cmd = new MySqlCommand(query, connection);
+                connection.Open();
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public bool InsertVehicle(string vehicleRegistration, double vehicleCapacity, double vehicleVolume)
+        {
+            try
+            {
+                string query = string.Format(culture, "INSERT INTO ciezarowki (Ladownosc, Pojemnosc, Rejestracja)" +
+                    " values ('{0}', '{1}', '{2}')", vehicleCapacity, vehicleVolume, vehicleRegistration);
+
+
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                connection.Open();
+                cmd.ExecuteNonQuery();
+                int id = (int)cmd.LastInsertedId;
+                connection.Close();
+
+            }
+            catch
+            {
+                return false;
+            }
+            return true;
+
+        }
+
+        public bool InsertCustomer(string customerCompanyName, string customerName, string customerSurname)
+        {
+            try
+            {
+                string query = string.Format("INSERT INTO klienci (nazwa, Imie_wlasciciel, Nazwisko_wlasciciel)" +
+                       " values ('{0}', '{1}', '{2}')", customerCompanyName,
+                       customerName, customerSurname);
+
+
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                connection.Open();
+                cmd.ExecuteNonQuery();
+                int id = (int)cmd.LastInsertedId;
+                connection.Close();
+            }
+            catch
+            {
+                return false;
+            }
+
+            return true;
+
+        }
+
+        #endregion
+
+        #region updates
         //Update statement
         public void Update()
         {
+
+
         }
+
+        public bool UpdatePassword(int id, string oldPass, string newPass)
+        {
+            try
+            {
+                string query = string.Format("UPDATE logowanie SET Haslo = '{0}' WHERE ID_kierowca like '{1}'" +
+                    " AND Haslo like '{2}'",
+                      newPass, id, oldPass);
+
+                MessageBox.Show(query);
+
+
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                connection.Open();
+                cmd.ExecuteNonQuery();
+                
+                connection.Close();
+            }
+            catch
+            {
+                return false;
+            }
+
+            return true;
+
+        }
+
+        #endregion
 
         //Delete statement
         public void Delete()
@@ -108,8 +221,6 @@ namespace Projekt
 
             string query = "SELECT Imie, Nazwisko, Login, ID_kierowca FROM kierowcy, logowanie " +
                 "WHERE ID_Kierowcy like ID_kierowca AND ID_Kierowcy like " + userID;
-
-            MessageBox.Show(query);
 
             if(this.OpenConnection() == true)
             {
@@ -166,6 +277,64 @@ namespace Projekt
                 return null;
             }
         }
+
+        public List<Customer> SelectAllCustomers()
+        {
+            string query = "SELECT * FROM klienci";
+
+            List<Customer> customers = new List<Customer>();
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    int id = (int)dataReader["ID_Klienta"];
+                    string customerCompanyName = dataReader["nazwa"].ToString();
+                    string customerName = dataReader["Imie_wlasciciel"].ToString();
+                    string customerSurname = dataReader["Nazwisko_wlasciciel"].ToString();
+                    customers.Add(new Customer(id, customerCompanyName, customerName, customerSurname));
+                }
+                dataReader.Close();
+                this.CloseConnection();
+                return customers;
+            }
+            else
+            {
+                return null;
+            }
+
+
+        }
+
+        public List<Driver> SelectAllDrivers()
+        {
+            string query = "SELECT * FROM kierowcy";
+
+            List<Driver> drivers = new List<Driver>();
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    int id = (int)dataReader["ID_Kierowcy"];
+                    string driverName = dataReader["Imie"].ToString();
+                    string driverSurname = dataReader["Nazwisko"].ToString();
+                    drivers.Add(new Driver(id, driverName, driverSurname));
+                }
+                dataReader.Close();
+                this.CloseConnection();
+                return drivers;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
 
         // selects all vehicles from database as a collection
         public List<Vehicle> SelectVehicles()
@@ -265,7 +434,7 @@ namespace Projekt
         //select returning collection of dates for specific driver represented by its id
         public List<DriverOccupied> SelectCertainDatesOfOccupation(int drivID)
         {
-            string query = "SELECT * FROM kierowca_zajety WHERE Id_kierowca LIKE "+drivID.ToString();
+            string query = "SELECT * FROM kierowca_zajety WHERE Id_kierowca LIKE " + drivID.ToString();
 
             List<DriverOccupied> dates = new List<DriverOccupied>();
             if (this.OpenConnection() == true)
@@ -274,7 +443,7 @@ namespace Projekt
                 MySqlDataReader dataReader = cmd.ExecuteReader();
 
                 while (dataReader.Read())
-                {                    
+                {
                     int DOID = (int)dataReader["Id_dat"];
                     int driverID = (int)dataReader["Id_kierowca"];
                     DateTime occBegin = DateTime.ParseExact(dataReader["Data_pocz"].ToString(), "MM.dd.yyyy H:mm:ss", null);
@@ -326,7 +495,7 @@ namespace Projekt
             {
                 return null;
             }
-            return null;
+          
         }
 
         #endregion

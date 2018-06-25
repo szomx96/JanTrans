@@ -261,8 +261,9 @@ namespace Projekt.Forms
             // mojeKontoToolStripMenuItem
             // 
             this.mojeKontoToolStripMenuItem.Name = "mojeKontoToolStripMenuItem";
-            this.mojeKontoToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
+            this.mojeKontoToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.mojeKontoToolStripMenuItem.Text = "Moje konto";
+            this.mojeKontoToolStripMenuItem.Click += new System.EventHandler(this.mojeKontoToolStripMenuItem_Click);
             // 
             // AdminMainView
             // 

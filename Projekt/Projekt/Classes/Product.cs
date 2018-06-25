@@ -12,6 +12,13 @@ namespace Projekt.Classes
         string productName;
         double weight, volume;
         Customer customer;
+
+        public Product(double commodityWeight, double commodityVolume, Customer customer)
+        {
+            this.weight = commodityWeight;
+            this.volume = commodityVolume;
+            this.customer = customer;
+        }
         
         public Product(int productID, string productName, double weight, double volume, Customer customer)
         {

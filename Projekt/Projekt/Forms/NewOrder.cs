@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Projekt.Views;
+using Projekt.Classes;
+using Projekt.Models;
+using Projekt.Presenters;
 
 namespace Projekt.Forms
 {
@@ -23,41 +26,19 @@ namespace Projekt.Forms
 
         #region properties
 
-        public string CustomerCompanyName {
-
+        public int DriverID
+        {
             get
             {
-                return textBoxCustomerCompanyName.Text;
-
+                return int.Parse(labelDriverIDValue.Text);
             }
 
             set
             {
-                textBoxCustomerCompanyName.Text = value;
+                labelDriverIDValue.Text = value.ToString();
             }
         }
-        public string CustomerSurname {
-            get
-            {
-                return textBoxCustomerSurname.Text;
-            }
 
-            set
-            {
-                textBoxCustomerSurname.Text = value;
-            }
-        }
-        public string CustomerName {
-            get
-            {
-                return textBoxCustomerName.Text;
-            }
-
-            set
-            {
-                textBoxCustomerName.Text = value;
-            }
-        }
         public string DriverName {
             get
             {
@@ -80,28 +61,7 @@ namespace Projekt.Forms
                 labelDriverSurnameValue.Text = value;
             }
         }
-        public string CommodityWeight {
-            get
-            {
-                return textBoxCommodityWeight.Text;
-            }
-
-            set
-            {
-                textBoxCommodityWeight.Text = value;
-            }
-        }
-        public string CommodityVolume {
-            get
-            {
-                return textBoxCommodityVolume.Text;
-            }
-
-            set
-            {
-                textBoxCommodityVolume.Text = value;
-            }
-        }
+       
         public string VehicleID {
             get
             {
@@ -146,11 +106,51 @@ namespace Projekt.Forms
                 textBoxRouteTo.Text = value;
             }
         }
-#endregion
+
+        public Driver Driver { get; set; }
+        public Route Route { get; set; }
+        public Vehicle Vehicle { get; set; }
+        public List<Product> Products { get; set; }
+        
+        
+
+        #endregion
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
             changer.ShowAdminMain();
+        }
+
+        private void buttonAddProduct_Click(object sender, EventArgs e)
+        {
+            AddProductForm productForm = new AddProductForm();
+            var model = new AddProductModel();
+            var presenter = new AddProductPresenter(model, productForm);
+            productForm.ShowDialog();
+        }
+
+        public event Func<string[]> SelectDrivers;
+        public event Func<Customer, bool> AddCustomer;
+
+
+        private void comboBox1_DropDown(object sender, EventArgs e)
+        {
+            comboBox1.Items.Clear();                     
+            comboBox1.Items.AddRange(SelectDrivers());
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string[] driverInfo = comboBox1.SelectedItem.ToString().Split(' ');
+
+            DriverID = int.Parse(driverInfo[0]);
+            DriverName = driverInfo[1];
+            DriverSurname = driverInfo[2];
+
+            Driver selectedDriver = new Driver(DriverID, DriverName, DriverSurname);
+            Driver = selectedDriver;
+            
+
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Projekt.Classes;
 using System.Windows.Forms;
 using Projekt.Views;
 
@@ -20,16 +21,17 @@ namespace Projekt.Forms
         {
             InitializeComponent();
 
-            this.changer = changer;      
+            this.changer = changer;
 
         }
 
-        public string DriverName {
+        public string DriverName
+        {
 
             get
             {
                 return textBoxDriverName.Text;
-                
+
             }
 
             set
@@ -38,7 +40,8 @@ namespace Projekt.Forms
             }
 
         }
-        public string DriverSurname {
+        public string DriverSurname
+        {
 
             get
             {
@@ -55,6 +58,33 @@ namespace Projekt.Forms
         private void buttonBack_Click(object sender, EventArgs e)
         {
             changer.ShowAdminMain();
+        }
+
+        public event Func<Driver, string, bool> AddDriver;
+
+
+        private void buttonDriverAdd_Click_1(object sender, EventArgs e)
+        {
+            if (textBoxDriverName.Text != "" && textBoxDriverSurname.Text != "")
+            {
+                if (textBoxPassword.Text != "")
+                {
+                    Driver driver = new Driver(DriverName, DriverSurname);
+                    string password = textBoxPassword.Text;
+
+                    if (AddDriver(driver, password))
+                    {
+                        textBoxDriverName.Clear();
+                        textBoxDriverSurname.Clear();
+                        textBoxPassword.Clear();
+                    }
+                    else
+                    {
+                        //errorprovider
+                    }
+                }
+            }
+
         }
     }
 }

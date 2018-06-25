@@ -18,11 +18,17 @@ namespace Projekt.Presenters
             this.model = model;
             this.view = view;
             view.LoadUserInfo += PresenterUserInfo;
+            view.GetCurrentDate += PresenterGetDate;
         }
 
         private string[] PresenterUserInfo()
         {
             return model.SelectUserInfo();   
+        }
+
+        private string PresenterGetDate()
+        {
+            return model.GetDate();
         }
     }
 }

@@ -78,6 +78,25 @@ namespace Projekt.Forms
             ShowControl(view);
         }
 
+        public void ShowSettings()
+        {
+            var view = new Settings(this);
+            var model = new SettingsModel(session);
+            var presenter = new SettingsPresenter(model, view);
+
+            ShowControl(view);
+        }
+
+
+        //public void ShowAddProduct()
+        //{
+        //    var view = new AddProduct(this);
+        //    var model = new AddProductModel(session);
+        //    var presenter = new AddProductPresenter(model, view);
+
+        //    ShowControl(view);
+        //}
+
 
 
 
@@ -92,6 +111,6 @@ namespace Projekt.Forms
             ShowLogin();
         }
 
-       
+      
     }
 }

@@ -12,6 +12,7 @@ namespace Projekt.Classes
         string routeFrom;
         string routeTo;
         DateTime departureDate, arrivalDate;
+
         Route(double routeLength, string routeFrom, string routeTo, DateTime departureDate, DateTime arrivalDate)
         {
             this.routeLength = routeLength;

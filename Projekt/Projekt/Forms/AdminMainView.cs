@@ -109,15 +109,22 @@ namespace Projekt.Forms
         }
 
         public event Func<string[]> LoadUserInfo;
-        
+        public event Func<string> GetCurrentDate;
+
         private void AdminMainView_Load(object sender, EventArgs e)
         {
             string[] info = LoadUserInfo();
 
+            CurrentDate = GetCurrentDate();
             UserName = info[0];
             UserSurname = info[1];
             UserLogin = info[2];
             UserID = int.Parse(info[3]);
+        }
+
+        private void mojeKontoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            changer.ShowSettings();
         }
     }
 }

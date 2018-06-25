@@ -13,6 +13,8 @@ namespace Projekt
         void ShowNewOrder();
         void ShowNewDriver();
         void ShowNewVehicle();
+        // void ShowAddProduct();
+        void ShowSettings();
           
     }
 }

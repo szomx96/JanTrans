@@ -10,7 +10,7 @@ namespace Projekt.Classes
     { 
         List<Product> products;
 
-        public Order_Product()
+        public Order_Product(List <Product> products)
         {
             this.products = products;
         }

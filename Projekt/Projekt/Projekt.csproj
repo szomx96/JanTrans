@@ -65,12 +65,19 @@
   <ItemGroup>
     <Compile Include="Classes\Customer.cs" />
     <Compile Include="Classes\Driver.cs" />
+    <Compile Include="Classes\DriverOccupied.cs" />
     <Compile Include="Classes\MySQLConnect.cs" />
     <Compile Include="Classes\Order-Product.cs" />
     <Compile Include="Classes\Product.cs" />
     <Compile Include="Classes\Route.cs" />
     <Compile Include="Classes\Vehicle.cs" />
     <Compile Include="Classes\Order.cs" />
+    <Compile Include="Forms\AddProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddProductForm.Designer.cs">
+      <DependentUpon>AddProductForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AdminMainView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -91,15 +98,19 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="IViewChanger.cs" />
+    <Compile Include="Models\AddProductModel.cs" />
     <Compile Include="Models\AdminMainModel.cs" />
     <Compile Include="Models\ModelContainer.cs" />
     <Compile Include="Models\NewDriverModel.cs" />
     <Compile Include="Models\NewOrderModel.cs" />
     <Compile Include="Models\NewVehicleModel.cs" />
+    <Compile Include="Models\SettingsModel.cs" />
+    <Compile Include="Presenters\AddProductPresenter.cs" />
     <Compile Include="Presenters\AdminMainPresenter.cs" />
     <Compile Include="Presenters\NewDriverPresenter.cs" />
     <Compile Include="Presenters\NewOrderPresenter.cs" />
     <Compile Include="Presenters\NewVehiclePresenter.cs" />
+    <Compile Include="Presenters\SettingsPresenter.cs" />
     <Compile Include="Table_classes\Ciezarowka.cs" />
     <Compile Include="Forms\Edytuj_kierowca.cs">
       <SubType>UserControl</SubType>
@@ -113,6 +124,7 @@
     <Compile Include="Forms\Edytuj_pojazd.Designer.cs">
       <DependentUpon>Edytuj_pojazd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\IProduct.cs" />
     <Compile Include="Views\IAdminMainView.cs" />
     <Compile Include="Views\ILogin.cs" />
     <Compile Include="Table_classes\Kierowca.cs" />
@@ -141,11 +153,11 @@
     <Compile Include="Forms\NewVehicle.Designer.cs">
       <DependentUpon>NewVehicle.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Ustawienia.cs">
+    <Compile Include="Forms\Settings.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\Ustawienia.Designer.cs">
-      <DependentUpon>Ustawienia.cs</DependentUpon>
+    <Compile Include="Forms\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Wybierz_z_bazy.cs">
       <SubType>Form</SubType>
@@ -160,10 +172,14 @@
       <DependentUpon>Zlecenie_podglad.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\INewOrder.cs" />
+    <Compile Include="Views\ISettings.cs" />
     <Compile Include="Views\IVehicle.cs" />
     <Compile Include="Views\IDriver.cs" />
     <Compile Include="Views\IUstawienia.cs" />
     <Compile Include="Views\IZleceniePodgladcs.cs" />
+    <EmbeddedResource Include="Forms\AddProductForm.resx">
+      <DependentUpon>AddProductForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminMainView.resx">
       <DependentUpon>AdminMainView.cs</DependentUpon>
     </EmbeddedResource>
@@ -200,8 +216,8 @@
     <EmbeddedResource Include="Forms\NewVehicle.resx">
       <DependentUpon>NewVehicle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Ustawienia.resx">
-      <DependentUpon>Ustawienia.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Wybierz_z_bazy.resx">
       <DependentUpon>Wybierz_z_bazy.cs</DependentUpon>

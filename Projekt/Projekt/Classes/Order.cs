@@ -16,6 +16,15 @@ namespace Projekt.Classes
         Vehicle vehicle;
         //Order_Product op;
 
+        public Order(Driver driver, Route route, Vehicle vehicle, List<Product> products)
+        {
+            this.driver = driver;
+            this.route = route;
+            this.vehicle = vehicle;
+            this.products = products;
+
+        }
+
         public Order(int orderID, Driver driver, Vehicle vehicle, double price, double freeCapacity,
             double freeVolume, Route route, List<Product> products)
         {
