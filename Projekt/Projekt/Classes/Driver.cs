@@ -9,13 +9,13 @@ namespace Projekt.Classes
     public class Driver
     {
         
-        int driverID;
-        string driverName;
-        string driverSurname;
-        double distanceTravelled;
-        Vehicle vehicle;
-        List<DriverOccupied> occupied;
-        Driver(int driverID, string driverName, string driverSurname, double distanceTravelled, Vehicle vehicle, List<DriverOccupied> occupied)
+        public int driverID;
+        public string driverName;
+        public string driverSurname;
+        public double distanceTravelled;
+        public Vehicle vehicle;
+        public List<DriverOccupied> occupied;
+        public Driver(int driverID, string driverName, string driverSurname, double distanceTravelled, Vehicle vehicle, List<DriverOccupied> occupied)
         {
             this.driverID = driverID;
             this.driverName = driverName;

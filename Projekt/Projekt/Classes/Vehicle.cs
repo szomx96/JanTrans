@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 namespace Projekt
 {
     public class Vehicle
-    { 
-        int vehicleID;
-        double vehicleCapacity;
-        double vehicleVolume;
-        string vehicleRegistration;
+    {
+        public int vehicleID;
+        public double vehicleCapacity;
+        public double vehicleVolume;
+        public string vehicleRegistration;
 
         public Vehicle(int vehicleID, double vehicleCapacity, double vehicleVolume, string vehicleRegistration)
         {

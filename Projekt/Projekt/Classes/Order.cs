@@ -8,21 +8,20 @@ namespace Projekt.Classes
 {
     public class Order
     {
-        int orderID;
-        Driver driver;
-        double price, freeCapacity, freeVolume;
-        Route route;
-        List<Product> products;
-        Vehicle vehicle;
+        public int orderID;
+        public Driver driver;
+        public double freeCapacity, freeVolume;
+        public Route route;
+        public List<Product> products;
+        public Vehicle vehicle;
         //Order_Product op;
 
-        public Order(int orderID, Driver driver, Vehicle vehicle, double price, double freeCapacity,
+        public Order(int orderID, Driver driver, Vehicle vehicle, double freeCapacity,
             double freeVolume, Route route, List<Product> products)
         {
             this.orderID = orderID;
             this.driver = driver;
             this.vehicle = vehicle;
-            this.price = price;
             this.freeCapacity = freeCapacity;
             this.freeVolume = freeVolume;
             this.route = route;

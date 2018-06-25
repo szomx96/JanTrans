@@ -8,10 +8,10 @@ namespace Projekt.Classes
 {
     public class Product
     {
-        int productID;
-        string productName;
-        double weight, volume;
-        Customer customer;
+        public int productID;
+        public string productName;
+        public double weight, volume;
+        public Customer customer;
         
         public Product(int productID, string productName, double weight, double volume, Customer customer)
         {

@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Classes\Customer.cs" />
     <Compile Include="Classes\Driver.cs" />
+    <Compile Include="Classes\DriverOccupied.cs" />
     <Compile Include="Classes\MySQLConnect.cs" />
     <Compile Include="Classes\Order-Product.cs" />
     <Compile Include="Classes\Product.cs" />

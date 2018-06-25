@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 namespace Projekt.Classes
 {
     public class Order_Product
-    { 
-        List<Product> products;
+    {
+        public List<Product> products;
 
         public Order_Product()
         {

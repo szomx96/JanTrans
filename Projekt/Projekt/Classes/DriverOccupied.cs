@@ -8,9 +8,9 @@ namespace Projekt.Classes
 {
     public class DriverOccupied
     {
-        int DOID;
-        int driverID;
-        DateTime occBegin, occEnd;
+        public int DOID;
+        public int driverID;
+        public DateTime occBegin, occEnd;
         public DriverOccupied(int DOISD, int driverID, DateTime occBegin, DateTime occEnd)
         {
             this.DOID = DOID;
