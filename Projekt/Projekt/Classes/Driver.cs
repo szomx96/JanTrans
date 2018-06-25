@@ -14,7 +14,7 @@ namespace Projekt.Classes
         string driverSurname;
         double distanceTravelled;
         Vehicle vehicle;
-        //List<DriverOccupied> occupied;
+        List<DriverOccupied> occupied;
 
 
         public Driver(string driverName, string driverSurname)
@@ -31,14 +31,14 @@ namespace Projekt.Classes
             this.driverSurname = driverSurname;
         }
 
-        public Driver(int driverID, string driverName, string driverSurname, double distanceTravelled, Vehicle vehicle/*, List<DriverOccupied> occupied*/)
+        public Driver(int driverID, string driverName, string driverSurname, double distanceTravelled, Vehicle vehicle, List<DriverOccupied> occupied)
         {
             this.driverID = driverID;
             this.driverName = driverName;
             this.driverSurname = driverSurname;
             this.distanceTravelled = distanceTravelled;
             this.vehicle = vehicle;
-            //this.occupied = occupied;
+            this.occupied = occupied;
         }
 
         public int DriverID
@@ -60,6 +60,11 @@ namespace Projekt.Classes
             {
                 return driverName;
             }
+
+            set
+            {
+                driverName = value;
+            }
         }
 
         public string DriverSurname
@@ -67,6 +72,48 @@ namespace Projekt.Classes
             get
             {
                 return driverSurname;
+            }
+
+            set
+            {
+                driverSurname = value;
+            }
+        }
+
+        public double DistanceTravelled
+        {
+            get
+            {
+                return distanceTravelled;
+            }
+
+            set
+            {
+                distanceTravelled = value;
+            }
+        }
+        public Vehicle Vehicle
+        {
+            get
+            {
+                return vehicle;
+            }
+
+            set
+            {
+                vehicle = value;
+            }
+        }
+        public List<DriverOccupied> Occupied
+        {
+            get
+            {
+                return occupied;
+            }
+
+            set
+            {
+                occupied = value;
             }
         }
 

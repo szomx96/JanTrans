@@ -8,12 +8,12 @@ namespace Projekt.Classes
 {
     public class Order
     {
-        int orderID;
-        Driver driver;
-        double price, freeCapacity, freeVolume;
-        Route route;
-        List<Product> products;
-        Vehicle vehicle;
+        private int orderID;
+        private Driver driver;
+        private double freeCapacity, freeVolume;
+        private Route route;
+        private List<Product> products;
+        private Vehicle vehicle;
         //Order_Product op;
 
         public Order(Driver driver, Route route, Vehicle vehicle, List<Product> products)
@@ -25,13 +25,12 @@ namespace Projekt.Classes
 
         }
 
-        public Order(int orderID, Driver driver, Vehicle vehicle, double price, double freeCapacity,
+        public Order(int orderID, Driver driver, Vehicle vehicle, double freeCapacity,
             double freeVolume, Route route, List<Product> products)
         {
             this.orderID = orderID;
             this.driver = driver;
             this.vehicle = vehicle;
-            this.price = price;
             this.freeCapacity = freeCapacity;
             this.freeVolume = freeVolume;
             this.route = route;
@@ -39,6 +38,92 @@ namespace Projekt.Classes
             //this.op = op;
         }
 
+
+        public int OrderID
+        {
+            get
+            {
+                return orderID;
+            }
+
+            set
+            {
+                orderID = value;
+            }
+        }
+        public Driver Driver
+        {
+            get
+            {
+                return driver;
+            }
+
+            set
+            {
+                driver = value;
+            }
+        }
+      
+        public double FreeCapacity
+        {
+            get
+            {
+                return freeCapacity;
+            }
+
+            set
+            {
+                freeCapacity = value;
+            }
+        }
+        public double FreeVolume
+        {
+            get
+            {
+                return freeVolume;
+            }
+
+            set
+            {
+                freeVolume = value;
+            }
+        }
+        public Route Route
+        {
+            get
+            {
+                return route;
+            }
+
+            set
+            {
+               route = value;
+            }
+        }
+        public List<Product> Products
+        {
+            get
+            {
+                return products;
+            }
+
+            set
+            {
+               products = value;
+            }
+        }
+        public Vehicle Vehicle
+        {
+            get
+            {
+                return vehicle;
+            }
+
+            set
+            {
+                vehicle = value;
+            }
+        }
 
 
 

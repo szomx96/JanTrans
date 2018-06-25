@@ -8,10 +8,10 @@ namespace Projekt.Classes
 {
     public class Product
     {
-        int productID;
-        string productName;
-        double weight, volume;
-        Customer customer;
+        private int productID;
+        private string productName;
+        private double weight, volume;
+        private Customer customer;
 
         public Product(double commodityWeight, double commodityVolume, Customer customer)
         {
@@ -28,5 +28,68 @@ namespace Projekt.Classes
             this.volume = volume;
             this.customer = customer;
         }
+
+        public int ProductID
+        {
+            get
+            {
+                return productID;
+            }
+
+            set
+            {
+                productID = value;
+            }
+        }
+        public string ProductName
+        {
+            get
+            {
+                return productName;
+            }
+
+            set
+            {
+               productName = value;
+            }
+        }
+        public double Weight
+        {
+            get
+            {
+                return weight;
+            }
+
+            set
+            {
+                weight = value;
+            }
+        }
+        public double Volume
+        {
+            get
+            {
+                return volume;
+            }
+
+            set
+            {
+               volume = value;
+            }
+        }
+        public Customer Customer
+        {
+            get
+            {
+                return customer;
+            }
+
+            set
+            {
+               customer = value;
+            }
+        }
+
+
     }
 }

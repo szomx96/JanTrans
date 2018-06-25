@@ -28,6 +28,19 @@ namespace Projekt
             this.vehicleRegistration = vehicleRegistration;
         }
 
+        public int VehicleID
+        {
+            get
+            {
+                return vehicleID;
+            }
+
+            set
+            {
+                vehicleID = value;
+            }
+        }
+
         public string VehicleRegistration
         {
             get

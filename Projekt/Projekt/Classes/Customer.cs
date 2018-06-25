@@ -13,6 +13,8 @@ namespace Projekt.Classes
         string customerName;
         string customerSurname;
 
+        
+
         public Customer(string customerCompanyName, string customerName, string customerSurname)
         {
             this.customerCompanyName = customerCompanyName;

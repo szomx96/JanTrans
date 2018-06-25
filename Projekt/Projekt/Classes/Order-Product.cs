@@ -8,11 +8,25 @@ namespace Projekt.Classes
 {
     public class Order_Product
     { 
-        List<Product> products;
+        private List<Product> products;
 
         public Order_Product(List <Product> products)
         {
             this.products = products;
         }
+
+        public List<Product> Products
+        {
+            get
+            {
+                return products;
+            }
+
+            set
+            {
+                products = value;
+            }
+        }
+
     }
 }
