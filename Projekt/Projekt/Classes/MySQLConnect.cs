@@ -93,7 +93,7 @@ namespace Projekt
         {
 
             string ordID = "";
-            string query = string.Format(" START TRANSACTION;" +
+            string query = string.Format("START TRANSACTION;" +
                 "INSERT kierowca_zajety(Id_kierowca, Data_pocz, Data_kon)" +
                 "values( {0}, '{4}', '{5}');" +
                 "INSERT zlecenia(Kierowca, trasa, Z, Do, Data_wyj, Data_pow," +

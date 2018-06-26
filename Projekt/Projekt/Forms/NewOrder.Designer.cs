@@ -163,7 +163,7 @@
             this.comboBoxDrivers.Location = new System.Drawing.Point(9, 166);
             this.comboBoxDrivers.Name = "comboBoxDrivers";
             this.comboBoxDrivers.Size = new System.Drawing.Size(251, 24);
-            this.comboBoxDrivers.TabIndex = 4;
+            this.comboBoxDrivers.TabIndex = 3;
             this.comboBoxDrivers.DropDown += new System.EventHandler(this.comboBox1_DropDown);
             this.comboBoxDrivers.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -233,21 +233,21 @@
             this.textBoxRouteTo.Location = new System.Drawing.Point(91, 114);
             this.textBoxRouteTo.Name = "textBoxRouteTo";
             this.textBoxRouteTo.Size = new System.Drawing.Size(148, 22);
-            this.textBoxRouteTo.TabIndex = 10;
+            this.textBoxRouteTo.TabIndex = 6;
             // 
             // textBoxRouteFrom
             // 
             this.textBoxRouteFrom.Location = new System.Drawing.Point(91, 75);
             this.textBoxRouteFrom.Name = "textBoxRouteFrom";
             this.textBoxRouteFrom.Size = new System.Drawing.Size(148, 22);
-            this.textBoxRouteFrom.TabIndex = 9;
+            this.textBoxRouteFrom.TabIndex = 5;
             // 
             // textBoxRouteLength
             // 
             this.textBoxRouteLength.Location = new System.Drawing.Point(91, 35);
             this.textBoxRouteLength.Name = "textBoxRouteLength";
             this.textBoxRouteLength.Size = new System.Drawing.Size(148, 22);
-            this.textBoxRouteLength.TabIndex = 8;
+            this.textBoxRouteLength.TabIndex = 4;
             // 
             // labelRouteTo
             // 
@@ -281,7 +281,7 @@
             this.buttonAddOrder.Location = new System.Drawing.Point(46, 689);
             this.buttonAddOrder.Name = "buttonAddOrder";
             this.buttonAddOrder.Size = new System.Drawing.Size(612, 35);
-            this.buttonAddOrder.TabIndex = 5;
+            this.buttonAddOrder.TabIndex = 11;
             this.buttonAddOrder.Text = "Dodaj zlecenie";
             this.buttonAddOrder.UseVisualStyleBackColor = true;
             this.buttonAddOrder.Click += new System.EventHandler(this.buttonAddOrder_Click);
@@ -291,7 +291,7 @@
             this.buttonBack.Location = new System.Drawing.Point(21, 20);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(127, 31);
-            this.buttonBack.TabIndex = 6;
+            this.buttonBack.TabIndex = 0;
             this.buttonBack.Text = "<- Wróć";
             this.buttonBack.UseVisualStyleBackColor = true;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
@@ -319,7 +319,7 @@
             this.buttonDeleteProduct.Location = new System.Drawing.Point(444, 23);
             this.buttonDeleteProduct.Name = "buttonDeleteProduct";
             this.buttonDeleteProduct.Size = new System.Drawing.Size(149, 32);
-            this.buttonDeleteProduct.TabIndex = 17;
+            this.buttonDeleteProduct.TabIndex = 9;
             this.buttonDeleteProduct.Text = "Usuń";
             this.buttonDeleteProduct.UseVisualStyleBackColor = true;
             this.buttonDeleteProduct.Click += new System.EventHandler(this.buttonDeleteProduct_Click);
@@ -367,7 +367,7 @@
             this.comboBoxProducts.Location = new System.Drawing.Point(9, 28);
             this.comboBoxProducts.Name = "comboBoxProducts";
             this.comboBoxProducts.Size = new System.Drawing.Size(251, 24);
-            this.comboBoxProducts.TabIndex = 5;
+            this.comboBoxProducts.TabIndex = 7;
             this.comboBoxProducts.DropDown += new System.EventHandler(this.comboBoxProducts_DropDown);
             // 
             // listBoxProducts
@@ -377,7 +377,7 @@
             this.listBoxProducts.Location = new System.Drawing.Point(9, 140);
             this.listBoxProducts.Name = "listBoxProducts";
             this.listBoxProducts.Size = new System.Drawing.Size(584, 84);
-            this.listBoxProducts.TabIndex = 1;
+            this.listBoxProducts.TabIndex = 10;
             this.listBoxProducts.SelectedIndexChanged += new System.EventHandler(this.listBoxProducts_SelectedIndexChanged);
             // 
             // buttonAddProduct
@@ -385,7 +385,7 @@
             this.buttonAddProduct.Location = new System.Drawing.Point(275, 23);
             this.buttonAddProduct.Name = "buttonAddProduct";
             this.buttonAddProduct.Size = new System.Drawing.Size(149, 32);
-            this.buttonAddProduct.TabIndex = 0;
+            this.buttonAddProduct.TabIndex = 8;
             this.buttonAddProduct.Text = "Dodaj";
             this.buttonAddProduct.UseVisualStyleBackColor = true;
             this.buttonAddProduct.Click += new System.EventHandler(this.buttonAddProduct_Click);
@@ -396,7 +396,7 @@
             this.dateTimePickerBegin.Location = new System.Drawing.Point(129, 31);
             this.dateTimePickerBegin.Name = "dateTimePickerBegin";
             this.dateTimePickerBegin.Size = new System.Drawing.Size(131, 22);
-            this.dateTimePickerBegin.TabIndex = 8;
+            this.dateTimePickerBegin.TabIndex = 1;
             // 
             // groupBoxDate
             // 
@@ -426,7 +426,7 @@
             this.dateTimePickerEnd.Location = new System.Drawing.Point(408, 31);
             this.dateTimePickerEnd.Name = "dateTimePickerEnd";
             this.dateTimePickerEnd.Size = new System.Drawing.Size(131, 22);
-            this.dateTimePickerEnd.TabIndex = 10;
+            this.dateTimePickerEnd.TabIndex = 2;
             // 
             // labelBeginDate
             // 

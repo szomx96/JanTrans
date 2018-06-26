@@ -15,7 +15,6 @@ D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.csproj.GenerateResource.
 D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.csproj.CoreCompileInputs.cache
 D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.exe
 D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.pdb
-D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.csprojResolveAssemblyReference.cache
 D:\repos\Projekt_poig\Projekt\Projekt\bin\Debug\Google.Protobuf.dll
 D:\repos\Projekt_poig\Projekt\Projekt\bin\Debug\MySql.Data.dll
 D:\repos\Projekt_poig\Projekt\Projekt\bin\Debug\Google.Protobuf.xml

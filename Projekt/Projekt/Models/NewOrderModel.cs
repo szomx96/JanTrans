@@ -32,6 +32,9 @@ namespace Projekt.Models
             string to, string dep, string arr, string cap, string vol, List<Product> prodIDs)
         {
             string[] ids = GetProductIDS(prodIDs);
+            cap = cap.Replace(',', '.');
+            vol = vol.Replace(',', '.');
+            route = route.Replace(',', '.');
             return container.Database.InsertOrder(drivID, route, from, to, dep, arr, cap, vol, ids);
         }
 

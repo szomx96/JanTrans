@@ -41,9 +41,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1062, 803);
-            this.MaximumSize = new System.Drawing.Size(1080, 850);
-            this.MinimumSize = new System.Drawing.Size(1080, 850);
+            this.ClientSize = new System.Drawing.Size(1102, 803);
+            this.MaximumSize = new System.Drawing.Size(1120, 850);
+            this.MinimumSize = new System.Drawing.Size(1120, 850);
             this.Name = "MainForm";
             this.Text = "JanTrans";
             this.Load += new System.EventHandler(this.MainForm_Load);

@@ -150,7 +150,7 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1071, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1107, 24);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -166,7 +166,7 @@
             // 
             // buttonLogout
             // 
-            this.buttonLogout.Location = new System.Drawing.Point(13, 371);
+            this.buttonLogout.Location = new System.Drawing.Point(13, 375);
             this.buttonLogout.Name = "buttonLogout";
             this.buttonLogout.Size = new System.Drawing.Size(264, 56);
             this.buttonLogout.TabIndex = 12;
@@ -178,16 +178,16 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(298, 57);
+            this.listBox1.Location = new System.Drawing.Point(283, 59);
             this.listBox1.MultiColumn = true;
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(750, 372);
+            this.listBox1.Size = new System.Drawing.Size(807, 372);
             this.listBox1.TabIndex = 15;
             // 
             // labelOrders
             // 
             this.labelOrders.AutoSize = true;
-            this.labelOrders.Location = new System.Drawing.Point(295, 26);
+            this.labelOrders.Location = new System.Drawing.Point(280, 31);
             this.labelOrders.Name = "labelOrders";
             this.labelOrders.Size = new System.Drawing.Size(98, 17);
             this.labelOrders.TabIndex = 13;
@@ -205,7 +205,7 @@
             this.Controls.Add(this.groupBoxUser);
             this.Controls.Add(this.menuStrip1);
             this.Name = "UserMainView";
-            this.Size = new System.Drawing.Size(1071, 463);
+            this.Size = new System.Drawing.Size(1107, 463);
             this.Load += new System.EventHandler(this.UserMainView_Load);
             this.groupBoxUser.ResumeLayout(false);
             this.groupBoxUser.PerformLayout();

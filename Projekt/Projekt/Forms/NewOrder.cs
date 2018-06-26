@@ -232,6 +232,23 @@ namespace Projekt.Forms
                 string vol = labelFreeVValue.Text;
                 if (CreateOrder(drID, route, from, to, dep, arr, cap, vol, addedProducts))
                 {
+                    dateTimePickerBegin.Value = DateTime.Now;
+                    dateTimePickerEnd.Value = DateTime.Now;
+                    labelDriverIDValue.Text = "0";
+                    labelDriverNameValue.Text = "";
+                    labelDriverSurnameValue.Text = "";
+                    labelCapacityValue.Text = "-";
+                    labelVolumeValue.Text = "-";
+                    textBoxRouteFrom.Clear();
+                    textBoxRouteTo.Clear();
+                    textBoxRouteLength.Clear();
+                    comboBoxDrivers.Items.Clear();
+                    comboBoxProducts.Items.Clear();
+                    labelFreeCValue.Text = "-";
+                    labelFreeVValue.Text = "-";
+                    listBoxProducts.Items.Clear();
+
+
                     MessageBox.Show("Dodano rekord!");
                 }
             }
