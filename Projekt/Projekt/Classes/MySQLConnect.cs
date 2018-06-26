@@ -88,12 +88,13 @@ namespace Projekt
 
         #region inserts
         //Insert statement
-public bool InsertOrder(string drivID, string route, string from, string to, 
-            string dep, string arr, string cap, string vol, string[] prodIDs)
+        public bool InsertOrder(string drivID, string route, string from, string to,
+                    string dep, string arr, string cap, string vol, string[] prodIDs)
         {
-            string ordID="";
+
+            string ordID = "";
             string query = string.Format(" START TRANSACTION;" +
-                "INSERT kierowca_zajety(Id_kierowca, Data_pocz, Data_kon)"+
+                "INSERT kierowca_zajety(Id_kierowca, Data_pocz, Data_kon)" +
                 "values( {0}, '{4}', '{5}');" +
                 "INSERT zlecenia(Kierowca, trasa, Z, Do, Data_wyj, Data_pow," +
                 " Pozostala_Ladownosc, Pozostala_Pojemnosc) VALUES ({0}, {1}, '{2}', '{3}', '{4}', '{5}', {6}, {7});" +
@@ -133,17 +134,19 @@ public bool InsertOrder(string drivID, string route, string from, string to,
                 {
                     MySqlCommand cmd = new MySqlCommand(query, connection);
                     connection.Open();
-                    cmd.ExecuteNonQuery();                    
+                    cmd.ExecuteNonQuery();
                     connection.Close();
                 }
                 catch
                 {
                     return false;
-                }                    
+                }
             }
-            
+
             return true;
         }
+    
+
 
         public bool InsertCommodity(int id, string commodityName, double commodityVolume, double commodityWeight)
         {
@@ -279,7 +282,7 @@ public bool InsertOrder(string drivID, string route, string from, string to,
             {
                 string query = string.Format("UPDATE kierowcy SET Imie = '{1}', Nazwisko = '{2}'" +
                     " WHERE ID_Kierowcy like '{0}'", id, driverName, driverSurname);
-                MessageBox.Show(query);
+               
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 connection.Open();
                 cmd.ExecuteNonQuery();
@@ -289,7 +292,7 @@ public bool InsertOrder(string drivID, string route, string from, string to,
 
                 query = string.Format("UPDATE logowanie SET Login = '{1}' WHERE ID_Kierowca" +
                     " like '{0}'", id, login);
-                MessageBox.Show(query);
+               
                 cmd = new MySqlCommand(query, connection);
                 connection.Open();
                 cmd.ExecuteNonQuery();
@@ -313,7 +316,7 @@ public bool InsertOrder(string drivID, string route, string from, string to,
                     " AND Haslo like '{2}'",
                       newPass, id, oldPass);
 
-                MessageBox.Show(query);
+               
 
 
                 MySqlCommand cmd = new MySqlCommand(query, connection);
@@ -540,11 +543,11 @@ public bool InsertOrder(string drivID, string route, string from, string to,
             string format = "yyyy-MM-dd HH:mm:ss";            
             string query =String.Format( " SELECT * FROM kierowcy" +
                 " WHERE ID_Kierowcy NOT IN(SELECT Id_kierowca FROM kierowca_zajety WHERE " +
-                "((Data_pocz  BETWEEN '{0}' AND '{1}')" +
+                "((Data_pocz BETWEEN '{0}' AND '{1}')" +
                 " OR (Data_kon BETWEEN '{0}' AND '{1}') OR " +
                 "('{0}' BETWEEN Data_pocz AND Data_kon) " +
                 "OR ('{1}' BETWEEN Data_pocz AND Data_kon)))", begin.ToString(format), end.ToString(format));
-            Console.WriteLine(query);
+            
             List<Driver> drivers = new List<Driver>();
             if (this.OpenConnection() == true)
             {
@@ -723,7 +726,7 @@ public bool InsertOrder(string drivID, string route, string from, string to,
 
                 this.CloseConnection();
                 Driver d = new Driver(driverID, name, surname, distance, null, null);
-                d.Vehicle = SelectCertainVehicle(driverID);
+                d.Vehicle = SelectCertainVehicle(vehicleID);
                 d.Occupied = SelectCertainDatesOfOccupation(driverID);
                 return d;
             }

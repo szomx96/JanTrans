@@ -170,23 +170,31 @@ namespace Projekt.Forms
             }
             else
             {
+                errorProvider.Clear();  
                 string str = comboBoxProducts.SelectedItem.ToString();
                 string index = str.Substring(str.LastIndexOf(':') + 1);
                 int id = Int32.Parse(index);
                 Product p = CreateProduct(id);
-                OccupiedCapacity += p.Weight;
-                OccupiedVolume += p.Volume;
-                MaxCapacity = maxCapacity;
-                MaxVolume = maxVolume;
-                addedProducts.Add(p);
-                listBoxProducts.Items.Add(str);
+                if (OccupiedCapacity + p.Weight > MaxCapacity || OccupiedVolume + p.Volume > MaxVolume)
+                {
+                    errorProvider.SetError(buttonAddProduct, "Przekroczono ładowność!");
+                }
+                else
+                {
+                    OccupiedCapacity += p.Weight;
+                    OccupiedVolume += p.Volume;
+                    MaxCapacity = maxCapacity;
+                    MaxVolume = maxVolume;
+                    addedProducts.Add(p);
+                    listBoxProducts.Items.Add(str);
+                }
             }
             
         }
 
         public event Func<DateTime, DateTime, string[]> SelectDrivers;
         public event Func<List<Product>> SelectProducts;
-        public event Func<int ,Driver> LoadDriver;
+        public event Func<int, Driver> LoadDriver;
         public event Func<int, Product> CreateProduct;
         public event Func<string, string, string, string, string, string, string, string, List<Product>, bool> CreateOrder;
 
@@ -223,7 +231,9 @@ namespace Projekt.Forms
                 string cap = labelFreeCValue.Text;
                 string vol = labelFreeVValue.Text;
                 if (CreateOrder(drID, route, from, to, dep, arr, cap, vol, addedProducts))
+                {
                     MessageBox.Show("Dodano rekord!");
+                }
             }
         }
 
