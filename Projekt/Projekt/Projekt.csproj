@@ -63,6 +63,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Commodity.cs" />
     <Compile Include="Classes\Customer.cs" />
     <Compile Include="Classes\Driver.cs" />
     <Compile Include="Classes\DriverOccupied.cs" />
@@ -72,6 +73,12 @@
     <Compile Include="Classes\Route.cs" />
     <Compile Include="Classes\Vehicle.cs" />
     <Compile Include="Classes\Order.cs" />
+    <Compile Include="Forms\AddCommodity.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\AddCommodity.Designer.cs">
+      <DependentUpon>AddCommodity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,33 +104,46 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UserMainView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\UserMainView.Designer.cs">
+      <DependentUpon>UserMainView.cs</DependentUpon>
+    </Compile>
     <Compile Include="IViewChanger.cs" />
+    <Compile Include="Models\AddCommodityModel.cs" />
     <Compile Include="Models\AddProductModel.cs" />
     <Compile Include="Models\AdminMainModel.cs" />
+    <Compile Include="Models\EditDriverModel.cs" />
+    <Compile Include="Models\EditVehicleModel.cs" />
     <Compile Include="Models\ModelContainer.cs" />
     <Compile Include="Models\NewDriverModel.cs" />
     <Compile Include="Models\NewOrderModel.cs" />
     <Compile Include="Models\NewVehicleModel.cs" />
     <Compile Include="Models\SettingsModel.cs" />
+    <Compile Include="Presenters\AddCommodityPresenter.cs" />
     <Compile Include="Presenters\AddProductPresenter.cs" />
     <Compile Include="Presenters\AdminMainPresenter.cs" />
+    <Compile Include="Presenters\EditDriverPresenter.cs" />
+    <Compile Include="Presenters\EditVehiclePresenter.cs" />
     <Compile Include="Presenters\NewDriverPresenter.cs" />
     <Compile Include="Presenters\NewOrderPresenter.cs" />
     <Compile Include="Presenters\NewVehiclePresenter.cs" />
     <Compile Include="Presenters\SettingsPresenter.cs" />
     <Compile Include="Table_classes\Ciezarowka.cs" />
-    <Compile Include="Forms\Edytuj_kierowca.cs">
+    <Compile Include="Forms\EditDriver.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\Edytuj_kierowca.Designer.cs">
-      <DependentUpon>Edytuj_kierowca.cs</DependentUpon>
+    <Compile Include="Forms\EditDriver.Designer.cs">
+      <DependentUpon>EditDriver.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Edytuj_pojazd.cs">
+    <Compile Include="Forms\EditVehicle.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\Edytuj_pojazd.Designer.cs">
-      <DependentUpon>Edytuj_pojazd.cs</DependentUpon>
+    <Compile Include="Forms\EditVehicle.Designer.cs">
+      <DependentUpon>EditVehicle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ICommodity.cs" />
     <Compile Include="Views\IProduct.cs" />
     <Compile Include="Views\IAdminMainView.cs" />
     <Compile Include="Views\ILogin.cs" />
@@ -177,6 +197,9 @@
     <Compile Include="Views\IDriver.cs" />
     <Compile Include="Views\IUstawienia.cs" />
     <Compile Include="Views\IZleceniePodgladcs.cs" />
+    <EmbeddedResource Include="Forms\AddCommodity.resx">
+      <DependentUpon>AddCommodity.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddProductForm.resx">
       <DependentUpon>AddProductForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +215,9 @@
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserMainView.resx">
+      <DependentUpon>UserMainView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -201,11 +227,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\Edytuj_kierowca.resx">
-      <DependentUpon>Edytuj_kierowca.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\EditDriver.resx">
+      <DependentUpon>EditDriver.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Edytuj_pojazd.resx">
-      <DependentUpon>Edytuj_pojazd.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\EditVehicle.resx">
+      <DependentUpon>EditVehicle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewOrder.resx">
       <DependentUpon>NewOrder.cs</DependentUpon>

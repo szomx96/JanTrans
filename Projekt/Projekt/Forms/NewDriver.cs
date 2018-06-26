@@ -61,29 +61,39 @@ namespace Projekt.Forms
         }
 
         public event Func<Driver, string, bool> AddDriver;
+        public event Func<string[]> SelectDrivers;
+        public event Func<int, string, string, bool> UpdateDriverInfo;
 
 
         private void buttonDriverAdd_Click_1(object sender, EventArgs e)
         {
-            if (textBoxDriverName.Text != "" && textBoxDriverSurname.Text != "")
-            {
-                if (textBoxPassword.Text != "")
-                {
-                    Driver driver = new Driver(DriverName, DriverSurname);
-                    string password = textBoxPassword.Text;
 
-                    if (AddDriver(driver, password))
-                    {
-                        textBoxDriverName.Clear();
-                        textBoxDriverSurname.Clear();
-                        textBoxPassword.Clear();
-                    }
-                    else
-                    {
-                        //errorprovider
-                    }
-                }
+            if(textBoxDriverName.Text == "")
+            {
+                errorProvider1.SetError(textBoxDriverName, "Pole nie moze byc puste!");
+            }else if(textBoxDriverSurname.Text == "")
+            {
+                errorProvider2.SetError(textBoxDriverSurname, "Pole nie moze byc puste!");
+            }else if(textBoxPassword.Text == "")
+            {
+                errorProvider3.SetError(textBoxPassword, "Pole nie moze byc puste!");
             }
+            else
+            {
+                Driver driver = new Driver(DriverName, DriverSurname);
+                string password = textBoxPassword.Text;
+
+                if (AddDriver(driver, password))
+                {
+                    textBoxDriverName.Clear();
+                    textBoxDriverSurname.Clear();
+                    textBoxPassword.Clear();
+                    MessageBox.Show("Pomyślnie dodano kierowcę!");
+                }
+                
+            }
+
+            
 
         }
     }

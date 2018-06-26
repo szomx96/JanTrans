@@ -53,6 +53,7 @@ namespace Projekt.Forms
             this.edytujZleceniaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ustawieniaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mojeKontoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.towarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxUser.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -184,19 +185,22 @@ namespace Projekt.Forms
             this.wylogujToolStripMenuItem.Name = "wylogujToolStripMenuItem";
             this.wylogujToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
             this.wylogujToolStripMenuItem.Text = "Wyloguj";
+            this.wylogujToolStripMenuItem.Click += new System.EventHandler(this.wylogujToolStripMenuItem_Click);
             // 
             // zamknijToolStripMenuItem
             // 
             this.zamknijToolStripMenuItem.Name = "zamknijToolStripMenuItem";
             this.zamknijToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
             this.zamknijToolStripMenuItem.Text = "Zamknij";
+            this.zamknijToolStripMenuItem.Click += new System.EventHandler(this.zamknijToolStripMenuItem_Click);
             // 
             // dodajToolStripMenuItem
             // 
             this.dodajToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.noweZlecenieToolStripMenuItem,
             this.kierowcaToolStripMenuItem,
-            this.pojazdToolStripMenuItem});
+            this.pojazdToolStripMenuItem,
+            this.towarToolStripMenuItem});
             this.dodajToolStripMenuItem.Name = "dodajToolStripMenuItem";
             this.dodajToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
             this.dodajToolStripMenuItem.Text = "Dodaj";
@@ -237,12 +241,14 @@ namespace Projekt.Forms
             this.edytujKierowcówToolStripMenuItem.Name = "edytujKierowcówToolStripMenuItem";
             this.edytujKierowcówToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
             this.edytujKierowcówToolStripMenuItem.Text = "Edytuj kierowców";
+            this.edytujKierowcówToolStripMenuItem.Click += new System.EventHandler(this.edytujKierowcówToolStripMenuItem_Click);
             // 
             // edytujPojazdyToolStripMenuItem
             // 
             this.edytujPojazdyToolStripMenuItem.Name = "edytujPojazdyToolStripMenuItem";
             this.edytujPojazdyToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
             this.edytujPojazdyToolStripMenuItem.Text = "Edytuj pojazdy";
+            this.edytujPojazdyToolStripMenuItem.Click += new System.EventHandler(this.edytujPojazdyToolStripMenuItem_Click);
             // 
             // edytujZleceniaToolStripMenuItem
             // 
@@ -261,9 +267,16 @@ namespace Projekt.Forms
             // mojeKontoToolStripMenuItem
             // 
             this.mojeKontoToolStripMenuItem.Name = "mojeKontoToolStripMenuItem";
-            this.mojeKontoToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.mojeKontoToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
             this.mojeKontoToolStripMenuItem.Text = "Moje konto";
             this.mojeKontoToolStripMenuItem.Click += new System.EventHandler(this.mojeKontoToolStripMenuItem_Click);
+            // 
+            // towarToolStripMenuItem
+            // 
+            this.towarToolStripMenuItem.Name = "towarToolStripMenuItem";
+            this.towarToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.towarToolStripMenuItem.Text = "Towar";
+            this.towarToolStripMenuItem.Click += new System.EventHandler(this.towarToolStripMenuItem_Click);
             // 
             // AdminMainView
             // 
@@ -310,5 +323,6 @@ namespace Projekt.Forms
         private System.Windows.Forms.ToolStripMenuItem edytujZleceniaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ustawieniaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mojeKontoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem towarToolStripMenuItem;
     }
 }

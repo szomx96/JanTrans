@@ -1,6 +1,6 @@
-﻿namespace Projekt.Views
+﻿namespace Projekt.Forms
 {
-    partial class Edytuj_pojazd
+    partial class EditVehicle
     {
         /// <summary> 
         /// Wymagana zmienna projektanta.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBoxVehicle = new System.Windows.Forms.GroupBox();
             this.textBoxVolumeValue = new System.Windows.Forms.TextBox();
             this.textBoxCapacityValue = new System.Windows.Forms.TextBox();
@@ -36,7 +37,15 @@
             this.labelVehicleCapacity = new System.Windows.Forms.Label();
             this.labelVehicleNumber = new System.Windows.Forms.Label();
             this.buttonVehicleEdit = new System.Windows.Forms.Button();
+            this.buttonBack = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBoxVehicle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxVehicle
@@ -47,9 +56,9 @@
             this.groupBoxVehicle.Controls.Add(this.labelVehicleVolume);
             this.groupBoxVehicle.Controls.Add(this.labelVehicleCapacity);
             this.groupBoxVehicle.Controls.Add(this.labelVehicleNumber);
-            this.groupBoxVehicle.Location = new System.Drawing.Point(3, 3);
+            this.groupBoxVehicle.Location = new System.Drawing.Point(22, 117);
             this.groupBoxVehicle.Name = "groupBoxVehicle";
-            this.groupBoxVehicle.Size = new System.Drawing.Size(318, 182);
+            this.groupBoxVehicle.Size = new System.Drawing.Size(367, 182);
             this.groupBoxVehicle.TabIndex = 1;
             this.groupBoxVehicle.TabStop = false;
             this.groupBoxVehicle.Text = "Pojazd";
@@ -104,23 +113,62 @@
             // 
             // buttonVehicleEdit
             // 
-            this.buttonVehicleEdit.Location = new System.Drawing.Point(152, 191);
+            this.buttonVehicleEdit.Location = new System.Drawing.Point(22, 315);
             this.buttonVehicleEdit.Name = "buttonVehicleEdit";
-            this.buttonVehicleEdit.Size = new System.Drawing.Size(169, 31);
+            this.buttonVehicleEdit.Size = new System.Drawing.Size(367, 41);
             this.buttonVehicleEdit.TabIndex = 2;
-            this.buttonVehicleEdit.Text = "Edytuj";
+            this.buttonVehicleEdit.Text = "Zapisz";
             this.buttonVehicleEdit.UseVisualStyleBackColor = true;
+            this.buttonVehicleEdit.Click += new System.EventHandler(this.buttonVehicleEdit_Click);
             // 
-            // Edytuj_pojazd
+            // buttonBack
+            // 
+            this.buttonBack.Location = new System.Drawing.Point(22, 13);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(127, 31);
+            this.buttonBack.TabIndex = 10;
+            this.buttonBack.Text = "<- Wróć";
+            this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(22, 64);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(367, 24);
+            this.comboBox1.TabIndex = 11;
+            this.comboBox1.DropDown += new System.EventHandler(this.comboBox1_DropDown);
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            // 
+            // errorProvider3
+            // 
+            this.errorProvider3.ContainerControl = this;
+            // 
+            // EditVehicle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.buttonVehicleEdit);
             this.Controls.Add(this.groupBoxVehicle);
-            this.Name = "Edytuj_pojazd";
-            this.Size = new System.Drawing.Size(356, 255);
+            this.Name = "EditVehicle";
+            this.Size = new System.Drawing.Size(416, 384);
             this.groupBoxVehicle.ResumeLayout(false);
             this.groupBoxVehicle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -135,5 +183,10 @@
         private System.Windows.Forms.Label labelVehicleCapacity;
         private System.Windows.Forms.Label labelVehicleNumber;
         private System.Windows.Forms.Button buttonVehicleEdit;
+        private System.Windows.Forms.Button buttonBack;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.ErrorProvider errorProvider3;
     }
 }

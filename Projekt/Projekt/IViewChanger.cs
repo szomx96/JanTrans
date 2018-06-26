@@ -15,6 +15,9 @@ namespace Projekt
         void ShowNewVehicle();
         // void ShowAddProduct();
         void ShowSettings();
-          
+        void ShowEditDriver();
+        void ShowEditVehicle();
+        void ShowUserView();
+        void ShowAddCommodity();
     }
 }

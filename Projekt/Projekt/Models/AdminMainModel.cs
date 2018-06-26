@@ -9,11 +9,8 @@ namespace Projekt.Models
     public class AdminMainModel
     {
         ModelContainer container;
-        //ModelContainer container = new ModelContainer();
-        AdminMainModel()
-        {
-
-        }
+        
+        AdminMainModel(){ }
 
         public AdminMainModel(ModelContainer container)
         {

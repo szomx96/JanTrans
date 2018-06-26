@@ -13,7 +13,7 @@ namespace Projekt.Classes
         string customerName;
         string customerSurname;
 
-        
+
 
         public Customer(string customerCompanyName, string customerName, string customerSurname)
         {
@@ -29,6 +29,20 @@ namespace Projekt.Classes
             this.customerCompanyName = customerCompanyName;
             this.customerName = customerName;
             this.customerSurname = customerSurname;
+
+        }
+
+        public int CustomerID
+        {
+            get
+            {
+                return customerID;
+            }
+
+            set
+            {
+                customerID = value;
+            }
 
         }
 

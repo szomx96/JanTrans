@@ -92,10 +92,32 @@ namespace Projekt
         {
 
         }
-        public bool InsertDriver(string driverName, string driverSurname, string password)
+
+        public bool InsertCommodity(int id, string commodityName, double commodityVolume, double commodityWeight)
         {
             try
             {
+                string query = string.Format(culture, "INSERT INTO produkt (Klient, Nazwa, Waga, Objetosc)" +
+                    " values ('{0}', '{1}', '{2}', '{3}')",
+                       id, commodityName, commodityWeight, commodityVolume);
+               
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                connection.Open();
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public bool InsertDriver(string driverName, string driverSurname, string password)
+        {
+            try { 
+            
                 string query = string.Format("INSERT INTO kierowcy (Imie, Nazwisko) values ('{0}', '{1}')",
                     driverName, driverSurname);
                 MySqlCommand cmd = new MySqlCommand(query, connection);
@@ -177,6 +199,58 @@ namespace Projekt
 
 
         }
+
+        public bool UpdateVehicle(int id, string registration, double capacity, double volume)
+        {
+            try
+            {
+                string query = string.Format(culture, "UPDATE ciezarowki SET Rejestracja = '{1}', Ladownosc = '{2}'," +
+                        " Pojemnosc = '{3}' WHERE ID_Pojazdu like '{0}'", id, registration, capacity, volume);
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                connection.Open();
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch
+            {
+                return false;
+            }
+
+            return true;
+
+        }
+
+        public bool UpdateDriver(int id, string driverName, string driverSurname)
+        {
+            try
+            {
+                string query = string.Format("UPDATE kierowcy SET Imie = '{1}', Nazwisko = '{2}'" +
+                    " WHERE ID_Kierowcy like '{0}'", id, driverName, driverSurname);
+                MessageBox.Show(query);
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                connection.Open();
+                cmd.ExecuteNonQuery();
+                connection.Close();
+
+                string login = (driverName + "." + driverSurname).ToLower();
+
+                query = string.Format("UPDATE logowanie SET Login = '{1}' WHERE ID_Kierowca" +
+                    " like '{0}'", id, login);
+                MessageBox.Show(query);
+                cmd = new MySqlCommand(query, connection);
+                connection.Open();
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch
+            {
+                return false;
+            }
+
+
+            return true;
+        }
+
 
         public bool UpdatePassword(int id, string oldPass, string newPass)
         {
@@ -461,7 +535,43 @@ namespace Projekt
 
         }
 
+        //select certain driver
+        public Driver SelectCertainDriver(int drivID)
+        {
+            string query = "SELECT * FROM kierowcy WHERE ID_Kierowcy LIKE " + drivID.ToString();
 
+            List<DriverOccupied> dates = new List<DriverOccupied>();
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                int driverID = 1;
+                int vehicleID = 1;
+                string driverName = "";
+                string driverSurname = "";
+                double distanceTravelled = 1;
+                Vehicle vehicle = null;
+                List<DriverOccupied> occupied =null;
+                while (dataReader.Read())
+                {
+                    driverID = (int)dataReader["ID_Kierowcy"];
+                    vehicleID = (int)dataReader["Ciezarowka"];
+                    driverName = dataReader["Imie"].ToString();
+                    driverSurname = dataReader["Nazwisko"].ToString();
+                    distanceTravelled = (double)dataReader["Trasa"];
+                    vehicle = SelectCertainVehicle(vehicleID); // ID pojazdu NIE kierowcy!!!
+                    occupied = SelectCertainDatesOfOccupation(driverID);
+                }
+                dataReader.Close();
+                this.CloseConnection();
+                return new Driver(driverID, driverName,driverSurname,distanceTravelled,vehicle,occupied);
+            }
+            else
+            {
+                return null;
+            }
+
+        }
 
         // select Product with specific ID
         public Product SelectCertainProduct(int proID)
@@ -497,6 +607,101 @@ namespace Projekt
             }
           
         }
+		
+		        // select list of products from orderID
+        public List<Product> SelectCertainProductList(int ordID)
+        {
+            List<Product> products = new List<Product>();
+            string query = "SELECT Produkt FROM towar WHERE Zlecenie LIKE " + ordID.ToString();
+
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    int proID = (int)dataReader["Produkt"];
+                    products.Add(SelectCertainProduct(proID));
+                }
+                dataReader.Close();
+                this.CloseConnection();
+                return products;
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+		
+        //route generation
+        public Route SelectRouteFromOrder(int ordID)
+        {
+            string query = "SELECT trasa, Koszt, Z, Do, Data_wyj, Data_pow FROM zlecenia WHERE ID_Zlecenia LIKE " + ordID.ToString(); //edit
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                double routeLength = 0, routePrice = 0;
+                string routeFrom = "";
+                string routeTo = "";
+                DateTime departureDate = DateTime.Now, arrivalDate = DateTime.Now;
+                while (dataReader.Read())
+                {
+                    routeLength = (double)dataReader["trasa"];
+                    routePrice = (double)dataReader["Koszt"];
+                    routeFrom = dataReader["Z"].ToString();
+                    routeTo = dataReader["Do"].ToString();
+                    departureDate = DateTime.ParseExact(dataReader["Data_wyj"].ToString(), "MM.dd.yyyy H:mm:ss", null);
+                    arrivalDate = DateTime.ParseExact(dataReader["Data_pow"].ToString(), "MM.dd.yyyy H:mm:ss", null);
+                }
+                dataReader.Close();
+
+
+                this.CloseConnection();
+                return new Route(routeLength, routePrice, routeFrom, routeTo, departureDate, arrivalDate);
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+
+
+        // get certain order obj
+        public Order SelectCertainOrder(int ordID)
+        {
+            string query = "SELECT * FROM zlecenia WHERE ID_Zlecenia LIKE " + ordID.ToString();
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                int orderID = ordID;
+                Driver driver = null;
+                double freeCapacity = 0, freeVolume = 0;
+                Route route = SelectRouteFromOrder(orderID);                    ;
+                List<Product> products = SelectCertainProductList(orderID);
+                Vehicle vehicle = null;
+                while (dataReader.Read())
+                {
+                    int driID = (int)dataReader["Kierowca"];
+                    driver = SelectCertainDriver(driID);
+                    freeCapacity = (double)dataReader["Pozostala_Ladownosc"];
+                    freeVolume = (double)dataReader["Pozostala_Pojemnosc"];
+                    vehicle = driver.Vehicle;
+                }
+                dataReader.Close();
+                this.CloseConnection();
+                return new Order(orderID, driver, vehicle, freeCapacity, freeVolume, route, products);
+            }
+            else
+            {
+                return null;
+            }
+        }		
+		
 
         #endregion
 

@@ -48,6 +48,7 @@ namespace Projekt.Models
             else
             {
                 container.LoginID = wynik[1];
+                container.LoggedAs = wynik[0];
                 loginMode = wynik[0];
                 userID = wynik[1];
                 return true;

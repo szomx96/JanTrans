@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBoxVehicle = new System.Windows.Forms.GroupBox();
             this.textBoxVolumeValue = new System.Windows.Forms.TextBox();
             this.textBoxCapacityValue = new System.Windows.Forms.TextBox();
@@ -37,7 +38,13 @@
             this.labelVehicleNumber = new System.Windows.Forms.Label();
             this.buttonVehicleAdd = new System.Windows.Forms.Button();
             this.buttonBack = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBoxVehicle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxVehicle
@@ -50,7 +57,7 @@
             this.groupBoxVehicle.Controls.Add(this.labelVehicleNumber);
             this.groupBoxVehicle.Location = new System.Drawing.Point(15, 71);
             this.groupBoxVehicle.Name = "groupBoxVehicle";
-            this.groupBoxVehicle.Size = new System.Drawing.Size(318, 182);
+            this.groupBoxVehicle.Size = new System.Drawing.Size(363, 182);
             this.groupBoxVehicle.TabIndex = 0;
             this.groupBoxVehicle.TabStop = false;
             this.groupBoxVehicle.Text = "Pojazd";
@@ -106,7 +113,7 @@
             // 
             // buttonVehicleAdd
             // 
-            this.buttonVehicleAdd.Location = new System.Drawing.Point(164, 260);
+            this.buttonVehicleAdd.Location = new System.Drawing.Point(209, 259);
             this.buttonVehicleAdd.Name = "buttonVehicleAdd";
             this.buttonVehicleAdd.Size = new System.Drawing.Size(169, 31);
             this.buttonVehicleAdd.TabIndex = 1;
@@ -124,6 +131,18 @@
             this.buttonBack.UseVisualStyleBackColor = true;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            // 
+            // errorProvider3
+            // 
+            this.errorProvider3.ContainerControl = this;
+            // 
             // NewVehicle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -135,6 +154,9 @@
             this.Size = new System.Drawing.Size(464, 360);
             this.groupBoxVehicle.ResumeLayout(false);
             this.groupBoxVehicle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -150,5 +172,8 @@
         private System.Windows.Forms.TextBox textBoxVolumeValue;
         private System.Windows.Forms.Button buttonVehicleAdd;
         private System.Windows.Forms.Button buttonBack;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.ErrorProvider errorProvider3;
     }
 }

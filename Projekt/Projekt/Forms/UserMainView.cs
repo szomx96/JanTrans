@@ -11,9 +11,15 @@ using Projekt.Views;
 
 namespace Projekt.Forms
 {
-    public partial class AdminMainView : UserControl, IAdminMainView
+    public partial class UserMainView : UserControl, IAdminMainView
     {
         IViewChanger changer;
+
+        public UserMainView(IViewChanger changer)
+        {
+            InitializeComponent();
+            this.changer = changer;
+        }
 
         #region properties
 
@@ -82,36 +88,12 @@ namespace Projekt.Forms
             }
         }
 
-        
-
         #endregion
-
-        public AdminMainView(IViewChanger changer)
-        {
-            InitializeComponent();
-            this.changer = changer;
-        }  
-
-
-        private void noweZlecenieToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            changer.ShowNewOrder();
-        }
-
-        private void kierowcaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            changer.ShowNewDriver();
-        }
-
-        private void pojazdToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            changer.ShowNewVehicle();
-        }
 
         public event Func<string[]> LoadUserInfo;
         public event Func<string> GetCurrentDate;
 
-        private void AdminMainView_Load(object sender, EventArgs e)
+        private void UserMainView_Load(object sender, EventArgs e)
         {
             string[] info = LoadUserInfo();
 
@@ -122,34 +104,15 @@ namespace Projekt.Forms
             UserID = int.Parse(info[3]);
         }
 
-        private void mojeKontoToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void buttonSettings_Click(object sender, EventArgs e)
         {
             changer.ShowSettings();
         }
 
-        private void edytujKierowcówToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            changer.ShowEditDriver();
-        }
-
-        private void edytujPojazdyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            changer.ShowEditVehicle();
-        }
-
-        private void wylogujToolStripMenuItem_Click(object sender, EventArgs e)
+        private void buttonLogout_Click(object sender, EventArgs e)
         {
             changer.ShowLogin();
-        }
-
-        private void zamknijToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void towarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            changer.ShowAddCommodity();
         }
     }
 }

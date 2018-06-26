@@ -20,7 +20,13 @@ namespace Projekt.Presenters
             this.view = view;
             view.GetUserID += PresenterGetUserID;
             view.ChangePassword += PresenterChangePassword;
+            view.CheckUserType += PresenterCheckUserType;
             
+        }
+
+        private string PresenterCheckUserType()
+        {
+            return model.GetUserType();
         }
 
         private bool PresenterChangePassword(int id, string oldPass, string newPass)

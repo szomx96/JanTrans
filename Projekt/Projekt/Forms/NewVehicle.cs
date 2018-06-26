@@ -80,6 +80,8 @@ namespace Projekt.Forms
         }
 
         public event Func<Vehicle, bool> AddVehicle;
+        public event Func<string[]> SelectVehicles;
+        public event Func<int, string, double, double, bool> UpdateVehicleInfo;
 
 
         private void buttonVehicleAdd_Click_1(object sender, EventArgs e)
@@ -87,28 +89,43 @@ namespace Projekt.Forms
             textBoxCapacityValue.Text = textBoxCapacityValue.Text.Replace(',', '.');
             textBoxVolumeValue.Text = textBoxVolumeValue.Text.Replace(',', '.');
 
-            double capacity, volume;
-            if (double.TryParse(textBoxCapacityValue.Text, NumberStyles.Any, culture, out capacity) &&
-                double.TryParse(textBoxVolumeValue.Text, NumberStyles.Any, culture, out volume))
+            if (textBoxCapacityValue.Text == "")
             {
-                RegistrationNr = RegistrationNr.ToUpper();
-                Vehicle vehicle = new Vehicle(RegistrationNr, Capacity, Volume);
-
-                if (AddVehicle(vehicle))
-                {
-                    textBoxRegistrationNrValue.Clear();
-                    textBoxCapacityValue.Clear();
-                    textBoxVolumeValue.Clear();
-                }
-                else
-                {
-                    //error provider ze nie dalo sie dodac pojazdu
-                }
+                errorProvider1.SetError(textBoxCapacityValue, "Pole nie moze byc puste!");
+            }
+            else if (textBoxVolumeValue.Text == "")
+            {
+                errorProvider2.SetError(textBoxVolumeValue, "Pole nie moze byc puste!");
+            }
+            else if (textBoxRegistrationNrValue.Text == "")
+            {
+                errorProvider3.SetError(textBoxRegistrationNrValue, "Pole nie moze byc puste!");
             }
             else
             {
-                //error provider ze nie da sie parsowac do double
 
+
+                double capacity, volume;
+                if (double.TryParse(textBoxCapacityValue.Text, NumberStyles.Any, culture, out capacity) &&
+                    double.TryParse(textBoxVolumeValue.Text, NumberStyles.Any, culture, out volume))
+                {
+                    RegistrationNr = RegistrationNr.ToUpper();
+                    Vehicle vehicle = new Vehicle(RegistrationNr, Capacity, Volume);
+
+                    if (AddVehicle(vehicle))
+                    {
+                        textBoxRegistrationNrValue.Clear();
+                        textBoxCapacityValue.Clear();
+                        textBoxVolumeValue.Clear();
+                        MessageBox.Show("Pomyślnie dodano pojazd");
+                    }
+                    
+                }
+                else
+                {
+                    errorProvider1.SetError(textBoxCapacityValue, "Zly typ danych");
+                    errorProvider2.SetError(textBoxVolumeValue, "Zly typ danych");
+                }
             }
 
         }

@@ -13,5 +13,7 @@ namespace Projekt.Views
         double Volume { get; set; }
 
         event Func<Vehicle, bool> AddVehicle;
+        event Func<string[]> SelectVehicles;
+        event Func<int, string, double, double, bool> UpdateVehicleInfo;
     }
 }

@@ -67,10 +67,21 @@ namespace Projekt.Forms
 
         public event Func<int, string, string, bool> ChangePassword;
         public event Func<string> GetUserID;
+        public event Func<string> CheckUserType;
 
         private void buttonChangePassword_Click(object sender, EventArgs e)
         {
             int id = int.Parse(GetUserID());
+
+            if(textBoxOldPass.Text == "")
+            {
+                errorProvider1.SetError(textBoxOldPass, "Pole nie moze byc puste!");
+            }else if(textBoxNewPass.Text == ""){
+                errorProvider2.SetError(textBoxNewPass, "Pole nie moze byc puste!");
+            }else if(textBoxNewPassRepeat.Text == "")
+            {
+                errorProvider3.SetError(textBoxNewPassRepeat, "Pole nie moze byc puste!");
+            }
 
             if (NewPass != NewPassRepeat)
             {
@@ -90,7 +101,13 @@ namespace Projekt.Forms
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            changer.ShowAdminMain();
+            if (CheckUserType() == "admin")
+            {
+                changer.ShowAdminMain();
+            }else if (CheckUserType() == "user")
+            {
+                changer.ShowUserView();
+            }
         }
     }
 }

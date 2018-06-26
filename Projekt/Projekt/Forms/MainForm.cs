@@ -87,6 +87,43 @@ namespace Projekt.Forms
             ShowControl(view);
         }
 
+        public void ShowEditDriver()
+        {
+            var view = new EditDriver(this);
+            var model = new EditDriverModel(session);
+            var presenter = new EditDriverPresenter(model, view);
+
+            ShowControl(view);
+        }
+
+        public void ShowEditVehicle()
+        {
+            var view = new EditVehicle(this);
+            var model = new EditVehicleModel(session);
+            var presenter = new EditVehiclePresenter(model, view);
+
+            ShowControl(view);
+        }
+
+        public void ShowUserView()
+        {
+            var view = new UserMainView(this);
+            var model = new AdminMainModel(session);
+            var presenter = new AdminMainPresenter(model, view);
+
+            ShowControl(view);
+        }
+
+        public void ShowAddCommodity()
+        {
+            var view = new AddCommodity(this);
+            var model = new AddCommodityModel(session);
+            var presenter = new AddCommodityPresenter(model, view);
+
+            ShowControl(view);
+            
+        }
+
 
         //public void ShowAddProduct()
         //{
@@ -111,6 +148,6 @@ namespace Projekt.Forms
             ShowLogin();
         }
 
-      
+        
     }
 }

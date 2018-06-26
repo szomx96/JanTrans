@@ -14,6 +14,7 @@ namespace Projekt.Views
 
         event Func<int, string, string, bool> ChangePassword;
         event Func<string> GetUserID;
+        event Func<string> CheckUserType;
 
     }
 }

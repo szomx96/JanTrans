@@ -39,6 +39,11 @@ namespace Projekt.Models
             return container.LoginID;
         }
 
+        internal string GetUserType()
+        {
+            return container.LoggedAs;
+        }
+
 
     }
 }

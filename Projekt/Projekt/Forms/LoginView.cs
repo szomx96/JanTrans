@@ -43,8 +43,13 @@ namespace Projekt.Forms
         {
             
             errorProvider.Clear();
-            if(SendLogin(Login, Password)=="admin")
+            if (SendLogin(Login, Password) == "admin")
+            {                
                 changer.ShowAdminMain();
+            }else if(SendLogin(Login, Password) == "user")
+            {
+                changer.ShowUserView();
+            }
         }
     }
 }
