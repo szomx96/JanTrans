@@ -163,16 +163,16 @@ namespace Projekt.Forms
             //var model = new AddProductModel();
             //var presenter = new AddProductPresenter(model, productForm);
             //productForm.ShowDialog();
-            string str = comboBoxProducts.SelectedIndex.ToString();
+            string str = comboBoxProducts.SelectedItem.ToString();
             string index = str.Substring(str.LastIndexOf(':') + 1);            
-            int id = Int32.Parse(index)+1;
+            int id = Int32.Parse(index);
             Product p = CreateProduct(id);
             OccupiedCapacity += p.Weight;
             OccupiedVolume += p.Volume;
             MaxCapacity = maxCapacity;
             MaxVolume = maxVolume;
             addedProducts.Add(p);
-            listBoxProducts.Items.Add(p.ProductName+" "+p.Weight+ " "+p.Volume);
+            listBoxProducts.Items.Add(str);
             
         }
 
@@ -203,18 +203,20 @@ namespace Projekt.Forms
         private void buttonAddOrder_Click(object sender, EventArgs e)
         {
             //string drivID, string route, string from, string to, string dep, string arr, string cap, string vol
-            string drID = Driver.DriverID.ToString();
-            string route = textBoxRouteLength.Text;
-            string from = textBoxRouteFrom.Text;
-            string to = textBoxRouteTo.Text;
-            string format = "yyyy-MM-dd HH:mm:ss";
-            string dep = EndDate.ToString(format);
-            string arr = BeginDate.ToString(format);
-            string cap = labelFreeCValue.Text;
-            string vol = labelFreeVValue.Text;
-            if (CreateOrder(drID, route, from, to, dep, arr, cap, vol, addedProducts))
-                MessageBox.Show("Dodano rekord!");
-
+            if(ProperValues())
+            {
+                string drID = Driver.DriverID.ToString();
+                string route = textBoxRouteLength.Text;
+                string from = textBoxRouteFrom.Text;
+                string to = textBoxRouteTo.Text;
+                string format = "yyyy-MM-dd HH:mm:ss";
+                string dep = EndDate.ToString(format);
+                string arr = BeginDate.ToString(format);
+                string cap = labelFreeCValue.Text;
+                string vol = labelFreeVValue.Text;
+                if (CreateOrder(drID, route, from, to, dep, arr, cap, vol, addedProducts))
+                    MessageBox.Show("Dodano rekord!");
+            }
         }
 
         private void comboBox1_DropDown(object sender, EventArgs e)
@@ -224,15 +226,56 @@ namespace Projekt.Forms
             comboBoxDrivers.Items.AddRange(SelectDrivers(BeginDate,EndDate));
         }
 
+        private bool ProperValues()
+        {
+            double d = 0.0;
+            errorProvider.Clear();
+            if(dateTimePickerBegin.Value > dateTimePickerEnd.Value)
+            {
+                errorProvider.SetError(dateTimePickerEnd, "Data końcowa musi być późniejsza niż początkowa!");
+                return false;
+            }
+            if(DriverID==0)
+            {
+                errorProvider.SetError(comboBoxDrivers, "Wybierz kierowcę!");
+                return false;
+            }
+            if (RouteFrom == "")
+            {
+                errorProvider.SetError(textBoxRouteFrom, "Podaj miejsce!");
+                return false;
+            }
+            if (RouteTo == "")
+            {
+                errorProvider.SetError(textBoxRouteTo, "Podaj miejsce!");
+                return false;
+            }
+            if (!Double.TryParse(RouteLength, out d) || d <= 0) 
+            {
+                errorProvider.SetError(textBoxRouteLength, "Podaj odpowiednią wartość!");
+                return false;
+            }
+            if(listBoxProducts.Items.Count <=0)
+            {
+                errorProvider.SetError(listBoxProducts, "Dodaj przynajmniej 1 produkt!");
+                return false;
+            }
+
+            return true;
+        }
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string[] driverInfo = comboBoxDrivers.SelectedItem.ToString().Split(' ');
 
             DriverID = int.Parse(driverInfo[0]);
             Driver = LoadDriver(DriverID);
+            DriverName = Driver.DriverName;
+            DriverSurname = Driver.DriverSurname;
             MaxCapacity = Driver.Vehicle.VehicleCapacity;
             MaxVolume = Driver.Vehicle.VehicleVolume;
-            
+            dateTimePickerBegin.Enabled = false;
+            dateTimePickerEnd.Enabled = false;
 
         }
 
@@ -246,7 +289,8 @@ namespace Projekt.Forms
                 string w = p.Weight.ToString();
                 string v = p.Volume.ToString();
                 string ind = p.ProductID.ToString();
-                string all = name + " " + w + "kg " + v + "m^3" + " ID:" + ind;
+                string cust = p.Customer.CustomerCompanyName;
+                string all = name + " " + w + "kg " + v + "m^3" + " dla "+ cust+" ID:" + ind;
                 comboBoxProducts.Items.Add(all);
             }
         }

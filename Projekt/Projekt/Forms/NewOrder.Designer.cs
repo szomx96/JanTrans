@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBoxDriver = new System.Windows.Forms.GroupBox();
             this.labelVolumeValue = new System.Windows.Forms.Label();
@@ -52,6 +53,11 @@
             this.buttonAddOrder = new System.Windows.Forms.Button();
             this.buttonBack = new System.Windows.Forms.Button();
             this.groupBoxProduct = new System.Windows.Forms.GroupBox();
+            this.buttonDeleteProduct = new System.Windows.Forms.Button();
+            this.labelFreeVValue = new System.Windows.Forms.Label();
+            this.labelFreeCValue = new System.Windows.Forms.Label();
+            this.labelFreeV = new System.Windows.Forms.Label();
+            this.labelFreeC = new System.Windows.Forms.Label();
             this.comboBoxProducts = new System.Windows.Forms.ComboBox();
             this.listBoxProducts = new System.Windows.Forms.ListBox();
             this.buttonAddProduct = new System.Windows.Forms.Button();
@@ -60,15 +66,12 @@
             this.labelEndDate = new System.Windows.Forms.Label();
             this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
             this.labelBeginDate = new System.Windows.Forms.Label();
-            this.labelFreeVValue = new System.Windows.Forms.Label();
-            this.labelFreeCValue = new System.Windows.Forms.Label();
-            this.labelFreeV = new System.Windows.Forms.Label();
-            this.labelFreeC = new System.Windows.Forms.Label();
-            this.buttonDeleteProduct = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBoxDriver.SuspendLayout();
             this.groupBoxRoute.SuspendLayout();
             this.groupBoxProduct.SuspendLayout();
             this.groupBoxDate.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -140,9 +143,9 @@
             this.labelDriverIDValue.AutoSize = true;
             this.labelDriverIDValue.Location = new System.Drawing.Point(80, 114);
             this.labelDriverIDValue.Name = "labelDriverIDValue";
-            this.labelDriverIDValue.Size = new System.Drawing.Size(21, 17);
+            this.labelDriverIDValue.Size = new System.Drawing.Size(16, 17);
             this.labelDriverIDValue.TabIndex = 6;
-            this.labelDriverIDValue.Text = "ID";
+            this.labelDriverIDValue.Text = "0";
             // 
             // labelDriverID
             // 
@@ -310,6 +313,53 @@
             this.groupBoxProduct.TabStop = false;
             this.groupBoxProduct.Text = "Produkty";
             // 
+            // buttonDeleteProduct
+            // 
+            this.buttonDeleteProduct.Enabled = false;
+            this.buttonDeleteProduct.Location = new System.Drawing.Point(444, 23);
+            this.buttonDeleteProduct.Name = "buttonDeleteProduct";
+            this.buttonDeleteProduct.Size = new System.Drawing.Size(149, 32);
+            this.buttonDeleteProduct.TabIndex = 17;
+            this.buttonDeleteProduct.Text = "Usuń";
+            this.buttonDeleteProduct.UseVisualStyleBackColor = true;
+            this.buttonDeleteProduct.Click += new System.EventHandler(this.buttonDeleteProduct_Click);
+            // 
+            // labelFreeVValue
+            // 
+            this.labelFreeVValue.AutoSize = true;
+            this.labelFreeVValue.Location = new System.Drawing.Point(255, 103);
+            this.labelFreeVValue.Name = "labelFreeVValue";
+            this.labelFreeVValue.Size = new System.Drawing.Size(13, 17);
+            this.labelFreeVValue.TabIndex = 16;
+            this.labelFreeVValue.Text = "-";
+            // 
+            // labelFreeCValue
+            // 
+            this.labelFreeCValue.AutoSize = true;
+            this.labelFreeCValue.Location = new System.Drawing.Point(22, 99);
+            this.labelFreeCValue.Name = "labelFreeCValue";
+            this.labelFreeCValue.Size = new System.Drawing.Size(13, 17);
+            this.labelFreeCValue.TabIndex = 14;
+            this.labelFreeCValue.Text = "-";
+            // 
+            // labelFreeV
+            // 
+            this.labelFreeV.AutoSize = true;
+            this.labelFreeV.Location = new System.Drawing.Point(255, 82);
+            this.labelFreeV.Name = "labelFreeV";
+            this.labelFreeV.Size = new System.Drawing.Size(179, 17);
+            this.labelFreeV.TabIndex = 15;
+            this.labelFreeV.Text = "Pozostała Pojemność(m^2)";
+            // 
+            // labelFreeC
+            // 
+            this.labelFreeC.AutoSize = true;
+            this.labelFreeC.Location = new System.Drawing.Point(22, 82);
+            this.labelFreeC.Name = "labelFreeC";
+            this.labelFreeC.Size = new System.Drawing.Size(174, 17);
+            this.labelFreeC.TabIndex = 13;
+            this.labelFreeC.Text = "Pozostała Ładowność (kg)";
+            // 
             // comboBoxProducts
             // 
             this.comboBoxProducts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -387,52 +437,9 @@
             this.labelBeginDate.TabIndex = 9;
             this.labelBeginDate.Text = "Data wyjazdu:";
             // 
-            // labelFreeVValue
+            // errorProvider
             // 
-            this.labelFreeVValue.AutoSize = true;
-            this.labelFreeVValue.Location = new System.Drawing.Point(255, 103);
-            this.labelFreeVValue.Name = "labelFreeVValue";
-            this.labelFreeVValue.Size = new System.Drawing.Size(13, 17);
-            this.labelFreeVValue.TabIndex = 16;
-            this.labelFreeVValue.Text = "-";
-            // 
-            // labelFreeCValue
-            // 
-            this.labelFreeCValue.AutoSize = true;
-            this.labelFreeCValue.Location = new System.Drawing.Point(22, 99);
-            this.labelFreeCValue.Name = "labelFreeCValue";
-            this.labelFreeCValue.Size = new System.Drawing.Size(13, 17);
-            this.labelFreeCValue.TabIndex = 14;
-            this.labelFreeCValue.Text = "-";
-            // 
-            // labelFreeV
-            // 
-            this.labelFreeV.AutoSize = true;
-            this.labelFreeV.Location = new System.Drawing.Point(255, 82);
-            this.labelFreeV.Name = "labelFreeV";
-            this.labelFreeV.Size = new System.Drawing.Size(179, 17);
-            this.labelFreeV.TabIndex = 15;
-            this.labelFreeV.Text = "Pozostała Pojemność(m^2)";
-            // 
-            // labelFreeC
-            // 
-            this.labelFreeC.AutoSize = true;
-            this.labelFreeC.Location = new System.Drawing.Point(22, 82);
-            this.labelFreeC.Name = "labelFreeC";
-            this.labelFreeC.Size = new System.Drawing.Size(174, 17);
-            this.labelFreeC.TabIndex = 13;
-            this.labelFreeC.Text = "Pozostała Ładowność (kg)";
-            // 
-            // buttonDeleteProduct
-            // 
-            this.buttonDeleteProduct.Enabled = false;
-            this.buttonDeleteProduct.Location = new System.Drawing.Point(444, 23);
-            this.buttonDeleteProduct.Name = "buttonDeleteProduct";
-            this.buttonDeleteProduct.Size = new System.Drawing.Size(149, 32);
-            this.buttonDeleteProduct.TabIndex = 17;
-            this.buttonDeleteProduct.Text = "Usuń";
-            this.buttonDeleteProduct.UseVisualStyleBackColor = true;
-            this.buttonDeleteProduct.Click += new System.EventHandler(this.buttonDeleteProduct_Click);
+            this.errorProvider.ContainerControl = this;
             // 
             // NewOrder
             // 
@@ -455,6 +462,7 @@
             this.groupBoxProduct.PerformLayout();
             this.groupBoxDate.ResumeLayout(false);
             this.groupBoxDate.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -499,5 +507,6 @@
         private System.Windows.Forms.Label labelFreeV;
         private System.Windows.Forms.Label labelFreeC;
         private System.Windows.Forms.Button buttonDeleteProduct;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
