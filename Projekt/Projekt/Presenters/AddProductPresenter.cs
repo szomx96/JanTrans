@@ -26,7 +26,7 @@ namespace Projekt.Presenters
 
         private List<Customer> PresenterSelectCustomers()
         {
-            // view.DriverName;
+            
             return model.SelectCustomers();
         }
 

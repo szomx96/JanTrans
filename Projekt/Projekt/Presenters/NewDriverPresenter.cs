@@ -19,11 +19,17 @@ namespace Projekt.Presenters
             this.model = model;
             this.view = view;
             view.AddDriver += PresenterAddDriver;
+            view.SelectVehicles += PresenterSelectVehicles; 
         }
 
-        private bool PresenterAddDriver(Driver driver, string password)
+        private bool PresenterAddDriver(Driver driver, string password, Vehicle vehicle)
         {
-            return model.InsertNewDriver(driver, password);
+            return model.InsertNewDriver(driver, password, vehicle);
+        }
+
+        private List<Vehicle> PresenterSelectVehicles()
+        {           
+            return model.SelectVehicles();
         }
 
 

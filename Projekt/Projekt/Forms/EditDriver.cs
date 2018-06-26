@@ -53,8 +53,10 @@ namespace Projekt.Forms
         public int DriverID { get; set; }
         public Driver Driver { get; set; }
 
-        public event Func<Driver, string, bool> AddDriver;
+        public event Func<Driver, string, Vehicle, bool> AddDriver;
         public event Func<string[]> SelectDrivers;
+        public event Func<List<Vehicle>> SelectVehicles;
+
 
         private void buttonBack_Click(object sender, EventArgs e)
         {

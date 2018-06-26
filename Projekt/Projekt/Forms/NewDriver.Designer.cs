@@ -35,16 +35,20 @@
             this.textBoxDriverSurname = new System.Windows.Forms.TextBox();
             this.buttonDriverAdd = new System.Windows.Forms.Button();
             this.groupBoxDriver = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.labelVehicle = new System.Windows.Forms.Label();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.labelPassword = new System.Windows.Forms.Label();
             this.buttonBack = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider4 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBoxDriver.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).BeginInit();
             this.SuspendLayout();
             // 
             // labelDriverName
@@ -81,7 +85,7 @@
             // 
             // buttonDriverAdd
             // 
-            this.buttonDriverAdd.Location = new System.Drawing.Point(141, 263);
+            this.buttonDriverAdd.Location = new System.Drawing.Point(141, 326);
             this.buttonDriverAdd.Name = "buttonDriverAdd";
             this.buttonDriverAdd.Size = new System.Drawing.Size(174, 34);
             this.buttonDriverAdd.TabIndex = 4;
@@ -91,6 +95,8 @@
             // 
             // groupBoxDriver
             // 
+            this.groupBoxDriver.Controls.Add(this.comboBox1);
+            this.groupBoxDriver.Controls.Add(this.labelVehicle);
             this.groupBoxDriver.Controls.Add(this.textBoxPassword);
             this.groupBoxDriver.Controls.Add(this.labelPassword);
             this.groupBoxDriver.Controls.Add(this.labelDriverName);
@@ -99,15 +105,35 @@
             this.groupBoxDriver.Controls.Add(this.textBoxDriverName);
             this.groupBoxDriver.Location = new System.Drawing.Point(18, 79);
             this.groupBoxDriver.Name = "groupBoxDriver";
-            this.groupBoxDriver.Size = new System.Drawing.Size(297, 162);
+            this.groupBoxDriver.Size = new System.Drawing.Size(297, 230);
             this.groupBoxDriver.TabIndex = 5;
             this.groupBoxDriver.TabStop = false;
             this.groupBoxDriver.Text = "Kierowca";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(9, 189);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(228, 24);
+            this.comboBox1.TabIndex = 7;
+            this.comboBox1.DropDown += new System.EventHandler(this.comboBox1_DropDown);
+            // 
+            // labelVehicle
+            // 
+            this.labelVehicle.AutoSize = true;
+            this.labelVehicle.Location = new System.Drawing.Point(6, 157);
+            this.labelVehicle.Name = "labelVehicle";
+            this.labelVehicle.Size = new System.Drawing.Size(84, 17);
+            this.labelVehicle.TabIndex = 6;
+            this.labelVehicle.Text = "Ciężarówka:";
             // 
             // textBoxPassword
             // 
             this.textBoxPassword.Location = new System.Drawing.Point(83, 115);
             this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(154, 22);
             this.textBoxPassword.TabIndex = 5;
             // 
@@ -142,6 +168,10 @@
             // 
             this.errorProvider3.ContainerControl = this;
             // 
+            // errorProvider4
+            // 
+            this.errorProvider4.ContainerControl = this;
+            // 
             // NewDriver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -150,12 +180,13 @@
             this.Controls.Add(this.groupBoxDriver);
             this.Controls.Add(this.buttonDriverAdd);
             this.Name = "NewDriver";
-            this.Size = new System.Drawing.Size(344, 345);
+            this.Size = new System.Drawing.Size(378, 413);
             this.groupBoxDriver.ResumeLayout(false);
             this.groupBoxDriver.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -174,5 +205,8 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ErrorProvider errorProvider2;
         private System.Windows.Forms.ErrorProvider errorProvider3;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label labelVehicle;
+        private System.Windows.Forms.ErrorProvider errorProvider4;
     }
 }

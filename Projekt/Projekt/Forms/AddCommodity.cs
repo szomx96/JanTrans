@@ -116,6 +116,7 @@ namespace Projekt.Forms
                         textBoxCommodityName.Clear();
                         textBoxCommodityVolume.Clear();
                         textBoxCommodityWeight.Clear();
+                        comboBox1.Items.Clear();
                         MessageBox.Show("Pomyślnie dodano towar");
                     }
 

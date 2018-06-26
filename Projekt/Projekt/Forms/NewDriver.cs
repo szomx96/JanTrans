@@ -60,7 +60,7 @@ namespace Projekt.Forms
             changer.ShowAdminMain();
         }
 
-        public event Func<Driver, string, bool> AddDriver;
+        public event Func<Driver, string, Vehicle, bool> AddDriver;
         public event Func<string[]> SelectDrivers;
         public event Func<int, string, string, bool> UpdateDriverInfo;
 
@@ -77,17 +77,30 @@ namespace Projekt.Forms
             }else if(textBoxPassword.Text == "")
             {
                 errorProvider3.SetError(textBoxPassword, "Pole nie moze byc puste!");
+            }else if(comboBox1.SelectedIndex == -1)
+            {
+                errorProvider4.SetError(comboBox1, "Wybierz pojazd");
             }
             else
             {
-                Driver driver = new Driver(DriverName, DriverSurname);
+                string[] vehicleInfo = comboBox1.SelectedItem.ToString().Split(' ');
+                
+                int vehicleID = int.Parse(vehicleInfo[0]);
+                string vehicleRegistration = vehicleInfo[1];
+                double vehicleCapacity = double.Parse(vehicleInfo[2]);
+                double vehicleVolume = double.Parse(vehicleInfo[3]);
+
+                Vehicle vehicle = new Vehicle(vehicleID, vehicleCapacity, vehicleVolume, vehicleRegistration);
+
+                Driver driver = new Driver(DriverName, DriverSurname, vehicle);
                 string password = textBoxPassword.Text;
 
-                if (AddDriver(driver, password))
+                if (AddDriver(driver, password, vehicle))
                 {
                     textBoxDriverName.Clear();
                     textBoxDriverSurname.Clear();
                     textBoxPassword.Clear();
+                    comboBox1.Items.Clear();
                     MessageBox.Show("Pomyślnie dodano kierowcę!");
                 }
                 
@@ -95,6 +108,19 @@ namespace Projekt.Forms
 
             
 
+        }
+
+        public event Func<List<Vehicle>> SelectVehicles;
+
+        private void comboBox1_DropDown(object sender, EventArgs e)
+        {
+            comboBox1.Items.Clear();
+
+            foreach (Vehicle v in SelectVehicles())
+            {
+                comboBox1.Items.Add(v.VehicleID + " " + v.VehicleRegistration + " " + v.VehicleCapacity 
+                    + " " + v.VehicleVolume);
+            }
         }
     }
 }

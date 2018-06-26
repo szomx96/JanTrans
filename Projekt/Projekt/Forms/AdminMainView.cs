@@ -8,12 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Projekt.Views;
+using Projekt.Classes;
 
 namespace Projekt.Forms
 {
     public partial class AdminMainView : UserControl, IAdminMainView
     {
-        IViewChanger changer;
+        
 
         #region properties
 
@@ -82,9 +83,11 @@ namespace Projekt.Forms
             }
         }
 
-        
+
 
         #endregion
+
+        IViewChanger changer;
 
         public AdminMainView(IViewChanger changer)
         {
@@ -110,6 +113,7 @@ namespace Projekt.Forms
 
         public event Func<string[]> LoadUserInfo;
         public event Func<string> GetCurrentDate;
+        public event Func<int, List<Route>> GetMyOrders;
 
         private void AdminMainView_Load(object sender, EventArgs e)
         {

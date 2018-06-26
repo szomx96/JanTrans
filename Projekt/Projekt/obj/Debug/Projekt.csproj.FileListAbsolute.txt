@@ -16,15 +16,12 @@ D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.csproj.CoreCompileInputs
 D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.exe
 D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.pdb
 D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.csprojResolveAssemblyReference.cache
-D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Views.Wybierz.resources
-D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Views.Zlecenie_podglad.resources
 D:\repos\Projekt_poig\Projekt\Projekt\bin\Debug\Google.Protobuf.dll
 D:\repos\Projekt_poig\Projekt\Projekt\bin\Debug\MySql.Data.dll
 D:\repos\Projekt_poig\Projekt\Projekt\bin\Debug\Google.Protobuf.xml
 D:\repos\Projekt_poig\Projekt\Projekt\bin\Debug\MySql.Data.xml
 D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Forms.LoginView.resources
 D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Forms.MainForm.resources
-D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Forms.Login.resources
 D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Forms.AdminMainView.resources
 D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Forms.NewOrder.resources
 D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Forms.NewDriver.resources
@@ -46,7 +43,6 @@ D:\Studies\object programmin\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.View
 D:\Studies\object programmin\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Views.Wybierz.resources
 D:\Studies\object programmin\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Views.Zlecenie_podglad.resources
 D:\Studies\object programmin\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.csproj.CopyComplete
-D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Forms.AddProductForm.resources
 D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Forms.Settings.resources
 D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Forms.EditDriver.resources
 D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Forms.EditVehicle.resources

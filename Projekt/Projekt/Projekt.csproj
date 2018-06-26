@@ -68,7 +68,6 @@
     <Compile Include="Classes\Driver.cs" />
     <Compile Include="Classes\DriverOccupied.cs" />
     <Compile Include="Classes\MySQLConnect.cs" />
-    <Compile Include="Classes\Order-Product.cs" />
     <Compile Include="Classes\Product.cs" />
     <Compile Include="Classes\Route.cs" />
     <Compile Include="Classes\Vehicle.cs" />
@@ -79,19 +78,12 @@
     <Compile Include="Forms\AddCommodity.Designer.cs">
       <DependentUpon>AddCommodity.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AddProductForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\AddProductForm.Designer.cs">
-      <DependentUpon>AddProductForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\AdminMainView.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\AdminMainView.Designer.cs">
       <DependentUpon>AdminMainView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Login.cs" />
     <Compile Include="Forms\LoginView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -179,35 +171,15 @@
     <Compile Include="Forms\Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Wybierz_z_bazy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Wybierz_z_bazy.Designer.cs">
-      <DependentUpon>Wybierz_z_bazy.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Zlecenie_podglad.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Zlecenie_podglad.Designer.cs">
-      <DependentUpon>Zlecenie_podglad.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\INewOrder.cs" />
     <Compile Include="Views\ISettings.cs" />
     <Compile Include="Views\IVehicle.cs" />
     <Compile Include="Views\IDriver.cs" />
-    <Compile Include="Views\IUstawienia.cs" />
-    <Compile Include="Views\IZleceniePodgladcs.cs" />
     <EmbeddedResource Include="Forms\AddCommodity.resx">
       <DependentUpon>AddCommodity.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AddProductForm.resx">
-      <DependentUpon>AddProductForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminMainView.resx">
       <DependentUpon>AdminMainView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginView.resx">
       <DependentUpon>LoginView.cs</DependentUpon>
@@ -244,12 +216,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Wybierz_z_bazy.resx">
-      <DependentUpon>Wybierz_z_bazy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Zlecenie_podglad.resx">
-      <DependentUpon>Zlecenie_podglad.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

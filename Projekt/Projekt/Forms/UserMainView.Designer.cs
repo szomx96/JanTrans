@@ -39,9 +39,10 @@
             this.labelUserSurname = new System.Windows.Forms.Label();
             this.labelUserName = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.buttonMyOrders = new System.Windows.Forms.Button();
             this.buttonSettings = new System.Windows.Forms.Button();
             this.buttonLogout = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.labelOrders = new System.Windows.Forms.Label();
             this.groupBoxUser.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -149,24 +150,15 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(582, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1071, 24);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // buttonMyOrders
-            // 
-            this.buttonMyOrders.Location = new System.Drawing.Point(318, 57);
-            this.buttonMyOrders.Name = "buttonMyOrders";
-            this.buttonMyOrders.Size = new System.Drawing.Size(221, 56);
-            this.buttonMyOrders.TabIndex = 10;
-            this.buttonMyOrders.Text = "Moje zlecenia";
-            this.buttonMyOrders.UseVisualStyleBackColor = true;
-            // 
             // buttonSettings
             // 
-            this.buttonSettings.Location = new System.Drawing.Point(318, 142);
+            this.buttonSettings.Location = new System.Drawing.Point(13, 309);
             this.buttonSettings.Name = "buttonSettings";
-            this.buttonSettings.Size = new System.Drawing.Size(221, 56);
+            this.buttonSettings.Size = new System.Drawing.Size(264, 56);
             this.buttonSettings.TabIndex = 11;
             this.buttonSettings.Text = "Ustawienia";
             this.buttonSettings.UseVisualStyleBackColor = true;
@@ -174,26 +166,46 @@
             // 
             // buttonLogout
             // 
-            this.buttonLogout.Location = new System.Drawing.Point(318, 227);
+            this.buttonLogout.Location = new System.Drawing.Point(13, 371);
             this.buttonLogout.Name = "buttonLogout";
-            this.buttonLogout.Size = new System.Drawing.Size(221, 56);
+            this.buttonLogout.Size = new System.Drawing.Size(264, 56);
             this.buttonLogout.TabIndex = 12;
             this.buttonLogout.Text = "Wyloguj";
             this.buttonLogout.UseVisualStyleBackColor = true;
             this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(298, 57);
+            this.listBox1.MultiColumn = true;
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(750, 372);
+            this.listBox1.TabIndex = 15;
+            // 
+            // labelOrders
+            // 
+            this.labelOrders.AutoSize = true;
+            this.labelOrders.Location = new System.Drawing.Point(295, 26);
+            this.labelOrders.Name = "labelOrders";
+            this.labelOrders.Size = new System.Drawing.Size(98, 17);
+            this.labelOrders.TabIndex = 13;
+            this.labelOrders.Text = "Moje zlecenia:";
+            // 
             // UserMainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.labelOrders);
             this.Controls.Add(this.buttonLogout);
             this.Controls.Add(this.buttonSettings);
-            this.Controls.Add(this.buttonMyOrders);
             this.Controls.Add(this.labelCurrentDate);
             this.Controls.Add(this.groupBoxUser);
             this.Controls.Add(this.menuStrip1);
             this.Name = "UserMainView";
-            this.Size = new System.Drawing.Size(582, 350);
+            this.Size = new System.Drawing.Size(1071, 463);
             this.Load += new System.EventHandler(this.UserMainView_Load);
             this.groupBoxUser.ResumeLayout(false);
             this.groupBoxUser.PerformLayout();
@@ -215,8 +227,9 @@
         private System.Windows.Forms.Label labelUserSurname;
         private System.Windows.Forms.Label labelUserName;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.Button buttonMyOrders;
         private System.Windows.Forms.Button buttonSettings;
         private System.Windows.Forms.Button buttonLogout;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label labelOrders;
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Projekt.Views;
+using Projekt.Classes;
 
 namespace Projekt.Forms
 {
@@ -92,6 +93,7 @@ namespace Projekt.Forms
 
         public event Func<string[]> LoadUserInfo;
         public event Func<string> GetCurrentDate;
+        public event Func<int, List<Route>> GetMyOrders;
 
         private void UserMainView_Load(object sender, EventArgs e)
         {
@@ -102,6 +104,27 @@ namespace Projekt.Forms
             UserSurname = info[1];
             UserLogin = info[2];
             UserID = int.Parse(info[3]);
+
+            if (GetMyOrders(UserID) != null)
+            {
+                List<string> records = new List<string>();
+
+                for (int i = 0; i < GetMyOrders(UserID).ToArray().Length; i++)
+                {
+                    Route route = GetMyOrders(UserID)[i];
+
+                    string record = "Trasa z: " + route.RouteFrom + "  |   Trasa do: " + route.RouteTo + "  |    Dystans: " +
+                        route.RouteLength + "  |    Data od: " + route.DepartureDate + "  |    Data do: " +
+                        route.ArrivalDate;
+
+                    records.Add(record);
+
+                }
+
+                listBox1.Items.AddRange(records.ToArray());
+            }
+                       
+
         }
 
 

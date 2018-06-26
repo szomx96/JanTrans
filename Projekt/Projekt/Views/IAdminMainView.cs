@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Projekt.Classes;
 
 namespace Projekt.Views
 {
@@ -17,6 +18,7 @@ namespace Projekt.Views
 
         event Func<string[]> LoadUserInfo;
         event Func<string> GetCurrentDate;
+        event Func<int, List<Route>> GetMyOrders;
 
     }
 }

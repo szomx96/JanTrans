@@ -15,6 +15,7 @@ namespace Projekt.Forms
     public partial class EditVehicle : UserControl, IVehicle
     {
         CultureInfo culture = new CultureInfo("en-GB");
+
         IViewChanger changer;
 
         public EditVehicle(IViewChanger changer)

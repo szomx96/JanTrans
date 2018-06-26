@@ -23,6 +23,13 @@ namespace Projekt.Classes
             this.driverSurname = driverSurname;
         }
 
+        public Driver(string driverName, string driverSurname, Vehicle vehicle)
+        {
+            this.driverName = driverName;
+            this.driverSurname = driverSurname;
+            this.vehicle = vehicle;
+        }
+
 
         public Driver(int id, string driverName, string driverSurname)
         {

@@ -12,8 +12,7 @@ namespace Projekt
         void ShowAdminMain();
         void ShowNewOrder();
         void ShowNewDriver();
-        void ShowNewVehicle();
-        // void ShowAddProduct();
+        void ShowNewVehicle();        
         void ShowSettings();
         void ShowEditDriver();
         void ShowEditVehicle();

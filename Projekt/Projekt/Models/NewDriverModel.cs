@@ -33,12 +33,13 @@ namespace Projekt.Models
 
         }
 
-        internal bool InsertNewDriver(Driver driver, string password)
+        internal bool InsertNewDriver(Driver driver, string password, Vehicle vehicle)
         {
             string driverName = driver.DriverName;
             string driverSurname = driver.DriverSurname;
+            
 
-            if (container.Database.InsertDriver(driverName, driverSurname, password))
+            if (container.Database.InsertDriver(driverName, driverSurname, password, vehicle))
             {
                 return true;
             }
@@ -47,6 +48,12 @@ namespace Projekt.Models
                 return false;
             }
 
+        }
+
+        internal List<Vehicle> SelectVehicles()
+        {
+            return container.Database.SelectVehicles();
+            
         }
 
 

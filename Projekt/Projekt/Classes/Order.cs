@@ -15,6 +15,10 @@ namespace Projekt.Classes
         private List<Product> products;
         private Vehicle vehicle;
         //Order_Product op;
+        public Order()
+        {
+
+        }
 
         public Order(Driver driver, Route route, Vehicle vehicle, List<Product> products)
         {

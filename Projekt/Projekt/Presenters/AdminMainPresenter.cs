@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Projekt.Models;
 using Projekt.Views;
+using Projekt.Classes;
 
 namespace Projekt.Presenters
 {
@@ -19,6 +20,7 @@ namespace Projekt.Presenters
             this.view = view;
             view.LoadUserInfo += PresenterUserInfo;
             view.GetCurrentDate += PresenterGetDate;
+            view.GetMyOrders += PresenterGetMyOrders;
         }
 
         private string[] PresenterUserInfo()
@@ -29,6 +31,11 @@ namespace Projekt.Presenters
         private string PresenterGetDate()
         {
             return model.GetDate();
+        }
+
+        private List<Route> PresenterGetMyOrders(int userID)
+        {
+            return model.GetMyOrders(userID);
         }
     }
 }

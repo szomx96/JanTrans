@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Projekt.Classes;
 
 namespace Projekt.Models
 {
@@ -26,6 +27,11 @@ namespace Projekt.Models
         internal string GetDate()
         {
             return DateTime.Now.ToString();
+        }
+
+        internal List<Route> GetMyOrders(int userID)
+        {
+            return container.Database.SelectOrdersByID(userID);
         }
 
     }

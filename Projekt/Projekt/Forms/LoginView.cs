@@ -50,6 +50,13 @@ namespace Projekt.Forms
             {
                 changer.ShowUserView();
             }
+            else
+            {
+                textBoxLogin.Clear();
+                textBoxPassword.Clear();
+                errorProvider.SetError(textBoxPassword, "Błędna nazwa użytkownika lub hasło");
+
+            }
         }
     }
 }
