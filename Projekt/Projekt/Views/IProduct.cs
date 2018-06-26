@@ -9,6 +9,7 @@ namespace Projekt.Views
 {
     public interface IProduct
     {
+        string CommodityName { get; set; }
         double CommodityWeight { get; set; }
         double CommodityVolume { get; set; }
         string CustomerCompanyName { get; set; }

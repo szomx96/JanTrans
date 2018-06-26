@@ -12,7 +12,7 @@ namespace Projekt.Views
         int DriverID { get; set; }
         string DriverName { get; set; }
         string DriverSurname { get; set; }        
-        string VehicleID { get; set; }
+        //string VehicleID { get; set; }
         string RouteLength { get; set; }
         string RouteFrom { get; set; }
         string RouteTo { get; set; }
@@ -21,9 +21,10 @@ namespace Projekt.Views
         //Route route { get; set; }
         //Vehicle vehicle { get; set; }
         //List<Product> products { get; set; }
-
-        event Func<string[]> SelectDrivers;
-        event Func<Customer, bool> AddCustomer;
-
+        event Func<int, Product> CreateProduct;
+        event Func<DateTime, DateTime, string[]> SelectDrivers;
+        event Func<int, Driver> LoadDriver;
+        event Func<string, string, string, string, string, string, string, string, List<Product>, bool> CreateOrder;
+        event Func<List<Product>> SelectProducts;
     }
 }

@@ -20,19 +20,34 @@ namespace Projekt.Presenters
             this.model = model;
             this.view = view;
             view.SelectDrivers += PresenterSelectDrivers;
-            view.AddCustomer += PresenterAddCustomer;
+            view.LoadDriver += PresenteLoadDriver;
+            view.SelectProducts += PresenterSelectProducts;
+            view.CreateProduct += PresenterCertainProduct;
+            view.CreateOrder += PresenterCreateOrder;
         }
        
-
-        private string[] PresenterSelectDrivers()
+        private bool PresenterCreateOrder(string drivID, string route, string from, string to, 
+            string dep, string arr, string cap, string vol, List<Product> prodIDs)
+        {
+            return model.ModelCreateOrder(drivID, route, from, to, dep, arr, cap, vol, prodIDs);
+        }
+        private Product PresenterCertainProduct(int index)
+        {
+            return model.GetCertainProduct(index);
+        }
+        private List<Product> PresenterSelectProducts()
+        {
+            return model.GetProducts();
+        }
+        private string[] PresenterSelectDrivers(DateTime beg, DateTime end)
         {
            
-            return model.SelectDrivers();
+            return model.SelectDrivers(beg, end);
         }
 
-        private bool PresenterAddCustomer(Customer customer)
+        private Driver PresenteLoadDriver( int id)
         {
-            return model.InsertCustomer(customer);
+            return model.ModelCertainDriver(id);
         }
 
     }

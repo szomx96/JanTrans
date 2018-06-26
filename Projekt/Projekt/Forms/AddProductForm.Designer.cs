@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.buttonAddProduct = new System.Windows.Forms.Button();
             this.groupBoxCustomer = new System.Windows.Forms.GroupBox();
             this.labelAddCustomer = new System.Windows.Forms.Label();
@@ -45,8 +46,13 @@
             this.textBoxCommodityWeight = new System.Windows.Forms.TextBox();
             this.labelCommodityVolume = new System.Windows.Forms.Label();
             this.labelCommodityWeight = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxCommodityName = new System.Windows.Forms.TextBox();
+            this.labelCommodityName = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBoxCustomer.SuspendLayout();
             this.groupBoxCommodity.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonAddProduct
@@ -169,27 +175,29 @@
             // 
             // groupBoxCommodity
             // 
+            this.groupBoxCommodity.Controls.Add(this.textBoxCommodityName);
+            this.groupBoxCommodity.Controls.Add(this.labelCommodityName);
             this.groupBoxCommodity.Controls.Add(this.textBoxCommodityVolume);
             this.groupBoxCommodity.Controls.Add(this.textBoxCommodityWeight);
             this.groupBoxCommodity.Controls.Add(this.labelCommodityVolume);
             this.groupBoxCommodity.Controls.Add(this.labelCommodityWeight);
             this.groupBoxCommodity.Location = new System.Drawing.Point(281, 21);
             this.groupBoxCommodity.Name = "groupBoxCommodity";
-            this.groupBoxCommodity.Size = new System.Drawing.Size(285, 121);
+            this.groupBoxCommodity.Size = new System.Drawing.Size(285, 161);
             this.groupBoxCommodity.TabIndex = 9;
             this.groupBoxCommodity.TabStop = false;
             this.groupBoxCommodity.Text = "Towar";
             // 
             // textBoxCommodityVolume
             // 
-            this.textBoxCommodityVolume.Location = new System.Drawing.Point(91, 73);
+            this.textBoxCommodityVolume.Location = new System.Drawing.Point(106, 114);
             this.textBoxCommodityVolume.Name = "textBoxCommodityVolume";
             this.textBoxCommodityVolume.Size = new System.Drawing.Size(148, 22);
             this.textBoxCommodityVolume.TabIndex = 7;
             // 
             // textBoxCommodityWeight
             // 
-            this.textBoxCommodityWeight.Location = new System.Drawing.Point(91, 34);
+            this.textBoxCommodityWeight.Location = new System.Drawing.Point(106, 75);
             this.textBoxCommodityWeight.Name = "textBoxCommodityWeight";
             this.textBoxCommodityWeight.Size = new System.Drawing.Size(148, 22);
             this.textBoxCommodityWeight.TabIndex = 6;
@@ -197,7 +205,7 @@
             // labelCommodityVolume
             // 
             this.labelCommodityVolume.AutoSize = true;
-            this.labelCommodityVolume.Location = new System.Drawing.Point(6, 73);
+            this.labelCommodityVolume.Location = new System.Drawing.Point(21, 114);
             this.labelCommodityVolume.Name = "labelCommodityVolume";
             this.labelCommodityVolume.Size = new System.Drawing.Size(68, 17);
             this.labelCommodityVolume.TabIndex = 5;
@@ -206,17 +214,47 @@
             // labelCommodityWeight
             // 
             this.labelCommodityWeight.AutoSize = true;
-            this.labelCommodityWeight.Location = new System.Drawing.Point(6, 34);
+            this.labelCommodityWeight.Location = new System.Drawing.Point(21, 75);
             this.labelCommodityWeight.Name = "labelCommodityWeight";
             this.labelCommodityWeight.Size = new System.Drawing.Size(49, 17);
             this.labelCommodityWeight.TabIndex = 4;
             this.labelCommodityWeight.Text = "Waga:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "label1";
+            // 
+            // textBoxCommodityName
+            // 
+            this.textBoxCommodityName.Location = new System.Drawing.Point(106, 36);
+            this.textBoxCommodityName.Name = "textBoxCommodityName";
+            this.textBoxCommodityName.Size = new System.Drawing.Size(148, 22);
+            this.textBoxCommodityName.TabIndex = 9;
+            // 
+            // labelCommodityName
+            // 
+            this.labelCommodityName.AutoSize = true;
+            this.labelCommodityName.Location = new System.Drawing.Point(21, 36);
+            this.labelCommodityName.Name = "labelCommodityName";
+            this.labelCommodityName.Size = new System.Drawing.Size(54, 17);
+            this.labelCommodityName.TabIndex = 8;
+            this.labelCommodityName.Text = "Nazwa:";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // AddProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(593, 399);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonAddProduct);
             this.Controls.Add(this.groupBoxCustomer);
             this.Controls.Add(this.groupBoxCommodity);
@@ -226,7 +264,9 @@
             this.groupBoxCustomer.PerformLayout();
             this.groupBoxCommodity.ResumeLayout(false);
             this.groupBoxCommodity.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -249,5 +289,9 @@
         private System.Windows.Forms.Label labelAddCustomer;
         private System.Windows.Forms.Label labelChooseCustomer;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBoxCommodityName;
+        private System.Windows.Forms.Label labelCommodityName;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

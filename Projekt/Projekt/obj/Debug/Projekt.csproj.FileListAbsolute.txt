@@ -44,9 +44,10 @@ D:\Studies\object programmin\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.View
 D:\Studies\object programmin\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Forms.NewOrder.resources
 D:\Studies\object programmin\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Forms.NewDriver.resources
 D:\Studies\object programmin\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Forms.NewVehicle.resources
-D:\Studies\object programmin\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Views.Ustawienia.resources
 D:\Studies\object programmin\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Views.Wybierz.resources
 D:\Studies\object programmin\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Views.Zlecenie_podglad.resources
 D:\Studies\object programmin\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.csproj.CopyComplete
 D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Forms.AddProductForm.resources
 D:\repos\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Forms.Settings.resources
+D:\Studies\object programmin\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Forms.AddProductForm.resources
+D:\Studies\object programmin\Projekt_poig\Projekt\Projekt\obj\Debug\Projekt.Forms.Settings.resources

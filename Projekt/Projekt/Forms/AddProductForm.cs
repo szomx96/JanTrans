@@ -21,6 +21,17 @@ namespace Projekt.Forms
         {
             InitializeComponent();
         }
+        public string CommodityName
+        {
+            get
+            {
+                return textBoxCommodityName.Text;
+            }
+            set
+            {
+                textBoxCommodityName.Text = value;
+            }
+        }
         public double CommodityWeight
         {
             get
@@ -45,7 +56,6 @@ namespace Projekt.Forms
                 textBoxCommodityVolume.Text = value.ToString();
             }
         }
-
         public string CustomerCompanyName
         {
 
@@ -143,7 +153,7 @@ namespace Projekt.Forms
             textBoxCustomerCompanyName.Enabled = false;
             textBoxCustomerName.Enabled = false;
             textBoxCustomerSurname.Enabled = false;
-
+            buttonCustomerAdd.Enabled = false;
             string[] customerInfo = comboBox1.SelectedItem.ToString().Split('|');
 
             //CustomerID = int.Parse(customerInfo[0]);

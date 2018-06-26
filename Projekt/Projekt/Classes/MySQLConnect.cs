@@ -88,9 +88,61 @@ namespace Projekt
 
         #region inserts
         //Insert statement
-        public void Insert()
+        public bool InsertOrder(string drivID, string route, string from, string to, 
+            string dep, string arr, string cap, string vol, string[] prodIDs)
         {
+            string ordID="";
+            string query = string.Format(" START TRANSACTION;" +
+                "INSERT kierowca_zajety(Id_kierowca, Data_pocz, Data_kon)"+
+                "values( {0}, '{4}', '{5}');" +
+                "INSERT zlecenia(Kierowca, trasa, Z, Do, Data_wyj, Data_pow," +
+                " Pozostala_Ladownosc, Pozostala_Pojemnosc) VALUES ({0}, {1}, '{2}', '{3}', '{4}', '{5}', {6}, {7});" +
+                "COMMIT;", drivID, route, from, to, dep, arr, cap, vol);
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                connection.Open();
+                cmd.ExecuteNonQuery();
+                //ordID = cmd.LastInsertedId.ToString();
+                connection.Close();
+            }
+            catch
+            {
+                return false;
+            }
 
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand("SELECT MAX(ID_Zlecenia) FROM zlecenia", connection);
+                connection.Open();
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    ordID = dataReader["MAX(ID_Zlecenia)"].ToString();
+                }
+                connection.Close();
+            }
+            catch
+            {
+                return false;
+            }
+            foreach (string id in prodIDs)
+            {
+                query = string.Format("INSERT towar(Zlecenie, Produkt) VALUES ({0},{1})", ordID, id);
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    connection.Open();
+                    cmd.ExecuteNonQuery();                    
+                    connection.Close();
+                }
+                catch
+                {
+                    return false;
+                }                    
+            }
+            
+            return true;
         }
         public bool InsertDriver(string driverName, string driverSurname, string password)
         {
@@ -214,7 +266,7 @@ namespace Projekt
         #region selects
         //Select statements
 
-            //select basic info about logged user
+        //select basic info about logged user
         public string[] SelectUserInfo (string userID)
         {
             List<string> answ = new List<string>();
@@ -271,6 +323,45 @@ namespace Projekt
                 dataReader.Close();
                 this.CloseConnection();
                 return answ.ToArray();
+            }
+            else
+            {
+                return null;
+            }
+        }
+        
+        //select all products
+        public List<Product> SelectProducts()
+        {
+            string query = "SELECT * FROM produkt";
+
+            List<Product> products = new List<Product>();
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    int proID = (int)dataReader["ID_Produkt"];
+                    int custID = (int)dataReader["Klient"];
+                    //Customer customer = SelectCertainCustomer(custID);///////////////POPRAWA
+                    string productName = dataReader["Nazwa"].ToString();
+                    double weight = (double)dataReader["Waga"];
+                    double volume = (double)dataReader["Objetosc"];
+
+                    products.Add(new Product(proID, custID, productName, weight, volume));
+                }
+                dataReader.Close();
+                this.CloseConnection();
+
+                foreach(Product p in products)
+                {
+                    Customer c = SelectCertainCustomer(p.CustomerID);
+                    p.Customer = c;
+                }
+
+                return products;
             }
             else
             {
@@ -334,7 +425,41 @@ namespace Projekt
                 return null;
             }
         }
+        //select that returns all drivers available between 2 dates
+        public List<Driver> SelectAvailableDrivers(DateTime begin, DateTime end)
+        {
+            string format = "yyyy-MM-dd HH:mm:ss";            
+            string query =String.Format( " SELECT * FROM kierowcy" +
+                " WHERE ID_Kierowcy NOT IN(SELECT Id_kierowca FROM kierowca_zajety WHERE " +
+                "((Data_pocz  BETWEEN '{0}' AND '{1}')" +
+                " OR (Data_kon BETWEEN '{0}' AND '{1}') OR " +
+                "('{0}' BETWEEN Data_pocz AND Data_kon) " +
+                "OR ('{1}' BETWEEN Data_pocz AND Data_kon)))", begin.ToString(format), end.ToString(format));
+            Console.WriteLine(query);
+            List<Driver> drivers = new List<Driver>();
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
 
+                while (dataReader.Read())
+                {
+                    int id = (int)dataReader["ID_Kierowcy"];
+                    string driverName = dataReader["Imie"].ToString();
+                    string driverSurname = dataReader["Nazwisko"].ToString();
+                    drivers.Add(new Driver(id, driverName, driverSurname));
+                }
+                dataReader.Close();
+                this.CloseConnection();
+                return drivers;
+            }
+            else
+            {
+                return null;
+            }
+
+
+        }
 
         // selects all vehicles from database as a collection
         public List<Vehicle> SelectVehicles()
@@ -444,10 +569,12 @@ namespace Projekt
 
                 while (dataReader.Read())
                 {
+                    string format = "yyyy-MM-dd HH:mm:ss";
                     int DOID = (int)dataReader["Id_dat"];
                     int driverID = (int)dataReader["Id_kierowca"];
-                    DateTime occBegin = DateTime.ParseExact(dataReader["Data_pocz"].ToString(), "MM.dd.yyyy H:mm:ss", null);
-                    DateTime occEnd = DateTime.ParseExact(dataReader["Data_kon"].ToString(), "MM.dd.yyyy H:mm:ss", null);
+                    Console.WriteLine(dataReader["Data_pocz"].ToString());
+                    DateTime occBegin = DateTime.Parse(dataReader["Data_pocz"].ToString());//, "yyyy-MMM-dd HH:mm:ss tt", null);
+                    DateTime occEnd = DateTime.Parse(dataReader["Data_kon"].ToString());//, "yyyy-MMM-dd HH:mm:ss tt", null);
                     dates.Add(new DriverOccupied(DOID, driverID, occBegin, occEnd));
                 }
                 dataReader.Close();
@@ -461,7 +588,42 @@ namespace Projekt
 
         }
 
+        //select certain driver by id
+        public Driver SelectCertainDriver(int driID)
+        {
+            string query = "SELECT * FROM kierowcy WHERE ID_Kierowcy LIKE " + driID.ToString();
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                int driverID = 1;
+                int vehicleID = 1;
+                string name = "";
+                string surname = "";
+                double distance = 0;
+                
+                while (dataReader.Read())
+                {
+                    driverID = (int)dataReader["ID_Kierowcy"];
+                    vehicleID = (int)dataReader["Ciezarowka"];
+                    name = dataReader["Imie"].ToString();
+                    surname = dataReader["Nazwisko"].ToString();
+                    distance = (double)dataReader["Trasa"];
+                }
+                dataReader.Close();
 
+
+                this.CloseConnection();
+                Driver d = new Driver(driverID, name, surname, distance, null, null);
+                d.Vehicle = SelectCertainVehicle(driverID);
+                d.Occupied = SelectCertainDatesOfOccupation(driverID);
+                return d;
+            }
+            else
+            {
+                return null;
+            }
+        }
 
         // select Product with specific ID
         public Product SelectCertainProduct(int proID)
@@ -489,7 +651,9 @@ namespace Projekt
 
                 
                 this.CloseConnection();
-                return new  Product(productID, productName, weight, volume, SelectCertainCustomer(customerID));
+                Product p = new Product(productID, customerID, productName, weight, volume);//, SelectCertainCustomer(customerID));
+                p.Customer = SelectCertainCustomer(p.CustomerID);
+                return p;
             }
             else
             {

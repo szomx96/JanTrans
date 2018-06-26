@@ -18,6 +18,7 @@ namespace Projekt.Models
             this.container = container;
         }
 
+
         internal bool InsertCustomer(Customer customer)
         {
             string customerCompanyName = customer.CustomerCompanyName;
